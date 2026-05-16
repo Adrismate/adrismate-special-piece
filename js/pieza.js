@@ -12,69 +12,93 @@
 
 (function () {
 
-  /* ── Timeline ── */
+  /* ── Timeline — timestamps from Whisper ── */
   const FRAMES = [
-    /* 0 · Preamble */
-    { t: 0.0,  dur: 2.0,  idx: null,          brand: false, els: [] },
+    /* 0 · Preamble — breath before narration */
+    { t: 0.0,  dur: 0.6,  idx: null,          brand: false, els: [] },
 
-    /* 1 · LA INCOMODIDAD */
-    { t: 2.0,  dur: 3.4,  idx:'incomodidad',  els: [
+    /* 1 · LA INCOMODIDAD ───────────────────────────────────────────
+       W 0.60–6.30  "Todo empieza con algo incómodo,"              */
+    { t: 0.6,  dur: 5.7,  idx:'incomodidad',  els: [
       { id:'g1',  type:'gradient',    x:'50%',  y:'50%', a:'cc', w:'42vw', h:'25vw' },
       { id:'l1',  text:'Todo empieza con algo incómodo.', size:'xxl', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 5.4,  dur: 2.6,  idx:'incomodidad',  els: [
+    /* W 6.30–12.10  "no con un briefing ni tampoco con un cliente," */
+    { t: 6.3,  dur: 2.9,  idx:'incomodidad',  els: [
       { id:'g1',  type:'gradient',    x:'50%',  y:'50%', a:'cc', w:'34vw', h:'20vw' },
-      { id:'l2a', text:'No con un briefing,',  size:'l', x:'5vw',  y:'50%', a:'cl' },
+      { id:'l2a', text:'No con un briefing,',       size:'l', x:'5vw',  y:'50%', a:'cl' },
     ]},
-    { t: 8.0,  dur: 2.8,  idx:'incomodidad',  els: [
+    { t: 9.2,  dur: 2.9,  idx:'incomodidad',  els: [
       { id:'g1',  type:'gradient',    x:'50%',  y:'50%', a:'cc', w:'34vw', h:'20vw' },
-      { id:'l2a', text:'No con un briefing,',  size:'l', x:'5vw',  y:'50%', a:'cl', mute:true },
+      { id:'l2a', text:'No con un briefing,',       size:'l', x:'5vw',  y:'50%', a:'cl', mute:true },
       { id:'l2b', text:'ni tampoco con un cliente.', size:'l', x:'95vw', y:'50%', a:'cr' },
     ]},
-    { t: 10.8, dur: 3.2,  idx:'incomodidad',  els: [
+    /* W 12.10–17.38  "con una fricción que no puedo ignorar."      */
+    { t: 12.1, dur: 5.28, idx:'incomodidad',  els: [
       { id:'l4',  text:'Con una fricción que no puedo ignorar.', size:'l', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 14.0, dur: 2.8,  idx:'incomodidad',  els: [
+    /* W 17.38–22.46  "Entonces recuerdo que algo esté hecho así
+                       no significa que esté bien."                  */
+    { t: 17.38, dur: 1.82, idx:'incomodidad', els: [
       { id:'l5',  text:'Entonces recuerdo…', size:'xl', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 16.8, dur: 2.4,  idx:'incomodidad',  els: [
+    { t: 19.2,  dur: 1.6,  idx:'incomodidad', els: [
       { id:'ph1', type:'placeholder', x:'4vw',  y:'18vh', a:'tl', w:'42vw', h:'60vh' },
-      { id:'l3a', text:'que algo esté hecho así', size:'l', x:'95vw', y:'48%', a:'cr' },
+      { id:'l3a', text:'que algo esté hecho así',    size:'l', x:'95vw', y:'48%', a:'cr' },
     ]},
-    { t: 19.2, dur: 2.8,  idx:'incomodidad',  els: [
+    { t: 20.8,  dur: 1.66, idx:'incomodidad', els: [
       { id:'ph1', type:'placeholder', x:'4vw',  y:'18vh', a:'tl', w:'42vw', h:'60vh' },
-      { id:'l3a', text:'que algo esté hecho así', size:'l', x:'95vw', y:'48%', a:'cr', mute:true },
+      { id:'l3a', text:'que algo esté hecho así',    size:'l', x:'95vw', y:'48%', a:'cr', mute:true },
       { id:'l3b', text:'no significa que esté bien.', size:'l', x:'95vw', y:'56%', a:'cr' },
     ]},
 
-    /* 2 · CUESTIONARLO TODO */
-    { t: 22.0, dur: 3.6,  idx:'cuestionarlo', els: [
+    /* 2 · CUESTIONARLO TODO ────────────────────────────────────────
+       W 22.46–27.80  "Me cuestiono todo lo cotidiano
+                       como hábito profesional."                     */
+    { t: 22.46, dur: 2.74, idx:'cuestionarlo', els: [
       { id:'l6a', text:'Me cuestiono todo lo cotidiano', size:'xl', x:'50%', y:'46%', a:'cc' },
-      { id:'l6b', text:'como hábito profesional.', size:'xl', x:'50%', y:'56%', a:'cc', mute:true },
+      { id:'l6b', text:'como hábito profesional.',       size:'xl', x:'50%', y:'56%', a:'cc', mute:true },
     ]},
-    { t: 25.6, dur: 2.6,  idx:'cuestionarlo', els: [
+    { t: 25.2,  dur: 2.6,  idx:'cuestionarlo', els: [
+      { id:'l6a', text:'Me cuestiono todo lo cotidiano', size:'xl', x:'50%', y:'46%', a:'cc', mute:true },
+      { id:'l6b', text:'como hábito profesional.',       size:'xl', x:'50%', y:'56%', a:'cc' },
+    ]},
+    /* W 27.80–33.74  "Las cosas no surgen de la nada. Somos
+                       incapaces de crear algo sin una fuente
+                       de inspiración,"                              */
+    { t: 27.8,  dur: 2.4,  idx:'cuestionarlo', els: [
       { id:'ph2', type:'placeholder', x:'50%',  y:'50%', a:'cc', w:'92vw', h:'68vh' },
       { id:'l7a', text:'Las cosas no surgen de la nada.', size:'l', x:'18vw', y:'48%', a:'cl' },
-      { id:'l7b', text:'Somos incapaces de crear algo nuevo sin', size:'l', x:'18vw', y:'56%', a:'cl', mute:true },
+      { id:'l7b', text:'Somos incapaces de crear algo sin', size:'l', x:'18vw', y:'56%', a:'cl', mute:true },
     ]},
-    { t: 28.2, dur: 2.6,  idx:'cuestionarlo', els: [
+    { t: 30.2,  dur: 1.8,  idx:'cuestionarlo', els: [
       { id:'ph2', type:'placeholder', x:'50%',  y:'50%', a:'cc', w:'92vw', h:'68vh' },
-      { id:'l7b', text:'Somos incapaces de crear algo nuevo sin', size:'l', x:'4vw',  y:'50%', a:'cl' },
-      { id:'l7c', text:'una fuente de inspiración, sin una referencia.', size:'l', x:'96vw', y:'50%', a:'cr', mute:true },
+      { id:'l7b', text:'Somos incapaces de crear algo sin', size:'l', x:'4vw',  y:'50%', a:'cl' },
+      { id:'l7c', text:'una fuente de inspiración,',         size:'l', x:'96vw', y:'50%', a:'cr', mute:true },
     ]},
-    { t: 30.8, dur: 2.8,  idx:'cuestionarlo', els: [
+    { t: 32.0,  dur: 1.74, idx:'cuestionarlo', els: [
       { id:'ph2', type:'placeholder', x:'50%',  y:'50%', a:'cc', w:'92vw', h:'68vh' },
-      { id:'l7b', text:'Somos incapaces de crear algo nuevo sin', size:'l', x:'4vw',  y:'50%', a:'cl', mute:true },
-      { id:'l7c', text:'una fuente de inspiración, sin una referencia.', size:'l', x:'96vw', y:'50%', a:'cr' },
+      { id:'l7b', text:'Somos incapaces de crear algo sin', size:'l', x:'4vw',  y:'50%', a:'cl', mute:true },
+      { id:'l7c', text:'una fuente de inspiración,',         size:'l', x:'96vw', y:'50%', a:'cr' },
     ]},
-    { t: 33.6, dur: 3.4,  idx:'cuestionarlo', els: [
+    /* W 33.74–40.48  "sin una referencia." (6.74 s — slow delivery)
+       Visual: reference images accumulate as metaphor             */
+    { t: 33.74, dur: 3.37, idx:'cuestionarlo', els: [
       { id:'c1',  type:'placeholder', x:'42vw', y:'-4vh',  a:'tl', w:'26vw', h:'30vw' },
       { id:'c2',  type:'placeholder', x:'72vw', y:'12vh',  a:'tl', w:'22vw', h:'32vw' },
       { id:'c3',  type:'placeholder', x:'4vw',  y:'30vh',  a:'tl', w:'20vw', h:'30vw' },
       { id:'c4',  type:'placeholder', x:'48vw', y:'62vh',  a:'tl', w:'20vw', h:'34vh' },
-      { id:'l8',  text:'Pero es ahí donde se nos brinda la oportunidad de', size:'m', x:'5vw', y:'52%', a:'cl', z:10 },
     ]},
-    { t: 37.0, dur: 1.6,  idx:'cuestionarlo', els: [
+    { t: 37.11, dur: 3.37, idx:'cuestionarlo', els: [
+      { id:'c1',  type:'placeholder', x:'42vw', y:'-2vh',  a:'tl', w:'30vw', h:'46vw' },
+      { id:'c2',  type:'placeholder', x:'66vw', y:'8vh',   a:'tl', w:'26vw', h:'34vw' },
+      { id:'c3',  type:'placeholder', x:'18vw', y:'18vh',  a:'tl', w:'28vw', h:'34vw' },
+      { id:'c4',  type:'placeholder', x:'40vw', y:'52vh',  a:'tl', w:'20vw', h:'42vh' },
+      { id:'c5',  type:'placeholder', x:'52vw', y:'40vh',  a:'tl', w:'18vw', h:'24vh', z:2 },
+    ]},
+    /* W 40.48–48.30  "Pero es ahí donde se nos brinda la oportunidad
+                       de cuestionar, combinar y crear algo nuevo."  */
+    { t: 40.48, dur: 2.61, idx:'cuestionarlo', els: [
       { id:'c1',  type:'placeholder', x:'42vw', y:'-2vh',  a:'tl', w:'30vw', h:'46vw' },
       { id:'c2',  type:'placeholder', x:'66vw', y:'8vh',   a:'tl', w:'26vw', h:'34vw' },
       { id:'c3',  type:'placeholder', x:'18vw', y:'18vh',  a:'tl', w:'28vw', h:'34vw' },
@@ -84,7 +108,7 @@
       { id:'l9b', text:'combinar',            size:'l', x:'50%',  y:'58%', a:'cc', mute:true, z:10 },
       { id:'l9c', text:'y crear algo nuevo.', size:'l', x:'85vw', y:'58%', a:'cr', mute:true, z:10 },
     ]},
-    { t: 38.6, dur: 1.6,  idx:'cuestionarlo', els: [
+    { t: 43.09, dur: 2.61, idx:'cuestionarlo', els: [
       { id:'c1',  type:'placeholder', x:'42vw', y:'-2vh',  a:'tl', w:'30vw', h:'46vw' },
       { id:'c2',  type:'placeholder', x:'66vw', y:'8vh',   a:'tl', w:'26vw', h:'34vw' },
       { id:'c3',  type:'placeholder', x:'18vw', y:'18vh',  a:'tl', w:'28vw', h:'34vw' },
@@ -94,7 +118,7 @@
       { id:'l9b', text:'combinar',            size:'l', x:'50%',  y:'58%', a:'cc', z:10 },
       { id:'l9c', text:'y crear algo nuevo.', size:'l', x:'85vw', y:'58%', a:'cr', mute:true, z:10 },
     ]},
-    { t: 40.2, dur: 2.2,  idx:'cuestionarlo', els: [
+    { t: 45.70, dur: 2.6,  idx:'cuestionarlo', els: [
       { id:'c1',  type:'placeholder', x:'42vw', y:'-2vh',  a:'tl', w:'30vw', h:'46vw' },
       { id:'c2',  type:'placeholder', x:'66vw', y:'8vh',   a:'tl', w:'26vw', h:'34vw' },
       { id:'c3',  type:'placeholder', x:'18vw', y:'18vh',  a:'tl', w:'28vw', h:'34vw' },
@@ -105,86 +129,100 @@
       { id:'l9c', text:'y crear algo nuevo.', size:'l', x:'85vw', y:'58%', a:'cr', z:10 },
     ]},
 
-    /* 3 · LEARN BY DOING */
-    { t: 42.4, dur: 2.8,  idx:'learn', els: [
+    /* 3 · LEARN BY DOING ───────────────────────────────────────────
+       W 48.30–53.00  "Learn by doing. Si no sabes por dónde
+                       empezar, empieza haciendo."                   */
+    { t: 48.3,  dur: 2.4,  idx:'learn', els: [
       { id:'l10a', text:'Learn by doing.', size:'xl', x:'50%', y:'46%', a:'cc' },
     ]},
-    { t: 45.2, dur: 2.4,  idx:'learn', els: [
-      { id:'l10a', text:'Learn by doing.', size:'xl', x:'50%', y:'46%', a:'cc' },
-      { id:'l10b', text:'Si no sabes por donde empezar,', size:'xl', x:'50%', y:'56%', a:'cc', mute:true },
+    { t: 50.7,  dur: 1.15, idx:'learn', els: [
+      { id:'l10a', text:'Learn by doing.',              size:'xl', x:'50%', y:'46%', a:'cc' },
+      { id:'l10b', text:'Si no sabes por dónde empezar,', size:'xl', x:'50%', y:'56%', a:'cc', mute:true },
     ]},
-    { t: 47.6, dur: 2.4,  idx:'learn', els: [
+    { t: 51.85, dur: 1.15, idx:'learn', els: [
       { id:'l10a', text:'Learn by doing.',   size:'xl', x:'50%', y:'46%', a:'cc' },
       { id:'l10c', text:'empieza haciendo.', size:'xl', x:'50%', y:'56%', a:'cc', mute:true },
     ]},
-    { t: 50.0, dur: 2.4,  idx:'learn', els: [
+    /* W 53.00–58.72  "Encaja todas las piezas necesarias, observa
+                       desde lejos y piensa en cómo mejorarlo.
+                       Vuelve a intentarlo."                         */
+    { t: 53.0,  dur: 2.0,  idx:'learn', els: [
       { id:'l11a', text:'Encaja todas las piezas necesarias.', size:'l', x:'5vw', y:'34%', a:'tl' },
     ]},
-    { t: 52.4, dur: 2.8,  idx:'learn', els: [
+    { t: 55.0,  dur: 2.0,  idx:'learn', els: [
       { id:'l11a', text:'Encaja todas las piezas necesarias.', size:'l', x:'5vw', y:'34%', a:'tl', mute:true },
-      { id:'l11b', text:'Observa desde lejos y\npiensa en como\nmejorarlo.', size:'l', x:'50%', y:'58%', a:'cc' },
+      { id:'l11b', text:'Observa desde lejos y\npiensa en cómo\nmejorarlo.', size:'l', x:'50%', y:'58%', a:'cc' },
     ]},
-    { t: 55.2, dur: 2.6,  idx:'learn', els: [
+    { t: 57.0,  dur: 1.72, idx:'learn', els: [
       { id:'l11a', text:'Encaja todas las piezas necesarias.', size:'l', x:'5vw', y:'34%', a:'tl', mute:true },
-      { id:'l11b', text:'Observa desde lejos y\npiensa en como\nmejorarlo.', size:'l', x:'50%', y:'58%', a:'cc', mute:true },
+      { id:'l11b', text:'Observa desde lejos y\npiensa en cómo\nmejorarlo.', size:'l', x:'50%', y:'58%', a:'cc', mute:true },
       { id:'l11c', text:'Vuelve a intentarlo.', size:'l', x:'95vw', y:'82%', a:'br' },
     ]},
 
-    /* 4 · UCD REAL */
-    { t: 57.8, dur: 2.8,  idx:'ucd', els: [
+    /* 4 · UCD REAL ─────────────────────────────────────────────────
+       W 58.72–63.28  "User-centered design real.
+                       Sal ahí fuera y pregunta."                    */
+    { t: 58.72, dur: 2.28, idx:'ucd', els: [
       { id:'l12',  text:'User-centered design real.', size:'xl', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 60.6, dur: 2.4,  idx:'ucd', els: [
+    { t: 61.0,  dur: 2.28, idx:'ucd', els: [
       { id:'l13a', text:'Sal ahí fuera y pregunta.', size:'l', x:'5vw', y:'66%', a:'cl' },
     ]},
-    { t: 63.0, dur: 2.6,  idx:'ucd', els: [
-      { id:'l13a', text:'Sal ahí fuera y pregunta.', size:'l', x:'5vw',  y:'66%', a:'cl', mute:true },
+    /* W 63.28–68.60  "No asumas, contrástalo con datos.
+                       Comparte, haz partícipe y perfecciona."        */
+    { t: 63.28, dur: 2.32, idx:'ucd', els: [
+      { id:'l13a', text:'Sal ahí fuera y pregunta.',    size:'l', x:'5vw',  y:'66%', a:'cl', mute:true },
       { id:'l13b', text:'No asumas, contrástalo con datos.', size:'l', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 65.6, dur: 3.0,  idx:'ucd', els: [
-      { id:'l13a', text:'Sal ahí fuera y pregunta.', size:'l', x:'5vw',  y:'66%', a:'cl', mute:true },
+    { t: 65.6,  dur: 3.0,  idx:'ucd', els: [
+      { id:'l13a', text:'Sal ahí fuera y pregunta.',    size:'l', x:'5vw',  y:'66%', a:'cl', mute:true },
       { id:'l13b', text:'No asumas, contrástalo con datos.', size:'l', x:'50%', y:'50%', a:'cc', mute:true },
-      { id:'l13c', text:'Comparte, haz participe y perfecciona.', size:'l', x:'95vw', y:'34%', a:'cr' },
+      { id:'l13c', text:'Comparte, haz partícipe y perfecciona.', size:'l', x:'95vw', y:'34%', a:'cr' },
     ]},
 
-    /* 5 · EL COSQUILLEO */
-    { t: 68.6, dur: 1.8,  idx:'cosquilleo', els: [
-      { id:'l14',  text:'Pero sobretodo,', size:'xl', x:'50%', y:'50%', a:'cc' },
+    /* 5 · EL COSQUILLEO ────────────────────────────────────────────
+       W 68.60–73.80  "Sobre todo, crea." (5.2 s — slow, deliberate) */
+    { t: 68.6,  dur: 2.6,  idx:'cosquilleo', els: [
+      { id:'l14',  text:'Sobre todo,', size:'xl', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 70.4, dur: 2.4,  idx:'cosquilleo', els: [
+    { t: 71.2,  dur: 2.6,  idx:'cosquilleo', els: [
       { id:'l15',  text:'crea.', size:'xxl', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 72.8, dur: 3.4,  idx:'cosquilleo', els: [
-      { id:'l16',  text:'Crear productos que sorprendan,\nque se adelanten a las expectativas del usuario.', size:'l', x:'50%', y:'50%', a:'cc' },
+    /* W 73.80–78.00  "Crea productos que sorprendan, que se adelanten
+                       a las expectativas del usuario."               */
+    { t: 73.8,  dur: 4.2,  idx:'cosquilleo', els: [
+      { id:'l16',  text:'Crea productos que sorprendan,\nque se adelanten a las expectativas del usuario.', size:'l', x:'50%', y:'50%', a:'cc' },
     ]},
-    { t: 76.2, dur: 3.0,  idx:'cosquilleo', els: [
-      { id:'l17',  text:'"La gente no sabe lo que quiere hasta que se lo enseñas",', size:'l', x:'50%', y:'42%', a:'cc' },
+    /* W 78.00–84.00  "La gente no sabe lo que quiere hasta que
+                       se lo enseñas, decía Jobs."                   */
+    { t: 78.0,  dur: 3.2,  idx:'cosquilleo', els: [
+      { id:'l17',  text:'"La gente no sabe lo que quiere\nhasta que se lo enseñas",', size:'l', x:'50%', y:'42%', a:'cc' },
     ]},
-    { t: 79.2, dur: 2.0,  idx:'cosquilleo', els: [
-      { id:'l17',  text:'"La gente no sabe lo que quiere hasta que se lo enseñas",', size:'l', x:'50%', y:'42%', a:'cc', mute:true },
-      { id:'l17b', text:'decía Jobs.', size:'l', x:'50%', y:'74%', a:'cc', mute:true },
+    { t: 81.2,  dur: 2.8,  idx:'cosquilleo', els: [
+      { id:'l17',  text:'"La gente no sabe lo que quiere\nhasta que se lo enseñas",', size:'l', x:'50%', y:'42%', a:'cc', mute:true },
+      { id:'l17b', text:'decía Jobs.', size:'l', x:'50%', y:'68%', a:'cc' },
     ]},
-    { t: 81.2, dur: 2.4,  idx:'cosquilleo', els: [
-      { id:'l18a', text:'No tengas miedo a crearlo,', size:'l', x:'5vw', y:'52%', a:'cl' },
+    /* W 84.00–89.20  "No tengas miedo a crearlo." (5.2 s)           */
+    { t: 84.0,  dur: 5.2,  idx:'cosquilleo', els: [
+      { id:'l18a', text:'No tengas miedo a crearlo.', size:'xl', x:'50%', y:'52%', a:'cc' },
     ]},
-    { t: 83.6, dur: 2.0,  idx:'cosquilleo', els: [
-      { id:'l18a', text:'No tengas miedo a crearlo,', size:'l', x:'5vw', y:'52%', a:'cl', mute:true },
-      { id:'l18b', text:'cuando algo funciona,', size:'l', x:'50%', y:'52%', a:'cc' },
+    /* W 89.20–93.28  "Cuando algo funciona, esa sensación de
+                       cosquillo te recorrerá la piel."              */
+    { t: 89.2,  dur: 2.04, idx:'cosquilleo', els: [
+      { id:'l18b', text:'Cuando algo funciona,', size:'l', x:'50%', y:'46%', a:'cc' },
     ]},
-    { t: 85.6, dur: 3.6,  idx:'cosquilleo', els: [
+    { t: 91.24, dur: 2.04, idx:'cosquilleo', els: [
       { id:'l19',  text:'esa sensación de cosquilleo\nte recorrerá la piel.', size:'l', x:'50%', y:'50%', a:'cc' },
     ]},
 
-    /* 6 · ENDING */
-    { t: 89.2, dur: 2.6,  idx:'cosquilleo', mutedIdx:true, els: [
+    /* 6 · ENDING ───────────────────────────────────────────────────
+       W 93.28–97.80  "Nadie me lo ha pedido. Tampoco lo he esperado." */
+    { t: 93.28, dur: 2.26, idx:'cosquilleo', mutedIdx:true, els: [
       { id:'l20',  text:'Nadie me lo ha pedido.', size:'xl', x:'50%', y:'46%', a:'cc' },
     ]},
-    { t: 91.8, dur: 3.0,  idx:'cosquilleo', mutedIdx:true, els: [
-      { id:'l20',  text:'Nadie me lo ha pedido.', size:'xl', x:'50%', y:'46%', a:'cc' },
+    { t: 95.54, dur: 2.26, idx:'cosquilleo', mutedIdx:true, els: [
+      { id:'l20',  text:'Nadie me lo ha pedido.',   size:'xl', x:'50%', y:'46%', a:'cc', mute:true },
       { id:'l20b', text:'Tampoco lo he esperado…', size:'xl', x:'50%', y:'56%', a:'cc', mute:true },
-    ]},
-    { t: 94.8, dur: 3.0,  idx:'cosquilleo', mutedIdx:true, els: [
-      { id:'l21',  text:'[entra la siguiente sección]', size:'m', x:'50%', y:'50%', a:'cc', mute:true },
     ]},
   ];
 
