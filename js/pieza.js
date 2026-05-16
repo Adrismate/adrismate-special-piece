@@ -479,8 +479,9 @@
     brandBg.classList.remove('shown');
     setAudioMuted(false);
     audio.play().catch(() => {
-      /* Autoplay blocked — user must tap play button */
-      syncPauseIcon();
+      /* Unmuted autoplay blocked — retry muted so visuals still run */
+      setAudioMuted(true);
+      audio.play().catch(() => syncPauseIcon());
     });
     window.__setHeroScrollActive && window.__setHeroScrollActive(false);
   };
