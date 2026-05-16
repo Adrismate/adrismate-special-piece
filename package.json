@@ -1,0 +1,11 @@
+{
+  "name": "adrismate-special-piece",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "browser-sync start --server --files 'css/**/*.css, js/**/*.js, *.html' --no-notify --port 3200"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}

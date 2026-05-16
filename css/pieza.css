@@ -1,0 +1,286 @@
+/* ══════════════════════════════════
+   PIEZA CREATIVA
+   All rules scoped to #nextScene.
+   Inner .pieza-container is position
+   absolute (parent is fixed, inset 0)
+   so nothing can scroll.
+══════════════════════════════════ */
+#nextScene {
+  --bg:         #DDDDD7;
+  --ink:        #1a1a18;
+  --mute:       #b3b2ac;
+  --placeholder:#c8c8c2;
+  --ease-p:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-fast-p:cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Sagace', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Inner container — clips everything, prevents any scroll */
+#nextScene .pieza-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* ── Dot grid (full screen) ── */
+#nextScene .pieza-dot-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+#nextScene .pieza-dot-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.6) 1px, transparent 1px);
+  background-size: 14.9px 14.8px;
+  opacity: 0.08;
+}
+
+/* ── Background brand watermark ── */
+#nextScene .brand-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+  font-size: 22vw;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.85;
+  color: rgba(26,26,24,0.035);
+  opacity: 0;
+  transition: opacity 1.4s var(--ease-p);
+  user-select: none;
+}
+#nextScene .brand-bg.shown { opacity: 1; }
+
+/* ── Table of contents (top-left) ── */
+#nextScene .pieza-index {
+  position: absolute;
+  top: 5.2vh;
+  left: 4.4vw;
+  z-index: 30;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sagace', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(20px, 1.85vw, 36px);
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--mute);
+  user-select: none;
+}
+#nextScene .pieza-index .entry {
+  display: block;
+  opacity: 0;
+  transform: translate(var(--idx-from-x, -8vw), var(--idx-from-y, 18vh)) scale(var(--idx-from-s, 2.2));
+  transform-origin: left top;
+  cursor: default;
+  transition:
+    opacity   .8s  var(--ease-p),
+    transform 1.05s var(--ease-p),
+    color     .4s  ease;
+  will-change: transform, opacity, color;
+}
+#nextScene .pieza-index .entry.shown {
+  opacity: 1;
+  transform: translate(0,0) scale(1);
+  cursor: pointer;
+}
+#nextScene .pieza-index .entry.shown:hover {
+  color: var(--ink);
+  opacity: 0.75;
+}
+#nextScene .pieza-index .entry.active {
+  color: var(--ink);
+  font-weight: 600;
+  opacity: 1 !important;
+  cursor: default;
+}
+
+/* ── Scene canvas ── */
+#nextScene .pieza-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+/* ══════════════════════════════════
+   Typography system
+   xxl — Sagace 500 64px / 68px / -2.56px
+   xl  — Sagace 500 clamp(54→130px)
+   l   — Rethink Sans 400 32px / 30px
+   m   — Rethink Sans 400 clamp(18→26px)
+   s   — Rethink Sans 400 clamp(13→18px)
+══════════════════════════════════ */
+#nextScene .line,
+#nextScene .viz {
+  position: absolute;
+  --ax: -50%;
+  --ay: -50%;
+  --enter: 18px;
+  opacity: 0;
+  transform: translate(var(--ax), var(--ay)) translateY(var(--enter));
+  transition:
+    opacity   .58s var(--ease-fast-p),
+    transform .62s var(--ease-fast-p),
+    color    1.1s  ease,
+    left     .9s   var(--ease-p),
+    top      .9s   var(--ease-p),
+    width    1s    var(--ease-p),
+    height   1s    var(--ease-p);
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+#nextScene .line.shown,
+#nextScene .viz.shown {
+  opacity: 1;
+  transform: translate(var(--ax), var(--ay)) translateY(0);
+}
+#nextScene .line.muted { color: var(--mute); }
+#nextScene .line { white-space: pre; }
+
+#nextScene .line.size-xxl {
+  font-family: 'Sagace', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 68px;
+  letter-spacing: -2.56px;
+}
+#nextScene .line.size-xl {
+  font-family: 'Sagace', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(54px, 6.2vw, 130px);
+  font-weight: 500;
+  line-height: 1.0625;
+  letter-spacing: -0.04em;
+}
+#nextScene .line.size-l {
+  font-family: 'Rethink Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.64px;
+}
+#nextScene .line.size-m {
+  font-family: 'Rethink Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(18px, 1.55vw, 26px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+#nextScene .line.size-s {
+  font-family: 'Rethink Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(13px, 1.05vw, 18px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+/* ── Visuals ── */
+#nextScene .viz.gradient {
+  background: linear-gradient(180deg,
+    #4f6fa6  0%, #5d7ab0 12%, #7689b0 24%,
+    #968ea1 36%, #b89687 48%, #d99659 60%,
+    #ec8e35 73%, #f59c28 85%, #fab233 100%);
+}
+#nextScene .viz.placeholder { background: var(--placeholder); }
+
+/* ══════════════════════════════════
+   BOTTOM ROW
+   Progress bar + audio toggle share
+   one flex row pinned to the bottom.
+   Editorial: 1px track, chapter ticks,
+   no thumb — precision over decoration.
+══════════════════════════════════ */
+#nextScene .pieza-bottom {
+  position: absolute;
+  bottom: 4vh;
+  left: 4.4vw;
+  right: 4.4vw;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Progress track — flex row of chapter segments */
+#nextScene .pieza-progress-track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Each chapter segment: 1px line that fills left-to-right */
+#nextScene .pieza-segment {
+  flex: 1;
+  height: 1px;
+  background: rgba(26,26,24,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fill — scaleX updated directly via rAF for smoothness */
+#nextScene .pieza-segment-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+/* Pause/resume button — sits at the left end of the progress row */
+#nextScene .pieza-pause-btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(26,26,24,0.25);
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+  opacity: 0.45;
+  transition: opacity .25s ease;
+  padding: 0;
+}
+#nextScene .pieza-pause-btn:hover { opacity: 0.9; }
+#nextScene .pieza-pause-btn svg   { display: block; }
+
+/* Audio toggle — sits at the right end of the progress row */
+#nextScene .audio-toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(26,26,24,0.25);
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+  opacity: 0.45;
+  transition: opacity .25s ease;
+  padding: 0;
+}
+#nextScene .audio-toggle:hover { opacity: 0.9; }
+#nextScene .audio-toggle.muted { opacity: 0.22; }
+#nextScene .audio-toggle svg   { display: block; }
+
+@media (max-width: 700px) {
+  #nextScene .pieza-index { font-size: 11px; }
+}

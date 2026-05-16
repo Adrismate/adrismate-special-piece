@@ -1,0 +1,327 @@
+/* ── Fonts ── */
+@font-face {
+  font-family: 'Sagace';
+  src: url('../assets/fonts/Sagace/TRIAL—Sagace-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Sagace';
+  src: url('../assets/fonts/Sagace/TRIAL—Sagace-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Sagace';
+  src: url('../assets/fonts/Sagace/TRIAL—Sagace-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Rethink Sans';
+  src: url('../assets/fonts/Rethink Sans/RethinkSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rethink Sans';
+  src: url('../assets/fonts/Rethink Sans/RethinkSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgb(206,210,221) 16%, rgb(239,127,46) 94%);
+  transition: background 1000ms cubic-bezier(0.76,0,0.24,1);
+}
+
+/* ── Dot grid (upper 65%) ── */
+.dot-grid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 65vh;
+  z-index: 2;
+  pointer-events: none;
+}
+.dot-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.8) 1px, transparent 1px);
+  background-size: 14.9px 14.8px;
+  opacity: 0.12;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 50%, transparent 100%);
+}
+
+/* ── Title + Labels column ── */
+.title-labels-wrapper {
+  position: absolute;
+  left: 0;
+  top: 12.67%;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  pointer-events: none;
+}
+
+.hero-title {
+  font-family: 'Sagace', serif;
+  font-weight: 400;
+  font-size: clamp(60px, min(19.94vw, 32vh), 345px);
+  line-height: 1.0;
+  letter-spacing: -0.09em;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  /* Composites via overlay against hero gradient */
+  mix-blend-mode: overlay;
+  -webkit-mask-image: linear-gradient(180deg, #000 21.33%, rgba(0,0,0,0.00) 90.67%);
+  mask-image: linear-gradient(180deg, #000 21.33%, rgba(0,0,0,0.00) 90.67%);
+  /* No transform — would isolate the stacking context and break mix-blend-mode */
+  will-change: opacity;
+  opacity: 0;
+}
+
+.labels-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 4.6vw;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* ── Portrait ── */
+.hero-subject {
+  position: absolute;
+  left: 28.96%;
+  top: 15.27%;
+  width: 42.19vw;
+  height: 89.4vh;
+  z-index: 4;
+  overflow: hidden;
+  will-change: opacity;
+  opacity: 0;
+}
+.hero-subject img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Strategy / Design labels ── */
+.intro-label {
+  font-family: 'Sagace', serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: normal;
+  letter-spacing: -1.08px;
+  color: #7B7B7B;
+  mix-blend-mode: difference;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+/* ── "meets" ── */
+.meets-label {
+  font-family: 'Sagace', serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: normal;
+  letter-spacing: -1.08px;
+  color: #7B7B7B;
+  mix-blend-mode: difference;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+  will-change: opacity;
+  opacity: 0;
+}
+
+/* ── Arrow + Bio group ── */
+.arrow-bio-group {
+  position: absolute;
+  right: 4.6vw;
+  top: 59%;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  width: 21.6vw;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.arrow-circle {
+  width: clamp(36px, 3.01vw, 52px);
+  height: clamp(36px, 3.01vw, 52px);
+  border: 1.5px solid rgb(249,248,243);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.arrow-circle:hover {
+  transform: scale(1.08);
+}
+.arrow-circle svg {
+  width: 40%;
+  height: 40%;
+}
+
+.hero-bio {
+  font-family: 'Rethink Sans', sans-serif;
+  font-weight: 500;
+  font-size: clamp(11px, 1.04vw, 18px);
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+  color: rgb(249,248,243);
+  margin: 0;
+}
+
+/* ══════════════════════════════════
+   BOTTOM NAV BAR
+══════════════════════════════════ */
+.hero-nav {
+  position: absolute;
+  bottom: 4.2%;
+  left: 4.6vw;
+  right: 4.6vw;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  will-change: opacity, transform;
+  opacity: 0;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(32px, 2.6vw, 44px);
+  height: clamp(32px, 2.6vw, 44px);
+  flex-shrink: 0;
+}
+.nav-logo img {
+  width: 60px;
+  height: 82px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-pills {
+  display: flex;
+  align-items: center;
+  background: rgba(251,251,251,0.2);
+  border-radius: 100px;
+  padding: 13px;
+  gap: clamp(2px, 0.28vw, 4px);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.12), inset 0 0 0 1px rgba(0,0,0,0.3);
+}
+
+.nav-pill {
+  font-family: 'Rethink Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgb(38,36,38);
+  background: rgb(207,207,207);
+  text-decoration: none;
+  padding: clamp(6px, 0.87vw, 10px) clamp(12px, 1.39vw, 24px);
+  border-radius: 100px;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background 0.18s ease;
+  white-space: nowrap;
+}
+.nav-pill:hover {
+  background: rgb(222,223,218);
+}
+
+.nav-contact {
+  font-family: 'Rethink Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgb(249,248,243);
+  text-decoration: none;
+  padding: clamp(6px, 0.87vw, 12px) clamp(14px, 1.62vw, 28px);
+  border-radius: 100px;
+  background: rgb(38,36,38);
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-contact:hover {
+  background: rgb(58,55,58);
+}
+
+/* ══════════════════════════════════
+   NEXT SCENE
+   Fades in over the hero on step 2.
+   Background matches Pieza Creativa's
+   --bg so the transition is seamless.
+   Replace .next-scene-brand content
+   with your real projects section.
+══════════════════════════════════ */
+.next-scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #DDDDD7;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.next-scene-brand {
+  font-family: 'Sagace', serif;
+  font-weight: 500;
+  font-size: 22vw;
+  letter-spacing: -0.045em;
+  line-height: 0.85;
+  color: rgba(26,26,24,0.035);
+  user-select: none;
+  text-align: center;
+}
