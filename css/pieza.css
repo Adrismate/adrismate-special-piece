@@ -125,27 +125,14 @@
   position: absolute;
   --ax: -50%;
   --ay: -50%;
-  --enter: 18px;
-  opacity: 0;
-  transform: translate(var(--ax), var(--ay)) translateY(var(--enter));
-  transition:
-    opacity   .58s var(--ease-fast-p),
-    transform .62s var(--ease-fast-p),
-    color    1.1s  ease,
-    left     .9s   var(--ease-p),
-    top      .9s   var(--ease-p),
-    width    1s    var(--ease-p),
-    height   1s    var(--ease-p);
+  /* GSAP owns opacity, transform, visibility — no CSS transitions for those */
+  transform: translate(var(--ax), var(--ay));
   color: var(--ink);
   font-weight: 500;
   letter-spacing: -0.01em;
   pointer-events: none;
   will-change: opacity, transform;
-}
-#nextScene .line.shown,
-#nextScene .viz.shown {
-  opacity: 1;
-  transform: translate(var(--ax), var(--ay)) translateY(0);
+  transition: color 1.1s ease; /* only muted color fades via CSS */
 }
 #nextScene .line.muted { color: var(--mute); }
 #nextScene .line { white-space: pre; }

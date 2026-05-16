@@ -1,9 +1,13 @@
 /* ══════════════════════════════════
-   PIEZA CREATIVA — animation engine
-   Auto-plays on start. No wheel scroll.
-   Navigation: TOC click only.
-   Audio toggle: play/pause (swap for
-   real mute/unmute when audio lands).
+   PIEZA CREATIVA — audio-driven engine
+
+   audio.currentTime IS the playhead.
+   The rAF loop reads it every frame.
+   GSAP owns all opacity + transform.
+   Exits: hard cut (gsap.set autoAlpha:0)
+   Enters text: opacity + y (power2.out)
+   Enters cards: scale + rotation (power3.out)
+   Muted color: CSS transition only.
 ══════════════════════════════════ */
 
 (function () {
@@ -14,7 +18,7 @@
     { t: 0.0,  dur: 2.0,  idx: null,          brand: false, els: [] },
 
     /* 1 · LA INCOMODIDAD */
-    { t: 2.0,  dur: 3.4,  idx:'incomodidad',  brand: false, els: [
+    { t: 2.0,  dur: 3.4,  idx:'incomodidad',  els: [
       { id:'g1',  type:'gradient',    x:'50%',  y:'50%', a:'cc', w:'42vw', h:'25vw' },
       { id:'l1',  text:'Todo empieza con algo incómodo.', size:'xxl', x:'50%', y:'50%', a:'cc' },
     ]},
@@ -199,22 +203,29 @@
   }
   const SECTION_ORDER = SECTIONS.map(s => s.id);
 
+  /* Stable rotation per card id — handoff: –5 to +5 deg max */
+  const CARD_ROT = { ph1:-1.5, ph2:0.8, c1:-2.5, c2:3.0, c3:-1.5, c4:2.0, c5:-1.0 };
+
   const ANCHOR = {
-    cc:['-50%','-50%'], cl:['0','-50%'],     cr:['-100%','-50%'],
-    tl:['0','0'],       tc:['-50%','0'],     tr:['-100%','0'],
-    bl:['0','-100%'],   bc:['-50%','-100%'], br:['-100%','-100%'],
+    cc:['-50%','-50%'], cl:['0','-50%'],    cr:['-100%','-50%'],
+    tl:['0','0'],       tc:['-50%','0'],    tr:['-100%','0'],
+    bl:['0','-100%'],   bc:['-50%','-100%'],br:['-100%','-100%'],
   };
 
+  /* ── Audio engine ── */
+  const audio = new Audio('assets/voice-off.m4a');
+  audio.preload = 'auto';
+
   /* ── Refs ── */
-  const root         = document.getElementById('nextScene');
-  const sceneEl      = root.querySelector('.pieza-scene');
-  const indexEl      = root.querySelector('.pieza-index');
-  const brandBg      = root.querySelector('.brand-bg');
-  const entries      = [...indexEl.querySelectorAll('.entry')];
-  const pauseBtn    = root.querySelector('#piezaPauseBtn');
-  const pauseIcon   = root.querySelector('#piezaPauseIcon');
-  const audioBtn    = root.querySelector('.audio-toggle');
-  const audioIcon   = root.querySelector('#piezaAudioIcon');
+  const root          = document.getElementById('nextScene');
+  const sceneEl       = root.querySelector('.pieza-scene');
+  const indexEl       = root.querySelector('.pieza-index');
+  const brandBg       = root.querySelector('.brand-bg');
+  const entries       = [...indexEl.querySelectorAll('.entry')];
+  const pauseBtn      = root.querySelector('#piezaPauseBtn');
+  const pauseIcon     = root.querySelector('#piezaPauseIcon');
+  const audioBtn      = root.querySelector('.audio-toggle');
+  const audioIcon     = root.querySelector('#piezaAudioIcon');
   const progressTrack = root.querySelector('.pieza-progress-track');
 
   /* ── Build scene DOM ── */
@@ -226,21 +237,22 @@
   const dom = new Map();
   for (const [id, spec] of allSpecs) {
     const el = document.createElement('div');
-    el.className = spec.type === 'gradient' ? 'viz gradient'
+    el.className = spec.type === 'gradient'    ? 'viz gradient'
                  : spec.type === 'placeholder' ? 'viz placeholder'
                  : 'line size-' + (spec.size || 'l');
     el.dataset.id = id;
-    el.style.zIndex = spec.z || 5;
     sceneEl.appendChild(el);
+    gsap.set(el, { autoAlpha: 0 }); /* GSAP owns visibility from the start */
     dom.set(id, el);
   }
 
+  /* ── Apply spec to element (position, size, text, muted — no animation) ── */
   function applyEl(el, spec) {
     const [ax, ay] = ANCHOR[spec.a || 'cc'];
     el.style.setProperty('--ax', ax);
     el.style.setProperty('--ay', ay);
-    el.style.left = spec.x;
-    el.style.top  = spec.y;
+    el.style.left   = spec.x;
+    el.style.top    = spec.y;
     if (spec.w) el.style.width  = spec.w;
     if (spec.h) el.style.height = spec.h;
     if (spec.size)
@@ -254,11 +266,39 @@
     el.style.zIndex = spec.z || 5;
   }
 
+  /* ── GSAP transition helpers ── */
+  function enterEl(el, spec, delay) {
+    gsap.killTweensOf(el);
+    const rot = CARD_ROT[spec.id] || 0;
+
+    if (spec.type === 'placeholder') {
+      /* Collage card entrance — handoff §6 */
+      gsap.fromTo(el,
+        { autoAlpha: 0, scale: 0.88, y: 50, rotation: rot * 2 },
+        { autoAlpha: 1, scale: 1, y: 0, rotation: rot,
+          duration: 0.7, delay, ease: 'power3.out' }
+      );
+    } else if (spec.type === 'gradient') {
+      gsap.fromTo(el,
+        { autoAlpha: 0, scale: 0.94 },
+        { autoAlpha: 1, scale: 1, duration: 0.7, delay, ease: 'power3.out' }
+      );
+    } else {
+      /* Text line — opacity + subtle y lift */
+      gsap.fromTo(el,
+        { autoAlpha: 0, y: 18 },
+        { autoAlpha: 1, y: 0, duration: 0.58, delay, ease: 'power2.out' }
+      );
+    }
+  }
+
+  function exitEl(el) {
+    gsap.killTweensOf(el);
+    gsap.set(el, { autoAlpha: 0 }); /* hard cut — handoff §3.1 */
+  }
+
   /* ══════════════════════════════════
-     TOC — persistent shown state.
-     Sections accumulate in shownSections
-     and never go back to hidden.
-     active follows the current playhead.
+     TOC — persistent shown state
   ══════════════════════════════════ */
   const shownSections = new Set();
 
@@ -266,19 +306,13 @@
     const activeId  = f.idx;
     const activeIdx = activeId ? SECTION_ORDER.indexOf(activeId) : -1;
 
-    /* Accumulate all sections up to and including the current one */
-    if (activeIdx >= 0) {
+    if (activeIdx >= 0)
       for (let i = 0; i <= activeIdx; i++) shownSections.add(SECTION_ORDER[i]);
-    }
 
     entries.forEach(entry => {
       const id    = entry.dataset.id;
       const myIdx = SECTION_ORDER.indexOf(id);
-
-      /* shown: persistent once reached */
       if (shownSections.has(id)) entry.classList.add('shown');
-
-      /* active: only current, not during mutedIdx frames */
       if (myIdx === activeIdx && !f.mutedIdx) entry.classList.add('active');
       else                                    entry.classList.remove('active');
     });
@@ -299,6 +333,7 @@
   }
 
   function updateProgress() {
+    const t = audio.currentTime;
     for (const seg of segments) {
       const span = seg.end - seg.start;
       const pct  = span <= 0 ? 0 : Math.min(1, Math.max(0, (t - seg.start) / span));
@@ -306,17 +341,7 @@
     }
   }
 
-  /* TOC click → jump to section start. shownSections is NOT reset. */
-  entries.forEach(entry => {
-    entry.addEventListener('click', () => {
-      if (!entry.classList.contains('shown')) return; /* not yet reached */
-      const section = SECTIONS.find(s => s.id === entry.dataset.id);
-      if (section) t = section.start;
-    });
-  });
-
   /* ── Frame renderer ── */
-  let renderGen    = 0;
   let lastFrameIdx = -1;
 
   function renderAt(time) {
@@ -324,51 +349,48 @@
     for (let k = FRAMES.length - 1; k >= 0; k--) {
       if (time >= FRAMES[k].t) { i = k; break; }
     }
+    if (i === lastFrameIdx) return; /* no frame change — skip */
+    lastFrameIdx = i;
+
     const f = FRAMES[i];
-
-    if (i !== lastFrameIdx) {
-      renderGen++;
-      lastFrameIdx = i;
-    }
-    const gen = renderGen;
-
     const visible = new Set((f.els || []).map(e => e.id));
 
+    /* Hard cut exits */
     for (const [id, el] of dom)
-      if (!visible.has(id) && el.classList.contains('shown'))
-        el.classList.remove('shown');
+      if (!visible.has(id)) exitEl(el);
 
-    let stagger = 0;
+    /* Animated enters + position updates */
+    let staggerMs = 0;
     for (const spec of (f.els || [])) {
-      const el       = dom.get(spec.id);
-      const wasShown = el.classList.contains('shown');
+      const el    = dom.get(spec.id);
+      const isNew = gsap.getProperty(el, 'autoAlpha') < 0.5;
       applyEl(el, spec);
-      if (!wasShown) {
-        const delay = 40 + stagger;
-        stagger += 70;
-        setTimeout(() => { if (renderGen === gen) el.classList.add('shown'); }, delay);
-      } else {
-        el.classList.add('shown');
+      if (isNew) {
+        enterEl(el, spec, staggerMs / 1000);
+        staggerMs += 70;
       }
+      /* Persisting elements: applyEl already updated muted/position */
     }
 
     brandBg.classList.toggle('shown', !!f.brand);
     updateIndex(f);
   }
 
-  /* ── Playback ── */
-  let playing = false;
-  let t       = 0;
-  let lastTs  = 0;
+  /* ── rAF loop — reads audio.currentTime ── */
+  function loop() {
+    renderAt(audio.currentTime);
+    updateProgress();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
 
-  /* Pause-button icons */
+  /* ── Playback icon helpers ── */
   const ICON_PAUSE = `
     <rect x="4"  y="3" width="3" height="10" rx="1" fill="currentColor"/>
     <rect x="9" y="3" width="3" height="10" rx="1" fill="currentColor"/>`;
   const ICON_PLAY  = `
     <path d="M5 3l8 5-8 5V3z" fill="currentColor"/>`;
 
-  /* Audio-toggle icons — swap when real narration audio lands */
   const ICON_AUDIO_ON  = `
     <path d="M3 8.5V5.5L7 3v10l-4-2.5z" fill="currentColor"/>
     <path d="M9.5 6.5c.6.5 1 1.2 1 2s-.4 1.5-1 2" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/>
@@ -382,47 +404,55 @@
 
   function setAudioMuted(m) {
     audioMuted = m;
+    audio.muted = m;
     audioIcon.innerHTML = m ? ICON_AUDIO_OFF : ICON_AUDIO_ON;
     audioBtn.classList.toggle('muted', m);
   }
 
-  function setPlaying(p) {
-    playing = p;
-    pauseIcon.innerHTML = p ? ICON_PAUSE : ICON_PLAY;
-    pauseBtn.setAttribute('aria-label', p ? 'Pause' : 'Resume');
+  function syncPauseIcon() {
+    const playing = !audio.paused && !audio.ended;
+    pauseIcon.innerHTML = playing ? ICON_PAUSE : ICON_PLAY;
+    pauseBtn.setAttribute('aria-label', playing ? 'Pause' : 'Resume');
   }
 
-  /* rAF loop */
-  function loop(ts) {
-    if (!lastTs) lastTs = ts;
-    const dt = (ts - lastTs) / 1000;
-    lastTs = ts;
-    if (playing) {
-      t += dt;
-      if (t >= TOTAL) { t = TOTAL; setPlaying(false); }
-    }
-    renderAt(t);
-    updateProgress();
-    requestAnimationFrame(loop);
-  }
-  requestAnimationFrame(loop);
+  audio.addEventListener('play',  syncPauseIcon);
+  audio.addEventListener('pause', syncPauseIcon);
+  audio.addEventListener('ended', syncPauseIcon);
 
   /* ── Pause/resume button ── */
   pauseBtn.addEventListener('click', () => {
-    if (t >= TOTAL) t = 0;
-    setPlaying(!playing);
+    if (audio.ended || audio.currentTime >= TOTAL) {
+      lastFrameIdx = -1;
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    } else if (audio.paused) {
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
   });
 
-  /* ── Audio toggle (mute/unmute — cosmetic until real audio lands) ── */
+  /* ── Audio mute toggle ── */
   audioBtn.addEventListener('click', () => setAudioMuted(!audioMuted));
 
-  /* ── Scroll-up-to-hero gesture ── */
+  /* ── TOC click → seek audio to section start ── */
+  entries.forEach(entry => {
+    entry.addEventListener('click', () => {
+      if (!entry.classList.contains('shown')) return;
+      const section = SECTIONS.find(s => s.id === entry.dataset.id);
+      if (!section) return;
+      lastFrameIdx    = -1; /* force re-render at new position */
+      audio.currentTime = section.start;
+      if (audio.paused && !audio.ended) audio.play().catch(() => {});
+    });
+  });
+
+  /* ── Scroll-up → back to hero ── */
   let wheelAccum = 0;
-  const WHEEL_BACK_THRESHOLD = 80;
-  root.addEventListener('wheel', (e) => {
+  root.addEventListener('wheel', e => {
     if (e.deltaY < 0) {
       wheelAccum += Math.abs(e.deltaY);
-      if (wheelAccum >= WHEEL_BACK_THRESHOLD) {
+      if (wheelAccum >= 80) {
         wheelAccum = 0;
         window.__heroGoBack && window.__heroGoBack();
       }
@@ -431,24 +461,30 @@
     }
   }, { passive: true });
 
-  /* ── Public API called by hero.js ── */
+  /* ── prefers-reduced-motion ── */
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (const [, el] of dom) gsap.set(el, { autoAlpha: 1, y: 0, scale: 1, rotation: 0 });
+  }
+
+  /* ── Public API ── */
   window.piezaStart = function () {
-    t            = 0;
-    lastTs       = 0;
-    lastFrameIdx = -1;
-    wheelAccum   = 0;
-    /* Reset all scene elements for a clean start */
-    for (const [, el] of dom) el.classList.remove('shown');
+    audio.currentTime = 0;
+    lastFrameIdx      = -1;
+    wheelAccum        = 0;
+    for (const [, el] of dom) { gsap.killTweensOf(el); gsap.set(el, { autoAlpha: 0, y: 0, scale: 1, rotation: 0 }); }
     entries.forEach(e => e.classList.remove('shown', 'active'));
     shownSections.clear();
     brandBg.classList.remove('shown');
     setAudioMuted(false);
-    setPlaying(true);
+    audio.play().catch(() => {
+      /* Autoplay blocked — user must tap play button */
+      syncPauseIcon();
+    });
     window.__setHeroScrollActive && window.__setHeroScrollActive(false);
   };
 
   window.piezaPause = function () {
-    setPlaying(false);
+    audio.pause();
     window.__setHeroScrollActive && window.__setHeroScrollActive(true);
   };
 
