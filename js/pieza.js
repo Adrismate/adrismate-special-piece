@@ -206,10 +206,12 @@
   /* Stable rotation per card id — handoff: –5 to +5 deg max */
   const CARD_ROT = { ph1:-1.5, ph2:0.8, c1:-2.5, c2:3.0, c3:-1.5, c4:2.0, c5:-1.0 };
 
+  /* xPercent/yPercent let GSAP own the full transform stack.
+     This prevents CSS translate() being wiped when GSAP sets y/scale. */
   const ANCHOR = {
-    cc:['-50%','-50%'], cl:['0','-50%'],    cr:['-100%','-50%'],
-    tl:['0','0'],       tc:['-50%','0'],    tr:['-100%','0'],
-    bl:['0','-100%'],   bc:['-50%','-100%'],br:['-100%','-100%'],
+    cc:{ xp:-50,  yp:-50  }, cl:{ xp:0,    yp:-50  }, cr:{ xp:-100, yp:-50  },
+    tl:{ xp:0,    yp:0    }, tc:{ xp:-50,  yp:0    }, tr:{ xp:-100, yp:0    },
+    bl:{ xp:0,    yp:-100 }, bc:{ xp:-50,  yp:-100 }, br:{ xp:-100, yp:-100 },
   };
 
   /* ── Audio engine ── */
@@ -248,9 +250,9 @@
 
   /* ── Apply spec to element (position, size, text, muted — no animation) ── */
   function applyEl(el, spec) {
-    const [ax, ay] = ANCHOR[spec.a || 'cc'];
-    el.style.setProperty('--ax', ax);
-    el.style.setProperty('--ay', ay);
+    const { xp, yp } = ANCHOR[spec.a || 'cc'];
+    /* Set anchor via GSAP so it stacks correctly with y/scale tweens */
+    gsap.set(el, { xPercent: xp, yPercent: yp });
     el.style.left   = spec.x;
     el.style.top    = spec.y;
     if (spec.w) el.style.width  = spec.w;
@@ -463,7 +465,7 @@
 
   /* ── prefers-reduced-motion ── */
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    for (const [, el] of dom) gsap.set(el, { autoAlpha: 1, y: 0, scale: 1, rotation: 0 });
+    for (const [, el] of dom) gsap.set(el, { autoAlpha: 1, y: 0, scale: 1, rotation: 0, xPercent: -50, yPercent: -50 });
   }
 
   /* ── Public API ── */
