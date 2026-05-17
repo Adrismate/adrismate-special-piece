@@ -62,23 +62,42 @@
 
 <!-- ══════════════════════════════════
      PIEZA CREATIVA
-     Fades in over the hero on step 2.
-     .pieza-container clips all content
-     so nothing inside can scroll.
 ══════════════════════════════════ -->
 <div class="next-scene" id="nextScene">
   <div class="pieza-container">
 
-    <!-- Dot grid — mirrors the hero top pattern -->
-    <div class="pieza-dot-grid">
-      <div class="pieza-dot-pattern"></div>
+    <!-- Escena 1: Intro Text -->
+    <div class="pieza-scene" id="scene1">
+      <div class="scene-content">
+        <p class="intro-text">Me cuestiono todo lo cotidiano</p>
+      </div>
+    </div>
+
+    <!-- Escena 2: Fullscreen Image -->
+    <div class="pieza-scene" id="scene2" style="opacity: 0;">
+        <div class="image-container">
+            <img src="assets/images/escena-2.jpg" alt="Hombre en un campo">
+        </div>
+        <div class="scene-content">
+            <p class="main-text">Me cuestiono todo lo cotidiano como hábito profesional.</p>
+        </div>
+    </div>
+
+    <!-- Escena 3: Shrunk Image -->
+    <div class="pieza-scene" id="scene3" style="opacity: 0;">
+        <div class="image-container shrunk">
+            <img src="assets/images/escena-2.jpg" alt="Hombre en un campo">
+        </div>
+        <div class="scene-content">
+            <p class="main-text">Me cuestiono todo lo cotidiano como hábito profesional.</p>
+        </div>
     </div>
 
     <!-- Ghosted brand watermark -->
     <div class="brand-bg">Adrismate</div>
 
-    <!-- Typography canvas (elements injected by pieza.js) -->
-    <div class="pieza-scene"></div>
+    <!-- Subtitle sync overlay — temporal check only -->
+    <div class="pieza-subs" id="piezaSubs"></div>
 
     <!-- Table of contents — the only navigation control -->
     <ol class="pieza-index">
@@ -110,10 +129,11 @@
   </div><!-- .pieza-container -->
 </div><!-- #nextScene -->
 
-<!-- GSAP + ScrollTrigger + CustomEase -->
+<!-- GSAP + ScrollTrigger + CustomEase + TextPlugin -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
 <!-- hero.js first — exposes __setHeroScrollActive + __heroGoBack -->
 <script src="js/hero.js"></script>
 <!-- pieza.js — reads those globals on start/pause -->
