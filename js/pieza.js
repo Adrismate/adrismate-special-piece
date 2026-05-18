@@ -28,6 +28,7 @@
        El texto entra al completo en el mismo instante, con blend-mode
        difference para legibilidad sobre la imagen y el canvas. */
 		{
+			id: "incomodidad-1",
 			t: 0.58,
 			dur: 2.18,
 			idx: "incomodidad",
@@ -50,6 +51,7 @@
        White flash 200ms → swipe-from-right del texto y de la imagen.
        Imagen al centro, texto a la izquierda. */
 		{
+			id: "incomodidad-2",
 			t: 2.76,
 			dur: 1.06,
 			idx: "incomodidad",
@@ -63,6 +65,7 @@
        Imagen se reajusta ligeramente a la izquierda para equilibrio horizontal,
        l2a queda muted, l2b entra swipe-right por la derecha. */
 		{
+			id: "incomodidad-3",
 			t: 3.82,
 			dur: 1.44,
 			idx: "incomodidad",
@@ -75,6 +78,7 @@
 		/* W 5.26–6.10  "Con una fricción"
        Fast-cut: aparece en el centro debajo de la imagen anterior, sin enter. */
 		{
+			id: "incomodidad-4",
 			t: 5.26,
 			dur: 0.84,
 			idx: "incomodidad",
@@ -85,6 +89,7 @@
        el fondo invierte a negro y la imagen full-bleed aparece detrás
        con parallax zoom interno. */
 		{
+			id: "incomodidad-5",
 			t: 6.1,
 			dur: 1.44,
 			idx: "incomodidad",
@@ -97,6 +102,7 @@
 		/* W 7.54–8.32  "Entonces recuerdo…"
        Vuelve canvas claro. Texto grande de impacto al centro. */
 		{
+			id: "incomodidad-6",
 			t: 7.54,
 			dur: 0.78,
 			idx: "incomodidad",
@@ -105,6 +111,7 @@
 		/* W 8.32–9.44  "que algo esté hecho así"
        Ojo en primer plano izquierdo, texto centrado a la derecha. */
 		{
+			id: "incomodidad-7",
 			t: 8.32,
 			dur: 1.12,
 			idx: "incomodidad",
@@ -116,6 +123,7 @@
 		/* W 9.44–11.54  "no significa que esté bien."
        Swipe-up + fade-in: la nueva frase empuja a la anterior sin tocarla. */
 		{
+			id: "incomodidad-8",
 			t: 9.44,
 			dur: 2.1,
 			idx: "incomodidad",
@@ -129,6 +137,7 @@
 		/* 2 · CUESTIONARLO TODO ────────────────────────────────────────
        W 11.54–12.68  "Me cuestiono todo lo cotidiano"              */
 		{
+			id: "cuestionarlo-1",
 			t: 11.54,
 			dur: 1.14,
 			idx: "cuestionarlo",
@@ -150,6 +159,7 @@
 		},
 		/* W 12.68–14.34  "como hábito profesional."                    */
 		{
+			id: "cuestionarlo-2",
 			t: 12.68,
 			dur: 1.66,
 			idx: "cuestionarlo",
@@ -171,6 +181,7 @@
 		/* W 14.34–16.52  "Las cosas no surgen de la nada."
        Upper-middle area, left rail. Below the TOC vertically. */
 		{
+			id: "cuestionarlo-3",
 			t: 14.34,
 			dur: 2.18,
 			idx: "cuestionarlo",
@@ -182,6 +193,7 @@
 		/* W 16.52–18.52  "Somos incapaces de crear algo nuevo sin" —
        second clause activates beneath the first, same left rail. */
 		{
+			id: "cuestionarlo-4",
 			t: 16.52,
 			dur: 2.0,
 			idx: "cuestionarlo",
@@ -193,6 +205,7 @@
 		/* W 18.52–19.42  "una fuente de inspiración," — appears on the
        right rail, balancing the left-side phrases. */
 		{
+			id: "cuestionarlo-5",
 			t: 18.52,
 			dur: 0.9,
 			idx: "cuestionarlo",
@@ -205,6 +218,7 @@
 		/* W 19.42–20.0  "sin una referencia." — completes the right-rail
        phrase next to "una fuente de inspiración," */
 		{
+			id: "cuestionarlo-6",
 			t: 19.42,
 			dur: 0.58,
 			idx: "cuestionarlo",
@@ -215,6 +229,7 @@
 		},
 		/* W 20.0–20.86  Cards settled — beat before the phrase lands     */
 		{
+			id: "cuestionarlo-7",
 			t: 20.0,
 			dur: 0.86,
 			idx: "cuestionarlo",
@@ -227,6 +242,7 @@
        Centered horizontally, mid-vertical — fills the canvas with the
        turning-point statement. Single line at this size. */
 		{
+			id: "cuestionarlo-8",
 			t: 20.86,
 			dur: 2.1,
 			idx: "cuestionarlo",
@@ -282,9 +298,10 @@
 
 		/* 3 · LEARN BY DOING ───────────────────────────────────────────
        W 25.80–27.0  "Learn by doing."                               */
-		{ t: 25.8, dur: 1.2, idx: "learn", els: [{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "46%", a: "cc" }] },
+		{ id: "learn-1", t: 25.8, dur: 1.2, idx: "learn", els: [{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "46%", a: "cc" }] },
 		/* W 27.0–28.52  "Si no sabes por dónde empezar,"               */
 		{
+			id: "learn-2",
 			t: 27.0,
 			dur: 1.52,
 			idx: "learn",
@@ -296,6 +313,7 @@
 		},
 		/* W 28.52–29.76  "empieza haciendo."                            */
 		{
+			id: "learn-3",
 			t: 28.52,
 			dur: 1.24,
 			idx: "learn",
@@ -308,6 +326,7 @@
 		/* W 29.76–31.76  "Encaja todas las piezas necesarias."
        notebook-sketch: cuaderno abierto cenital — empieza haciendo */
 		{
+			id: "learn-4",
 			t: 29.76,
 			dur: 2.0,
 			idx: "learn",
@@ -328,6 +347,7 @@
 		/* W 31.76–34.70  "Observa desde lejos y piensa en cómo mejorarlo."
        feedback-talk: manos sobre escritorio diseñando wireframes — observar y rehacer */
 		{
+			id: "learn-5",
 			t: 31.76,
 			dur: 1.24,
 			idx: "learn",
@@ -347,6 +367,7 @@
 		},
 		/* W 33.0–34.70  "piensa en cómo mejorarlo." — text updates in same position */
 		{
+			id: "learn-6",
 			t: 33.0,
 			dur: 1.7,
 			idx: "learn",
@@ -366,6 +387,7 @@
 		},
 		/* W 34.70–36.02  "Vuelve a intentarlo." — full-bleed feedback-talk */
 		{
+			id: "learn-7",
 			t: 34.7,
 			dur: 1.32,
 			idx: "learn",
@@ -386,9 +408,10 @@
 
 		/* 4 · UCD REAL ─────────────────────────────────────────────────
        W 36.02–38.66  "User-centered design real."                   */
-		{ t: 36.02, dur: 2.64, idx: "ucd", els: [{ id: "l12", text: "User-centered design real.", size: "xl", x: "50%", y: "50%", a: "cc" }] },
+		{ id: "ucd-1", t: 36.02, dur: 2.64, idx: "ucd", els: [{ id: "l12", text: "User-centered design real.", size: "xl", x: "50%", y: "50%", a: "cc" }] },
 		/* W 38.66–39.90  "Sal ahí fuera y pregunta."                   */
 		{
+			id: "ucd-2",
 			t: 38.66,
 			dur: 1.24,
 			idx: "ucd",
@@ -408,6 +431,7 @@
 		},
 		/* W 39.90–42.20  "No asumas, contrástalo con datos."            */
 		{
+			id: "ucd-3",
 			t: 39.9,
 			dur: 2.3,
 			idx: "ucd",
@@ -428,6 +452,7 @@
 		},
 		/* W 42.20–45.16  "Comparte, haz partícipe y perfecciona."       */
 		{
+			id: "ucd-4",
 			t: 42.2,
 			dur: 2.96,
 			idx: "ucd",
@@ -450,9 +475,10 @@
 
 		/* 5 · EL COSQUILLEO ────────────────────────────────────────────
        W 45.16–46.30  "Sobre todo,"                                  */
-		{ t: 45.16, dur: 1.14, idx: "cosquilleo", els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc" }] },
+		{ id: "cosquilleo-1", t: 45.16, dur: 1.14, idx: "cosquilleo", els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc" }] },
 		/* W 46.30–47.12  "crea." — the imperative drops like a stamp.    */
 		{
+			id: "cosquilleo-2",
 			t: 46.3,
 			dur: 0.82,
 			idx: "cosquilleo",
@@ -463,6 +489,7 @@
        behind him — as if the words radiated from his head. Photo z=10,
        text z=5 so phrases peek out around the silhouette. */
 		{
+			id: "cosquilleo-3",
 			t: 47.12,
 			dur: 4.46,
 			idx: "cosquilleo",
@@ -495,6 +522,7 @@
        Quote enters in resonance — centered, slight scale expansion. The
        text holds the room before Jobs arrives to push it aside. */
 		{
+			id: "cosquilleo-4",
 			t: 51.58,
 			dur: 0.92,
 			idx: "cosquilleo",
@@ -514,6 +542,7 @@
        make room. Two simultaneous moves create the "push" illusion:
        photo enters from off-screen right, text translates to left rail. */
 		{
+			id: "cosquilleo-5",
 			t: 52.5,
 			dur: 1.5,
 			idx: "cosquilleo",
@@ -543,6 +572,7 @@
 		/* W 54.0–55.28  "decía Jobs." — attribution lands below the muted
        quote, both anchored to the left rail with Jobs to the right. */
 		{
+			id: "cosquilleo-6",
 			t: 54.0,
 			dur: 1.28,
 			idx: "cosquilleo",
@@ -571,6 +601,7 @@
 		},
 		/* W 55.28–56.88  "No tengas miedo a crearlo."                   */
 		{
+			id: "cosquilleo-7",
 			t: 55.28,
 			dur: 1.6,
 			idx: "cosquilleo",
@@ -589,9 +620,10 @@
 			],
 		},
 		/* W 56.88–57.66  "Cuando algo funciona,"                        */
-		{ t: 56.88, dur: 0.78, idx: "cosquilleo", els: [{ id: "l18b", text: "Cuando algo funciona,", size: "l", x: "50%", y: "46%", a: "cc" }] },
+		{ id: "cosquilleo-8", t: 56.88, dur: 0.78, idx: "cosquilleo", els: [{ id: "l18b", text: "Cuando algo funciona,", size: "l", x: "50%", y: "46%", a: "cc" }] },
 		/* W 57.66–60.96  "esa sensación de cosquilleo te recorrerá la piel." */
 		{
+			id: "cosquilleo-9",
 			t: 57.66,
 			dur: 3.3,
 			idx: "cosquilleo",
@@ -613,6 +645,7 @@
 		/* 6 · ENDING ───────────────────────────────────────────────────
        W 60.96–62.0  "Nadie me lo ha pedido." — text on a clean canvas */
 		{
+			id: "cosquilleo-10",
 			t: 60.96,
 			dur: 1.04,
 			idx: "cosquilleo",
@@ -624,6 +657,7 @@
        canvas — fully visible throughout its travel. Lands overlapping
        the second line, with the natural "thrown on a table" settle. */
 		{
+			id: "cosquilleo-11",
 			t: 62.0,
 			dur: 1.82,
 			idx: "cosquilleo",
@@ -1334,4 +1368,158 @@
 		audio.pause();
 		window.__setHeroScrollActive && window.__setHeroScrollActive(true);
 	};
+
+	/* ══════════════════════════════════
+	   DEV MODE  — activated by ?dev in the URL
+	   Skips hero, hides subs, injects a frame
+	   navigator panel for fast layout review.
+	   Not shipped to production.
+	══════════════════════════════════ */
+	if (new URLSearchParams(location.search).has("dev")) {
+		/* 1. Skip hero — show pieza immediately */
+		const ns = document.getElementById("nextScene");
+		if (ns) { ns.style.opacity = "1"; ns.style.pointerEvents = "all"; }
+		window.__setHeroScrollActive && window.__setHeroScrollActive(false);
+
+		/* 2. Hide subtitles */
+		const subsEl = document.getElementById("piezaSubs");
+		if (subsEl) subsEl.style.display = "none";
+
+		/* 3. Render frame 0 paused */
+		renderAt(0.01);
+		audio.pause();
+		syncPauseIcon();
+
+		/* 4. Track current frame index for ← → navigation */
+		let devFrameIdx = 0;
+
+		function devJump(idx) {
+			devFrameIdx = Math.max(0, Math.min(FRAMES.length - 1, idx));
+			const t = FRAMES[devFrameIdx].t + 0.001;
+			lastFrameIdx = -1;
+			renderAt(t);
+			audio.currentTime = t;
+			audio.pause();
+			syncPauseIcon();
+			devHighlight(devFrameIdx);
+		}
+
+		/* 5. Keyboard: ← → navigate frames, Space pause/resume */
+		document.addEventListener("keydown", function devKeys(e) {
+			if (e.key === "ArrowRight") { e.preventDefault(); devJump(devFrameIdx + 1); }
+			else if (e.key === "ArrowLeft") { e.preventDefault(); devJump(devFrameIdx - 1); }
+		});
+
+		/* 6. Build navigator panel */
+		const panel = document.createElement("div");
+		panel.id = "dev-nav";
+		panel.innerHTML = `
+			<div id="dev-nav-header">
+				<span id="dev-nav-title">DEV</span>
+				<button id="dev-nav-toggle" title="Toggle panel">☰</button>
+			</div>
+			<div id="dev-nav-list"></div>`;
+		document.body.appendChild(panel);
+
+		/* Panel CSS — injected inline so it never leaks into production */
+		const devStyle = document.createElement("style");
+		devStyle.textContent = `
+			#dev-nav {
+				position: fixed; top: 0; right: 0; width: 260px; height: 100vh;
+				background: rgba(10,10,10,0.92); color: #e8e8e6;
+				font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px;
+				z-index: 99999; display: flex; flex-direction: column;
+				border-left: 1px solid rgba(255,255,255,0.08);
+				backdrop-filter: blur(8px);
+				transition: transform 0.2s ease;
+			}
+			#dev-nav.collapsed { transform: translateX(calc(100% - 32px)); pointer-events: none; }
+			#dev-nav.collapsed #dev-nav-header { pointer-events: auto; }
+			#dev-nav.collapsed #dev-nav-toggle { pointer-events: auto; }
+			#dev-nav.collapsed #dev-nav-list { pointer-events: none; }
+			#dev-nav-header {
+				display: flex; align-items: center; justify-content: space-between;
+				padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.08);
+				flex-shrink: 0;
+			}
+			#dev-nav-title { font-weight: 700; font-size: 10px; letter-spacing: 0.12em; color: #ff5f40; }
+			#dev-nav-toggle {
+				background: none; border: none; color: #888; cursor: pointer;
+				font-size: 14px; padding: 2px 4px; line-height: 1;
+			}
+			#dev-nav-toggle:hover { color: #fff; }
+			#dev-nav-list {
+				overflow-y: auto; flex: 1; padding: 4px 0;
+			}
+			#dev-nav-list::-webkit-scrollbar { width: 3px; }
+			#dev-nav-list::-webkit-scrollbar-track { background: transparent; }
+			#dev-nav-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+			.dev-chapter-label {
+				padding: 8px 12px 4px; font-size: 9px; letter-spacing: 0.1em;
+				text-transform: uppercase; color: #ff5f40; opacity: 0.7;
+			}
+			.dev-frame-item {
+				display: flex; gap: 8px; align-items: flex-start;
+				padding: 5px 12px; cursor: pointer; border-left: 2px solid transparent;
+				transition: background 0.1s;
+			}
+			.dev-frame-item:hover { background: rgba(255,255,255,0.05); }
+			.dev-frame-item.active {
+				background: rgba(255,255,255,0.08); border-left-color: #ff5f40;
+			}
+			.dev-frame-ts { color: #ff5f40; min-width: 36px; flex-shrink: 0; }
+			.dev-frame-text { color: #aaa; line-height: 1.4; overflow: hidden;
+				display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+			.dev-frame-text em { color: #ddd; font-style: normal; }
+			.dev-hint {
+				padding: 8px 12px; font-size: 10px; color: #555;
+				border-top: 1px solid rgba(255,255,255,0.05); flex-shrink: 0;
+			}
+		`;
+		document.head.appendChild(devStyle);
+
+		/* Populate frame list */
+		const listEl = panel.querySelector("#dev-nav-list");
+		let lastSection = null;
+		FRAMES.forEach((f, i) => {
+			if (f.idx && f.idx !== lastSection) {
+				lastSection = f.idx;
+				const sep = document.createElement("div");
+				sep.className = "dev-chapter-label";
+				sep.textContent = f.idx;
+				listEl.appendChild(sep);
+			}
+			const firstText = (f.els || []).find(e => e.text);
+			const item = document.createElement("div");
+			item.className = "dev-frame-item";
+			item.dataset.frameIdx = i;
+			item.innerHTML = `
+				<span class="dev-frame-ts" title="${f.id}">${f.t.toFixed(2)}s</span>
+				<span class="dev-frame-text"><em style="color:#ff5f40; font-style:normal; font-size:9px">${f.id || "?"}</em> ${firstText ? `<em>${firstText.text.replace(/\n/g, " ")}</em>` : "<span style='opacity:.3'>—</span>"}</span>`;
+			item.addEventListener("click", () => devJump(i));
+			listEl.appendChild(item);
+		});
+
+		/* Hint bar */
+		const hint = document.createElement("div");
+		hint.className = "dev-hint";
+		hint.textContent = "← → frames · click to jump";
+		panel.appendChild(hint);
+
+		/* Toggle collapse */
+		panel.querySelector("#dev-nav-toggle").addEventListener("click", () => {
+			panel.classList.toggle("collapsed");
+		});
+
+		function devHighlight(idx) {
+			listEl.querySelectorAll(".dev-frame-item").forEach(el => el.classList.remove("active"));
+			const active = listEl.querySelector(`[data-frame-idx="${idx}"]`);
+			if (active) {
+				active.classList.add("active");
+				active.scrollIntoView({ block: "nearest", behavior: "smooth" });
+			}
+		}
+
+		devHighlight(0);
+	}
 })();
