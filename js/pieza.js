@@ -43,7 +43,7 @@
 					h: "calc(min(90vw, 906px) * 0.7225)",
 					anim: "bleed-to-frame",
 				},
-				{ id: "l1", text: "Todo empieza con algo incómodo.", size: "xxl", x: "50%", y: "50%", a: "cc", diff: true, z: 10 },
+				{ id: "l1", text: "Todo empieza con algo incómodo.", size: "xl", x: "50%", y: "50%", a: "cc", diff: true, z: 10 },
 			],
 		},
 		/* W 2.76–3.82  "No con un briefing,"
@@ -169,44 +169,48 @@
 			],
 		},
 		/* W 14.34–16.52  "Las cosas no surgen de la nada."
-       robert-klank: edificios idénticos en hilera — todo viene de algo previo */
+       Upper-middle area, left rail. Below the TOC vertically. */
 		{
 			t: 14.34,
 			dur: 2.18,
 			idx: "cuestionarlo",
 			els: [
-				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "50%", y: "10%", a: "tc", z: 10 },
-				{ id: "l7b", text: "Somos incapaces de crear algo sin", size: "l", x: "18vw", y: "56%", a: "cl", mute: true },
+				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "22vw", y: "48%", a: "cl", z: 10 },
+				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "22vw", y: "55%", a: "cl", mute: true },
 			],
 		},
-		/* W 16.52–18.52  "Somos incapaces de crear algo sin"           */
+		/* W 16.52–18.52  "Somos incapaces de crear algo nuevo sin" —
+       second clause activates beneath the first, same left rail. */
 		{
 			t: 16.52,
 			dur: 2.0,
 			idx: "cuestionarlo",
 			els: [
-				{ id: "l7b", text: "Somos incapaces de crear algo sin", size: "l", x: "4vw", y: "88%", a: "bl", z: 10 },
-				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "96vw", y: "50%", a: "cr", mute: true },
+				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "22vw", y: "48%", a: "cl", mute: true },
+				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "22vw", y: "55%", a: "cl", z: 10 },
 			],
 		},
-		/* W 18.52–19.42  "una fuente de inspiración,"                  */
+		/* W 18.52–19.42  "una fuente de inspiración," — appears on the
+       right rail, balancing the left-side phrases. */
 		{
 			t: 18.52,
 			dur: 0.9,
 			idx: "cuestionarlo",
 			els: [
-				{ id: "l7b", text: "Somos incapaces de crear algo sin", size: "l", x: "4vw", y: "88%", a: "bl", mute: true },
-				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "96vw", y: "12%", a: "tr", z: 10 },
+				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "22vw", y: "48%", a: "cl", mute: true },
+				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "22vw", y: "55%", a: "cl", mute: true },
+				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "55vw", y: "48%", a: "cl", z: 10 },
 			],
 		},
-		/* W 19.42–20.0  "sin una referencia." — collage asimétrico de objetos
-       cotidianos cuestionados: taza, pintura derramada, croquis, dashboard */
+		/* W 19.42–20.0  "sin una referencia." — completes the right-rail
+       phrase next to "una fuente de inspiración," */
 		{
 			t: 19.42,
 			dur: 0.58,
 			idx: "cuestionarlo",
 			els: [
-				{ id: "l7d", text: "sin una referencia.", size: "l", x: "50%", y: "50%", a: "cc" },
+				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "55vw", y: "48%", a: "cl", mute: true },
+				{ id: "l7d", text: "sin una referencia.", size: "l", x: "55vw", y: "55%", a: "cl", z: 10 },
 			],
 		},
 		/* W 20.0–20.86  Cards settled — beat before the phrase lands     */
@@ -214,16 +218,19 @@
 			t: 20.0,
 			dur: 0.86,
 			idx: "cuestionarlo",
-			els: [],
+			els: [
+				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "55vw", y: "48%", a: "cl", mute: true },
+				{ id: "l7d", text: "sin una referencia.", size: "l", x: "55vw", y: "55%", a: "cl", mute: true },
+			],
 		},
-		/* W 20.86–22.96  "Pero es ahí donde se nos brinda la oportunidad de" */
+		/* W 20.86–22.96  "Pero es ahí donde se nos brinda la oportunidad de"
+       Centered horizontally, mid-vertical — fills the canvas with the
+       turning-point statement. Single line at this size. */
 		{
 			t: 20.86,
 			dur: 2.1,
 			idx: "cuestionarlo",
-			els: [
-				{ id: "l8", text: "Pero es ahí donde se nos brinda la oportunidad de", size: "l", x: "4vw", y: "8%", a: "tl", z: 10 },
-			],
+			els: [{ id: "l8", text: "Pero es ahí donde se nos brinda la oportunidad de", size: "l", x: "50%", y: "50%", a: "cc", z: 10 }],
 		},
 		/* W 22.96–23.66  "cuestionar" — l8 exits left, words accumulate  */
 		{
@@ -249,9 +256,7 @@
 			t: 23.66,
 			dur: 0.88,
 			idx: "cuestionarlo",
-			els: [
-				{ id: "l9b", text: "combinar", size: "l", x: "50%", y: "92%", a: "bc", z: 10 },
-			],
+			els: [{ id: "l9b", text: "combinar", size: "l", x: "50%", y: "92%", a: "bc", z: 10 }],
 		},
 		/* W 24.54–25.80  "y crear algo nuevo." — phrase complete          */
 		{
@@ -307,7 +312,16 @@
 			dur: 2.0,
 			idx: "learn",
 			els: [
-				{ id: "phL1", type: "photo", src: "assets/images/encaja las piezas.png", x: "68vw", y: "50%", a: "cc", w: "min(32vw, 444px)", h: "calc(min(32vw, 444px) * 1.331)" },
+				{
+					id: "phL1",
+					type: "photo",
+					src: "assets/images/encaja las piezas.png",
+					x: "68vw",
+					y: "50%",
+					a: "cc",
+					w: "min(32vw, 444px)",
+					h: "calc(min(32vw, 444px) * 1.331)",
+				},
 				{ id: "l11a", text: "Encaja todas las piezas necesarias.", size: "l", x: "4vw", y: "34%", a: "tl" },
 			],
 		},
@@ -315,11 +329,39 @@
        feedback-talk: manos sobre escritorio diseñando wireframes — observar y rehacer */
 		{
 			t: 31.76,
-			dur: 2.94,
+			dur: 1.24,
 			idx: "learn",
 			els: [
-				{ id: "phL2", type: "photo", src: "assets/images/observa desde lejos.png", x: "22vw", y: "50%", a: "cc", w: "min(28vw, 390px)", h: "calc(min(28vw, 390px) * 1.508)" },
-				{ id: "l11b", text: "Observa desde lejos y\npiensa en cómo\nmejorarlo.", size: "l", x: "72vw", y: "50%", a: "cc" },
+				{
+					id: "phL2",
+					type: "photo",
+					src: "assets/images/observa desde lejos.png",
+					x: "22vw",
+					y: "50%",
+					a: "cc",
+					w: "min(28vw, 390px)",
+					h: "calc(min(28vw, 390px) * 1.508)",
+				},
+				{ id: "l11b", text: "Observa desde lejos y", size: "l", x: "72vw", y: "50%", a: "cc" },
+			],
+		},
+		/* W 33.0–34.70  "piensa en cómo mejorarlo." — text updates in same position */
+		{
+			t: 33.0,
+			dur: 1.7,
+			idx: "learn",
+			els: [
+				{
+					id: "phL2",
+					type: "photo",
+					src: "assets/images/observa desde lejos.png",
+					x: "22vw",
+					y: "50%",
+					a: "cc",
+					w: "min(28vw, 390px)",
+					h: "calc(min(28vw, 390px) * 1.508)",
+				},
+				{ id: "l11b", text: "piensa en cómo mejorarlo.", size: "l", x: "72vw", y: "50%", a: "cc" },
 			],
 		},
 		/* W 34.70–36.02  "Vuelve a intentarlo." — full-bleed feedback-talk */
@@ -328,7 +370,16 @@
 			dur: 1.32,
 			idx: "learn",
 			els: [
-				{ id: "phL3", type: "photo", src: "assets/images/vuelve a intentarlo.png", x: "50%", y: "50%", a: "cc", w: "min(30vw, 443px)", h: "calc(min(30vw, 443px) * 1.316)" },
+				{
+					id: "phL3",
+					type: "photo",
+					src: "assets/images/vuelve a intentarlo.png",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					w: "min(30vw, 443px)",
+					h: "calc(min(30vw, 443px) * 1.316)",
+				},
 				{ id: "l11c", text: "Vuelve a intentarlo.", size: "xl", x: "50%", y: "50%", a: "cc", z: 10 },
 			],
 		},
@@ -342,7 +393,16 @@
 			dur: 1.24,
 			idx: "ucd",
 			els: [
-				{ id: "phU1", type: "photo", src: "assets/images/sal ahi fuera.png", x: "72vw", y: "56%", a: "cc", w: "min(56vw, 618px)", h: "calc(min(56vw, 618px) * 0.777)" },
+				{
+					id: "phU1",
+					type: "photo",
+					src: "assets/images/sal ahi fuera.png",
+					x: "72vw",
+					y: "56%",
+					a: "cc",
+					w: "min(56vw, 618px)",
+					h: "calc(min(56vw, 618px) * 0.777)",
+				},
 				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "5vw", y: "66%", a: "cl" },
 			],
 		},
@@ -352,7 +412,16 @@
 			dur: 2.3,
 			idx: "ucd",
 			els: [
-				{ id: "phU1", type: "photo", src: "assets/images/sal ahi fuera.png", x: "72vw", y: "56%", a: "cc", w: "min(56vw, 618px)", h: "calc(min(56vw, 618px) * 0.777)" },
+				{
+					id: "phU1",
+					type: "photo",
+					src: "assets/images/sal ahi fuera.png",
+					x: "72vw",
+					y: "56%",
+					a: "cc",
+					w: "min(56vw, 618px)",
+					h: "calc(min(56vw, 618px) * 0.777)",
+				},
 				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "5vw", y: "66%", a: "cl", mute: true },
 				{ id: "l13b", text: "No asumas, contrástalo con datos.", size: "l", x: "50%", y: "50%", a: "cc" },
 			],
@@ -363,7 +432,16 @@
 			dur: 2.96,
 			idx: "ucd",
 			els: [
-				{ id: "phU2", type: "photo", src: "assets/images/comparte.png", x: "18vw", y: "52%", a: "cc", w: "min(26vw, 418px)", h: "calc(min(26vw, 418px) * 1.5)" },
+				{
+					id: "phU2",
+					type: "photo",
+					src: "assets/images/comparte.png",
+					x: "18vw",
+					y: "52%",
+					a: "cc",
+					w: "min(26vw, 418px)",
+					h: "calc(min(26vw, 418px) * 1.5)",
+				},
 				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "5vw", y: "66%", a: "cl", mute: true },
 				{ id: "l13b", text: "No asumas, contrástalo con datos.", size: "l", x: "50%", y: "50%", a: "cc", mute: true },
 				{ id: "l13c", text: "Comparte, haz partícipe y perfecciona.", size: "l", x: "95vw", y: "34%", a: "cr" },
@@ -373,44 +451,122 @@
 		/* 5 · EL COSQUILLEO ────────────────────────────────────────────
        W 45.16–46.30  "Sobre todo,"                                  */
 		{ t: 45.16, dur: 1.14, idx: "cosquilleo", els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc" }] },
-		/* W 46.30–47.12  "crea."                                        */
-		{ t: 46.3, dur: 0.82, idx: "cosquilleo", els: [{ id: "l15", text: "crea.", size: "xxl", x: "50%", y: "50%", a: "cc" }] },
-		/* W 47.12–51.58  "Crea productos que sorprendan…"               */
+		/* W 46.30–47.12  "crea." — the imperative drops like a stamp.    */
+		{
+			t: 46.3,
+			dur: 0.82,
+			idx: "cosquilleo",
+			els: [{ id: "l15", text: "crea.", size: "xxl", x: "50%", y: "50%", a: "cc", anim: "stamp-drop" }],
+		},
+		/* W 47.12–51.58  "Crea productos que sorprendan…"
+       Adrián lands first (milliseconds), then text expands outward from
+       behind him — as if the words radiated from his head. Photo z=10,
+       text z=5 so phrases peek out around the silhouette. */
 		{
 			t: 47.12,
 			dur: 4.46,
 			idx: "cosquilleo",
 			els: [
-				{ id: "phC1", type: "photo", src: "assets/images/crea productos.png", x: "50%", y: "50%", a: "cc", w: "min(34vw, 706px)", h: "calc(min(34vw, 706px) * 1.072)" },
+				{
+					id: "phC1",
+					type: "photo",
+					src: "assets/images/crea productos.png",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					w: "min(34vw, 706px)",
+					h: "calc(min(34vw, 706px) * 1.072)",
+					anim: "fast-photo-pop",
+					z: 10,
+				},
 				{
 					id: "l16",
-					text: "Crea productos que sorprendan,\nque se adelanten a las expectativas del usuario.",
+					text: "Crea productos que sorprendan, que se adelanten a las expectativas del usuario.",
 					size: "l",
 					x: "50%",
 					y: "50%",
 					a: "cc",
+					anim: "expand-from-head",
+					z: 5,
 				},
 			],
 		},
-		/* W 51.58–54.0  "La gente no sabe lo que quiere…"               */
+		/* W 51.58–52.5  "La gente no sabe lo que quiere…"
+       Quote enters in resonance — centered, slight scale expansion. The
+       text holds the room before Jobs arrives to push it aside. */
 		{
 			t: 51.58,
-			dur: 2.42,
+			dur: 0.92,
 			idx: "cosquilleo",
 			els: [
-				{ id: "phC2", type: "photo", src: "assets/images/steve jobs.png", x: "20vw", y: "56%", a: "cc", w: "min(28vw, 594px)", h: "calc(min(28vw, 594px) * 1.378)" },
-				{ id: "l17", text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",', size: "l", x: "50%", y: "42%", a: "cc" },
+				{
+					id: "l17",
+					text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",',
+					size: "l",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					anim: "expand-from-center",
+				},
 			],
 		},
-		/* W 54.0–55.28  "decía Jobs."                                   */
+		/* W 52.5–54.0  Jobs pushes from right — the quote slides left to
+       make room. Two simultaneous moves create the "push" illusion:
+       photo enters from off-screen right, text translates to left rail. */
+		{
+			t: 52.5,
+			dur: 1.5,
+			idx: "cosquilleo",
+			els: [
+				{
+					id: "phC2",
+					type: "photo",
+					src: "assets/images/steve jobs.png",
+					x: "72vw",
+					y: "56%",
+					a: "cc",
+					w: "min(28vw, 594px)",
+					h: "calc(min(28vw, 594px) * 1.378)",
+					anim: "push-from-right",
+				},
+				{
+					id: "l17",
+					text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",',
+					size: "l",
+					x: "8vw",
+					y: "44%",
+					a: "cl",
+					anim: "shift-position",
+				},
+			],
+		},
+		/* W 54.0–55.28  "decía Jobs." — attribution lands below the muted
+       quote, both anchored to the left rail with Jobs to the right. */
 		{
 			t: 54.0,
 			dur: 1.28,
 			idx: "cosquilleo",
 			els: [
-				{ id: "phC2", type: "photo", src: "assets/images/steve jobs.png", x: "20vw", y: "56%", a: "cc", w: "min(28vw, 594px)", h: "calc(min(28vw, 594px) * 1.378)" },
-				{ id: "l17", text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",', size: "l", x: "50%", y: "42%", a: "cc", mute: true },
-				{ id: "l17b", text: "decía Jobs.", size: "l", x: "50%", y: "68%", a: "cc" },
+				{
+					id: "phC2",
+					type: "photo",
+					src: "assets/images/steve jobs.png",
+					x: "72vw",
+					y: "56%",
+					a: "cc",
+					w: "min(28vw, 594px)",
+					h: "calc(min(28vw, 594px) * 1.378)",
+				},
+				{
+					id: "l17",
+					text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",',
+					size: "l",
+					x: "8vw",
+					y: "44%",
+					a: "cl",
+					mute: true,
+				},
+				{ id: "l17b", text: "decía Jobs.", size: "l", x: "8vw", y: "62%", a: "cl" },
 			],
 		},
 		/* W 55.28–56.88  "No tengas miedo a crearlo."                   */
@@ -419,7 +575,16 @@
 			dur: 1.6,
 			idx: "cosquilleo",
 			els: [
-				{ id: "phC3", type: "photo", src: "assets/images/no tengas miedo.png", x: "50%", y: "50%", a: "cc", w: "min(60vw, 705px)", h: "calc(min(60vw, 705px) * 0.637)" },
+				{
+					id: "phC3",
+					type: "photo",
+					src: "assets/images/no tengas miedo.png",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					w: "min(60vw, 705px)",
+					h: "calc(min(60vw, 705px) * 0.637)",
+				},
 				{ id: "l18a", text: "No tengas miedo a crearlo.", size: "xl", x: "50%", y: "52%", a: "cc" },
 			],
 		},
@@ -431,33 +596,53 @@
 			dur: 3.3,
 			idx: "cosquilleo",
 			els: [
-				{ id: "phC4", type: "photo", src: "assets/images/cosquilleo.png", x: "50%", y: "50%", a: "cc", w: "min(24vw, 480px)", h: "calc(min(24vw, 480px) * 1.462)" },
-				{ id: "l19", text: "esa sensación de cosquilleo\nte recorrerá la piel.", size: "l", x: "50%", y: "50%", a: "cc" },
+				{
+					id: "phC4",
+					type: "photo",
+					src: "assets/images/cosquilleo.png",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					w: "min(24vw, 480px)",
+					h: "calc(min(24vw, 480px) * 1.462)",
+				},
+				{ id: "l19", text: "esa sensación de cosquilleo te recorrerá la piel.", size: "l", x: "50%", y: "50%", a: "cc" },
 			],
 		},
 
 		/* 6 · ENDING ───────────────────────────────────────────────────
-       W 60.96–62.0  "Nadie me lo ha pedido."                        */
+       W 60.96–62.0  "Nadie me lo ha pedido." — text on a clean canvas */
 		{
 			t: 60.96,
 			dur: 1.04,
 			idx: "cosquilleo",
 			mutedIdx: true,
-			els: [
-				{ id: "phC5", type: "photo", src: "assets/images/nadie me lo ha pedido.png", x: "50%", y: "50%", a: "cc", w: "min(26vw, 596px)", h: "calc(min(26vw, 596px) * 1.194)" },
-				{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "46%", a: "cc" },
-			],
+			els: [{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "44%", a: "cc" }],
 		},
-		/* W 62.0–63.82  "Tampoco lo he esperado…" — cierre a plena opacidad */
+		/* W 62.0–63.82  "Tampoco lo he esperado…" + envelope tossed in.
+       Second phrase arrives, then the envelope slides up from below the
+       canvas — fully visible throughout its travel. Lands overlapping
+       the second line, with the natural "thrown on a table" settle. */
 		{
 			t: 62.0,
 			dur: 1.82,
 			idx: "cosquilleo",
 			mutedIdx: true,
 			els: [
-				{ id: "phC5", type: "photo", src: "assets/images/nadie me lo ha pedido.png", x: "50%", y: "50%", a: "cc", w: "min(26vw, 596px)", h: "calc(min(26vw, 596px) * 1.194)" },
-				{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "44%", a: "cc" },
-				{ id: "l20b", text: "Tampoco lo he esperado…", size: "xl", x: "50%", y: "57%", a: "cc" },
+				{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "36%", a: "cc" },
+				{ id: "l20b", text: "Tampoco lo he esperado…", size: "xl", x: "50%", y: "48%", a: "cc" },
+				{
+					id: "phC5",
+					type: "photo",
+					src: "assets/images/nadie me lo ha pedido.png",
+					x: "50%",
+					y: "62%",
+					a: "cc",
+					w: "min(28vw, 540px)",
+					h: "calc(min(28vw, 540px) * 1.194)",
+					anim: "envelope-toss",
+					z: 20,
+				},
 			],
 		},
 	];
@@ -601,16 +786,16 @@
 		if (spec.src && !USE_PLACEHOLDERS) el.style.backgroundImage = `url('${spec.src}')`;
 	}
 
-	/* Parallax token — slow inner zoom inside frame, shared by all visuals.
-     We animate background-size on the same element (cheaper than nested DOM). */
+	/* Parallax token — slow drift inside the frame creates the window-depth
+     illusion. The image is slightly larger than the frame (cover scale),
+     so panning the background creates parallax against the frame edges. */
 	function startParallax(el) {
-		/* Only meaningful while we have an image; for placeholders skip */
 		if (USE_PLACEHOLDERS) return;
 		gsap.killTweensOf(el, "backgroundPosition,backgroundSize");
 		gsap.fromTo(
 			el,
-			{ backgroundSize: "110%", backgroundPosition: "50% 52%" },
-			{ backgroundSize: "118%", backgroundPosition: "50% 48%", duration: 6, ease: "sine.inOut", repeat: -1, yoyo: true },
+			{ backgroundSize: "108%", backgroundPosition: "50% 55%" },
+			{ backgroundSize: "122%", backgroundPosition: "50% 45%", duration: 7, ease: "sine.inOut", repeat: -1, yoyo: true },
 		);
 	}
 
@@ -655,13 +840,93 @@
 		gsap.killTweensOf(el);
 		const rot = CARD_ROT[spec.id] || 0;
 
-		/* Special case: keep the main headline static and visible (no enter animation) */
+		/* Opening headline — fades in slowly as the image bleeds behind it,
+       so they feel like one synchronized arrival rather than separate events. */
 		if (spec.id === "l1") {
-			gsap.set(el, { autoAlpha: 1, x: 0, y: 0 });
+			gsap.fromTo(el, { autoAlpha: 0, x: 0, y: 0 }, { autoAlpha: 1, duration: 0.9, delay, ease: "power2.out" });
 			return;
 		}
 
 		/* ── New motion tokens (anim:'...') ── */
+		if (spec.anim === "fast-photo-pop") {
+			/* Photo lands quickly with a tiny scale-up — used before paired
+         text expansion. Parallax kicks in during the pop, not after. */
+			gsap.fromTo(
+				el,
+				{ autoAlpha: 0, scale: 0.94 },
+				{ autoAlpha: 1, scale: 1, duration: 0.32, delay, ease: "power2.out" },
+			);
+			startParallax(el);
+			return;
+		}
+		if (spec.anim === "expand-from-head") {
+			/* Text starts compressed near where the photo's head lives, then
+         expands outward to its final scale. Delayed so the photo lands
+         FIRST (milliseconds) and the text feels like it radiates out as
+         the head settles into frame. */
+			gsap.fromTo(
+				el,
+				{ autoAlpha: 0, scale: 0.55 },
+				{ autoAlpha: 1, scale: 1, duration: 0.6, delay: delay + 0.22, ease: "power3.out" },
+			);
+			return;
+		}
+		if (spec.anim === "stamp-drop") {
+			/* Used for the single most weighty word of the piece — lands like
+         a stamp on paper. Slight overshoot at the end seals the impact. */
+			gsap.fromTo(
+				el,
+				{ autoAlpha: 0, scale: 1.35 },
+				{ autoAlpha: 1, scale: 1, duration: 0.5, delay, ease: "back.out(1.4)" },
+			);
+			return;
+		}
+		if (spec.anim === "expand-from-center") {
+			/* Quote-style entry — text appears at center with a subtle scale
+         expansion. Resonance, not impact. */
+			gsap.fromTo(
+				el,
+				{ autoAlpha: 0, scale: 0.88 },
+				{ autoAlpha: 1, scale: 1, duration: 0.55, delay, ease: "power3.out" },
+			);
+			return;
+		}
+		if (spec.anim === "push-from-right") {
+			/* Image enters from off-screen right, pushing toward its final
+         position. Pairs with a left-shifting text element. */
+			gsap.fromTo(
+				el,
+				{ autoAlpha: 0, x: 180 },
+				{
+					autoAlpha: 1,
+					x: 0,
+					duration: 0.85,
+					delay,
+					ease: "power3.out",
+					onComplete() {
+						if (spec.type === "photo") startParallax(el);
+					},
+				},
+			);
+			return;
+		}
+		if (spec.anim === "envelope-toss") {
+			/* Envelope is fully visible during its travel — opacity stays 1.
+         Slides up from below the canvas, with a slight tilt that settles
+         to neutral. Custom ease creates the "tossed on a table" feel. */
+			gsap.set(el, { autoAlpha: 1, y: window.innerHeight * 0.7, rotation: -3.5 });
+			gsap.to(el, {
+				y: 0,
+				rotation: 0,
+				duration: 1.35,
+				delay,
+				ease: "back.out(0.7)",
+				onComplete() {
+					startParallax(el);
+				},
+			});
+			return;
+		}
 		if (spec.anim === "bleed-pullback") {
 			/* Storyboard: image enters scaled up (suggesting bleed) + fades in,
          then settles into its framed size while parallax zoom continues
@@ -716,9 +981,11 @@
 					el.style.top = spec.y;
 					/* Persist final percent offsets */
 					gsap.set(el, { xPercent: xp, yPercent: yp });
-					startParallax(el);
 				},
 			});
+			/* Parallax starts during the bleed — window-depth feeling is
+         present from the first moment, not after the frame settles. */
+			startParallax(el);
 			return;
 		}
 		if (spec.anim === "swipe-right") {
@@ -799,6 +1066,24 @@
 			const fromY = fromX !== 0 ? 0 : 24;
 			gsap.fromTo(el, { autoAlpha: 0, x: fromX, y: fromY }, { autoAlpha: 1, x: 0, y: 0, duration: 0.42, delay, ease: "power2.out" });
 		}
+	}
+
+	/* FLIP-style transition for elements that persist between frames but
+     change position. Captures old screen rect, applies new spec, then
+     animates the delta with GSAP transforms. */
+	function transitionEl(el, spec, delay, oldRect) {
+		const newRect = el.getBoundingClientRect();
+		const dx = oldRect.left - newRect.left;
+		const dy = oldRect.top - newRect.top;
+		if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return; /* no real change */
+		gsap.killTweensOf(el, "x,y");
+		if (spec.anim === "shift-position") {
+			/* Smooth, deliberate — used when a phrase makes room for a photo */
+			gsap.fromTo(el, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.85, delay, ease: "power3.inOut" });
+			return;
+		}
+		/* Default position transition */
+		gsap.fromTo(el, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.6, delay, ease: "power2.inOut" });
 	}
 
 	function exitEl(el) {
@@ -891,12 +1176,17 @@
 		for (const spec of (f.els || []).filter((e) => !e.mute)) {
 			const el = dom.get(spec.id);
 			const isNew = gsap.getProperty(el, "autoAlpha") < 0.5;
+			/* Capture position before applyEl moves the element — needed for FLIP */
+			const oldRect = !isNew && spec.anim ? el.getBoundingClientRect() : null;
 			applyEl(el, spec);
 			if (isNew) {
 				enterEl(el, spec, staggerMs / 1000);
 				staggerMs += 70;
+			} else if (oldRect) {
+				transitionEl(el, spec, staggerMs / 1000, oldRect);
+				staggerMs += 70;
 			}
-			/* Persisting elements: applyEl already updated muted/position */
+			/* Persisting elements without anim: applyEl already updated muted/position */
 		}
 
 		brandBg.classList.toggle("shown", !!f.brand);
