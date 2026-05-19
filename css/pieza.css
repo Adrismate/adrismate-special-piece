@@ -52,7 +52,7 @@
 	pointer-events: none;
 	z-index: 1;
 	font-size: 22vw;
-	font-weight: 500;
+	font-weight: 400;
 	letter-spacing: -0.045em;
 	line-height: 0.85;
 	color: rgba(26, 26, 24, 0.035);
@@ -74,37 +74,35 @@
 	margin: 0;
 	padding: 0;
 	font-family: "TRIAL—Sagace", "Sagace", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 36px;
-	line-height: normal;
+	line-height: 1.5;
 	letter-spacing: -1.08px;
 	color: var(--Humo-negro, #262426);
+	word-break: break-word;
 	user-select: none;
 }
 #nextScene .pieza-index .entry {
 	display: block;
 	opacity: 0;
+	margin-bottom: -12px;
 	transform: translate(var(--idx-from-x, -8vw), var(--idx-from-y, 18vh)) scale(var(--idx-from-s, 2.2));
 	transform-origin: left top;
 	cursor: default;
 	transition:
 		opacity 0.8s var(--ease-p),
-		transform 1.05s var(--ease-p),
-		color 0.4s ease;
-	will-change: transform, opacity, color;
+		transform 1.05s var(--ease-p);
+	will-change: transform, opacity;
 }
 #nextScene .pieza-index .entry.shown {
-	opacity: 1;
+	opacity: 0.2;
 	transform: translate(0, 0) scale(1);
 	cursor: pointer;
-	color: var(--mute);
 }
 #nextScene .pieza-index .entry.shown:hover {
-	color: var(--ink);
+	opacity: 0.55;
 }
 #nextScene .pieza-index .entry.active {
-	color: var(--Humo-negro, #262426);
-	font-weight: 500;
 	opacity: 1 !important;
 	cursor: default;
 }
@@ -122,14 +120,14 @@
 
 #nextScene .scene-content {
 	color: var(--ink);
-	font-weight: 500;
+	font-weight: 400;
 	letter-spacing: -0.01em;
 }
 
 #nextScene .intro-text {
 	font-family: "Sagace", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: clamp(54px, 6.2vw, 130px);
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 1.0625;
 	letter-spacing: -0.04em;
 }
@@ -197,7 +195,7 @@
 #nextScene .line.size-xxl,
 #nextScene .line.size-xl {
 	font-family: "Sagace", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 500;
+	font-weight: 400;
 }
 #nextScene .line.size-l,
 #nextScene .line.size-m {
@@ -233,6 +231,14 @@
 	transition: color 0.4s ease;
 }
 
+/* Typewriter cursor — GSAP controls blink via opacity tween */
+#nextScene .tw-cursor {
+	display: inline;
+	font-style: normal;
+	opacity: 1;
+	font-weight: inherit;
+}
+
 /* Visual frames — window into the image */
 #nextScene .viz {
 	background-size: cover;
@@ -252,6 +258,12 @@
 		0 1px 2px rgba(26, 26, 24, 0.04),
 		0 8px 32px rgba(26, 26, 24, 0.06);
 }
+#nextScene .viz.photo.cutout {
+	border-radius: 0;
+	box-shadow: none;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
 
 /* Placeholder — used while real photography is pending */
 #nextScene .viz.placeholder {
@@ -266,6 +278,11 @@
 /* Motion token: text over image uses difference blend for legibility */
 #nextScene .line.diff {
 	mix-blend-mode: difference;
+	color: #ffffff !important;
+}
+
+/* Plain white text — no blend mode (over image, for direct legibility) */
+#nextScene .line.white {
 	color: #ffffff !important;
 }
 
@@ -289,6 +306,9 @@
 }
 #nextScene .pieza-container.inverted .line.muted {
 	color: #6a6a64;
+}
+#nextScene .pieza-container.inverted .pieza-index {
+	color: #f5f4ee;
 }
 #nextScene .pieza-container.inverted .pieza-dot-pattern {
 	background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px);

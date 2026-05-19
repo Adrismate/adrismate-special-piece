@@ -44,7 +44,7 @@
 					h: "calc(min(90vw, 906px) * 0.7225)",
 					anim: "bleed-to-frame",
 				},
-				{ id: "l1", text: "Todo empieza con algo incómodo.", size: "xl", x: "50%", y: "50%", a: "cc", diff: true, z: 10 },
+				{ id: "l1", text: "Todo empieza con algo incómodo.", size: "xl", x: "50%", y: "50%", a: "cc", diff: true, z: 10, anim: "typewriter", twDur: 2.18 },
 			],
 		},
 		/* W 2.76–3.82  "No con un briefing,"
@@ -82,7 +82,10 @@
 			t: 5.26,
 			dur: 0.84,
 			idx: "incomodidad",
-			els: [{ id: "l4a", text: "Con una fricción", size: "l", x: "50%", y: "50%", a: "cc", anim: "fast-cut", z: 10 }],
+			els: [
+				{ id: "g1", type: "photo", src: "assets/images/incomodidad-2.png", x: "47%", y: "50%", a: "cc", w: "44vw", h: "32vh", z: 10, exitAfter: 0 },
+				{ id: "l4a", text: "Con una fricción", size: "l", x: "50%", y: "50%", a: "cc", anim: "fast-cut", z: 2 },
+			],
 		},
 		/* W 6.10–7.54  "que no puedo ignorar."
        Texto inicial se desplaza a izquierda con fast-in/easy-out,
@@ -116,8 +119,8 @@
 			dur: 1.12,
 			idx: "incomodidad",
 			els: [
-				{ id: "ph1", type: "photo", src: "assets/images/dar por sentado.png", x: "6vw", y: "50%", a: "cl", w: "52vw", h: "40vh" },
-				{ id: "l3a", text: "que algo esté hecho así", size: "m", x: "78vw", y: "46%", a: "cc" },
+				{ id: "ph1", type: "photo", src: "assets/images/dar por sentado.png", x: "11.67vw", y: "49.97%", a: "cl", w: "46.32vw", h: "65.1vh" },
+				{ id: "l3a", text: "que algo esté hecho así", size: "m", x: "77.99vw", y: "50%", a: "cc" },
 			],
 		},
 		/* W 9.44–11.54  "no significa que esté bien."
@@ -128,9 +131,9 @@
 			dur: 2.1,
 			idx: "incomodidad",
 			els: [
-				{ id: "ph1", type: "photo", src: "assets/images/dar por sentado.png", x: "6vw", y: "50%", a: "cl", w: "52vw", h: "40vh" },
+				{ id: "ph1", type: "photo", src: "assets/images/dar por sentado.png", x: "11.61vw", y: "49.39%", a: "cl", w: "46.37vw", h: "64.66vh" },
 				{ id: "l3a", text: "que algo esté hecho así", size: "m", x: "78vw", y: "42%", a: "cc", mute: true },
-				{ id: "l3b", text: "no significa que esté bien.", size: "m", x: "78vw", y: "58%", a: "cc", anim: "swipe-up" },
+				{ id: "l3b", text: "no significa que esté bien.", size: "m", x: "77.99vw", y: "50%", a: "cc", anim: "swipe-up" },
 			],
 		},
 
@@ -153,7 +156,7 @@
 					h: "calc(min(32vw, 520px) * 1.941)",
 					anim: "bleed-to-frame",
 				},
-				{ id: "l6a", text: "Me cuestiono todo lo cotidiano", size: "xl", x: "50%", y: "46%", a: "cc" },
+				{ id: "l6a", text: "Me cuestiono todo lo cotidiano", size: "xl", x: "50%", y: "50%", a: "cc", anim: "typewriter", twDur: 1.14 },
 				{ id: "l6b", text: "como hábito profesional.", size: "xl", x: "50%", y: "56%", a: "cc", mute: true },
 			],
 		},
@@ -174,8 +177,8 @@
 					w: "min(32vw, 520px)",
 					h: "calc(min(32vw, 520px) * 1.941)",
 				},
-				{ id: "l6a", text: "Me cuestiono todo lo cotidiano", size: "xl", x: "50%", y: "46%", a: "cc", mute: true },
-				{ id: "l6b", text: "como hábito profesional.", size: "xl", x: "50%", y: "56%", a: "cc" },
+				{ id: "l6a", text: "Me cuestiono todo lo cotidiano", size: "xl", x: "50%", y: "44.78%", a: "cc" },
+				{ id: "l6b", text: "como hábito profesional.", size: "xl", x: "50.09%", y: "54.45%", a: "cc" },
 			],
 		},
 		/* W 14.34–16.52  "Las cosas no surgen de la nada."
@@ -186,7 +189,7 @@
 			dur: 2.18,
 			idx: "cuestionarlo",
 			els: [
-				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "22vw", y: "48%", a: "cl", z: 10 },
+				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "8.33vw", y: "50%", a: "cl", z: 10 },
 				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "22vw", y: "55%", a: "cl", mute: true },
 			],
 		},
@@ -199,7 +202,7 @@
 			idx: "cuestionarlo",
 			els: [
 				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "22vw", y: "48%", a: "cl", mute: true },
-				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "22vw", y: "55%", a: "cl", z: 10 },
+				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "35.07vw", y: "50%", a: "cl", z: 10 },
 			],
 		},
 		/* W 18.52–19.42  "una fuente de inspiración," — appears on the
@@ -212,7 +215,7 @@
 			els: [
 				{ id: "l7a", text: "Las cosas no surgen de la nada.", size: "l", x: "22vw", y: "48%", a: "cl", mute: true },
 				{ id: "l7b", text: "Somos incapaces de crear algo nuevo sin", size: "l", x: "22vw", y: "55%", a: "cl", mute: true },
-				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "55vw", y: "48%", a: "cl", z: 10 },
+				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "69.45vw", y: "50%", a: "cl", z: 10 },
 			],
 		},
 		/* W 19.42–20.0  "sin una referencia." — completes the right-rail
@@ -224,7 +227,7 @@
 			idx: "cuestionarlo",
 			els: [
 				{ id: "l7c", text: "una fuente de inspiración,", size: "l", x: "55vw", y: "48%", a: "cl", mute: true },
-				{ id: "l7d", text: "sin una referencia.", size: "l", x: "55vw", y: "55%", a: "cl", z: 10 },
+				{ id: "l7d", text: "sin una referencia.", size: "l", x: "69.38vw", y: "50%", a: "cl", z: 10 },
 			],
 		},
 		/* W 20.0–20.86  Cards settled — beat before the phrase lands     */
@@ -258,13 +261,13 @@
 					id: "q1",
 					type: "photo",
 					src: "assets/images/cuestionar.png",
-					x: "50%",
-					y: "50%",
+					x: "49.83%",
+					y: "51.58%",
 					a: "cc",
-					w: "min(26vw, 455px)",
-					h: "calc(min(26vw, 455px) * 1.777)",
+					w: "20.5vw",
+					h: "65.8vh",
 				},
-				{ id: "l9a", text: "cuestionar", size: "l", x: "8vw", y: "92%", a: "bl", z: 10 },
+				{ id: "l9a", text: "cuestionar", size: "l", x: "11.64vw", y: "52.15%", a: "bl", z: 10 },
 			],
 		},
 		/* W 23.66–24.54  "combinar" — builds alongside "cuestionar"      */
@@ -272,7 +275,7 @@
 			t: 23.66,
 			dur: 0.88,
 			idx: "cuestionarlo",
-			els: [{ id: "l9b", text: "combinar", size: "l", x: "50%", y: "92%", a: "bc", z: 10 }],
+			els: [{ id: "l9b", text: "combinar", size: "l", x: "50%", y: "52.15%", a: "bc", z: 1 }],
 		},
 		/* W 24.54–25.80  "y crear algo nuevo." — phrase complete          */
 		{
@@ -287,40 +290,54 @@
 					x: "50%",
 					y: "50%",
 					a: "cc",
-					w: "min(26vw, 455px)",
-					h: "calc(min(26vw, 455px) * 1.778)",
+					w: "26vw",
+					h: "65.13vh",
+					z: 3,
 				},
-				{ id: "l9a", text: "cuestionar", size: "l", x: "8vw", y: "92%", a: "bl", z: 10 },
-				{ id: "l9b", text: "combinar", size: "l", x: "50%", y: "92%", a: "bc", z: 10 },
-				{ id: "l9c", text: "y crear algo nuevo.", size: "l", x: "92vw", y: "92%", a: "br", z: 10 },
+				{ id: "l9a", text: "cuestionar", size: "l", x: "7.99vw", y: "51.12%", a: "bl", z: 10, mute: true },
+				{ id: "l9b", text: "combinar", size: "l", x: "50%", y: "50.63%", a: "bc", z: 10, mute: true },
+				{ id: "l9c", text: "y crear algo nuevo.", size: "l", x: "87.76vw", y: "52.15%", a: "br", z: 10 },
 			],
 		},
 
 		/* 3 · LEARN BY DOING ───────────────────────────────────────────
        W 25.80–27.0  "Learn by doing."                               */
-		{ id: "learn-1", t: 25.8, dur: 1.2, idx: "learn", els: [{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "46%", a: "cc" }] },
-		/* W 27.0–28.52  "Si no sabes por dónde empezar,"               */
+		{ id: "learn-1", t: 25.8, dur: 1.2, idx: "learn", els: [{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "48.86%", a: "cc", anim: "typewriter", twDur: 1.2 }] },
+		/* W 27.0–28.52  "Si no sabes por dónde empezar,"
+		   Texto solo — l10a sube al entrar l10b (shift-position). */
 		{
 			id: "learn-2",
 			t: 27.0,
 			dur: 1.52,
 			idx: "learn",
 			els: [
-				{ id: "phL0", type: "photo", src: "assets/images/haciendo.png", x: "50%", y: "50%", a: "cc", w: "100vw", h: "100vh", anim: "fast-cut" },
-				{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "46%", a: "cc" },
-				{ id: "l10b", text: "Si no sabes por dónde empezar,", size: "xl", x: "50%", y: "56%", a: "cc", mute: true },
+				{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "41%", a: "cc", anim: "shift-position" },
+				{ id: "l10b", text: "Si no sabes por dónde empezar,", size: "xl", x: "50%", y: "51.82%", a: "cc" },
 			],
 		},
-		/* W 28.52–29.76  "empieza haciendo."                            */
+		/* W 28.52–28.78  "empieza"
+		   Texto solo — l10a persiste arriba, l10c "empieza" entra debajo. */
 		{
 			id: "learn-3",
 			t: 28.52,
-			dur: 1.24,
+			dur: 0.26,
 			idx: "learn",
 			els: [
-				{ id: "phL0", type: "photo", src: "assets/images/haciendo.png", x: "50%", y: "50%", a: "cc", w: "100vw", h: "100vh", anim: "fast-cut" },
-				{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "46%", a: "cc" },
-				{ id: "l10c", text: "empieza haciendo.", size: "xl", x: "50%", y: "56%", a: "cc", mute: true },
+				{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "41%", a: "cc" },
+				{ id: "l10c", text: "empieza", size: "xl", x: "50%", y: "51.57%", a: "cc" },
+			],
+		},
+		/* W 28.78–29.76  "haciendo."
+		   Imagen entra full-bleed → encuadre (bleed-to-frame 0.62s).
+		   "haciendo." blanco puro, inmóvil. */
+		{
+			id: "learn-3b",
+			t: 28.78,
+			dur: 0.98,
+			idx: "learn",
+			els: [
+				{ id: "phL0", type: "photo", src: "assets/images/haciendo.png", x: "50%", y: "50%", a: "cc", w: "53.69vw", h: "55.92vh", anim: "bleed-to-frame", bleedDur: 0.62, z: 1 },
+				{ id: "l10d", text: "haciendo.", size: "xl", x: "50%", y: "50%", a: "cc", white: true },
 			],
 		},
 		/* W 29.76–31.76  "Encaja todas las piezas necesarias."
@@ -335,13 +352,13 @@
 					id: "phL1",
 					type: "photo",
 					src: "assets/images/encaja las piezas.png",
-					x: "68vw",
-					y: "50%",
+					x: "19.85vw",
+					y: "58.2%",
 					a: "cc",
-					w: "min(32vw, 444px)",
-					h: "calc(min(32vw, 444px) * 1.331)",
+					w: "25.69vw",
+					h: "63.61vh",
 				},
-				{ id: "l11a", text: "Encaja todas las piezas necesarias.", size: "l", x: "4vw", y: "34%", a: "tl" },
+				{ id: "l11a", text: "Encaja todas las piezas necesarias.", size: "l", x: "6.97vw", y: "20.34%", a: "tl" },
 			],
 		},
 		/* W 31.76–34.70  "Observa desde lejos y piensa en cómo mejorarlo."
@@ -356,13 +373,13 @@
 					id: "phL2",
 					type: "photo",
 					src: "assets/images/observa desde lejos.png",
-					x: "22vw",
-					y: "50%",
+					x: "50vw",
+					y: "58.77%",
 					a: "cc",
-					w: "min(28vw, 390px)",
-					h: "calc(min(28vw, 390px) * 1.508)",
+					w: "22.57vw",
+					h: "63.31vh",
 				},
-				{ id: "l11b", text: "Observa desde lejos y", size: "l", x: "72vw", y: "50%", a: "cc" },
+				{ id: "l11b", text: "Observa desde lejos y", size: "l", x: "49.99vw", y: "24.44%", a: "cc" },
 			],
 		},
 		/* W 33.0–34.70  "piensa en cómo mejorarlo." — text updates in same position */
@@ -376,13 +393,13 @@
 					id: "phL2",
 					type: "photo",
 					src: "assets/images/observa desde lejos.png",
-					x: "22vw",
-					y: "50%",
+					x: "50vw",
+					y: "58.5%",
 					a: "cc",
-					w: "min(28vw, 390px)",
-					h: "calc(min(28vw, 390px) * 1.508)",
+					w: "22.57vw",
+					h: "63.31vh",
 				},
-				{ id: "l11b", text: "piensa en cómo mejorarlo.", size: "l", x: "72vw", y: "50%", a: "cc" },
+				{ id: "l11b", text: "piensa en cómo mejorarlo.", size: "l", x: "50.02vw", y: "22.58%", a: "cc" },
 			],
 		},
 		/* W 34.70–36.02  "Vuelve a intentarlo." — full-bleed feedback-talk */
@@ -396,13 +413,13 @@
 					id: "phL3",
 					type: "photo",
 					src: "assets/images/vuelve a intentarlo.png",
-					x: "50%",
-					y: "50%",
+					x: "82.13%",
+					y: "58.78%",
 					a: "cc",
-					w: "min(30vw, 443px)",
-					h: "calc(min(30vw, 443px) * 1.316)",
+					w: "25.64vw",
+					h: "62.75vh",
 				},
-				{ id: "l11c", text: "Vuelve a intentarlo.", size: "xl", x: "50%", y: "50%", a: "cc", z: 10 },
+				{ id: "l11c", text: "Vuelve a intentarlo.", size: "l", x: "86.93%", y: "23.3%", a: "cc", z: 10 },
 			],
 		},
 
@@ -420,13 +437,13 @@
 					id: "phU1",
 					type: "photo",
 					src: "assets/images/sal ahi fuera.png",
-					x: "72vw",
-					y: "56%",
+					x: "50vw",
+					y: "50%",
 					a: "cc",
 					w: "min(56vw, 618px)",
 					h: "calc(min(56vw, 618px) * 0.777)",
 				},
-				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "5vw", y: "66%", a: "cl" },
+				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "9.49vw", y: "50%", a: "cl" },
 			],
 		},
 		/* W 39.90–42.20  "No asumas, contrástalo con datos."            */
@@ -445,6 +462,7 @@
 					a: "cc",
 					w: "min(56vw, 618px)",
 					h: "calc(min(56vw, 618px) * 0.777)",
+					mute: true,
 				},
 				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "5vw", y: "66%", a: "cl", mute: true },
 				{ id: "l13b", text: "No asumas, contrástalo con datos.", size: "l", x: "50%", y: "50%", a: "cc" },
@@ -461,21 +479,21 @@
 					id: "phU2",
 					type: "photo",
 					src: "assets/images/comparte.png",
-					x: "18vw",
-					y: "52%",
+					x: "50vw",
+					y: "50%",
 					a: "cc",
 					w: "min(26vw, 418px)",
 					h: "calc(min(26vw, 418px) * 1.5)",
 				},
 				{ id: "l13a", text: "Sal ahí fuera y pregunta.", size: "l", x: "5vw", y: "66%", a: "cl", mute: true },
 				{ id: "l13b", text: "No asumas, contrástalo con datos.", size: "l", x: "50%", y: "50%", a: "cc", mute: true },
-				{ id: "l13c", text: "Comparte, haz partícipe y perfecciona.", size: "l", x: "95vw", y: "34%", a: "cr" },
+				{ id: "l13c", text: "Comparte, haz partícipe y perfecciona.", size: "l", x: "97.18vw", y: "50%", a: "cr" },
 			],
 		},
 
 		/* 5 · EL COSQUILLEO ────────────────────────────────────────────
        W 45.16–46.30  "Sobre todo,"                                  */
-		{ id: "cosquilleo-1", t: 45.16, dur: 1.14, idx: "cosquilleo", els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc" }] },
+		{ id: "cosquilleo-1", t: 45.16, dur: 1.14, idx: "cosquilleo", els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc", anim: "typewriter", twDur: 1.14 }] },
 		/* W 46.30–47.12  "crea." — the imperative drops like a stamp.    */
 		{
 			id: "cosquilleo-2",
@@ -498,23 +516,34 @@
 					id: "phC1",
 					type: "photo",
 					src: "assets/images/crea productos.png",
-					x: "50%",
-					y: "50%",
+					x: "49.99%",
+					y: "50.01%",
 					a: "cc",
-					w: "min(34vw, 706px)",
+					w: "34vw",
 					h: "calc(min(34vw, 706px) * 1.072)",
 					anim: "fast-photo-pop",
 					z: 10,
+					cutout: true,
 				},
 				{
-					id: "l16",
-					text: "Crea productos que sorprendan, que se adelanten a las expectativas del usuario.",
+					id: "l16a",
+					text: "Crea productos que sorprendan,",
 					size: "l",
-					x: "50%",
-					y: "50%",
-					a: "cc",
+					x: "31.84%",
+					y: "50.08%",
+					a: "bc",
 					anim: "expand-from-head",
-					z: 5,
+					z: 3,
+				},
+				{
+					id: "l16b",
+					text: "que se adelanten a las expectativas del usuario.",
+					size: "l",
+					x: "74.05%",
+					y: "45.56%",
+					a: "tc",
+					anim: "expand-from-head",
+					z: 3,
 				},
 			],
 		},
@@ -530,7 +559,7 @@
 				{
 					id: "l17",
 					text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",',
-					size: "l",
+					size: "xl",
 					x: "50%",
 					y: "50%",
 					a: "cc",
@@ -538,65 +567,35 @@
 				},
 			],
 		},
-		/* W 52.5–54.0  Jobs pushes from right — the quote slides left to
-       make room. Two simultaneous moves create the "push" illusion:
-       photo enters from off-screen right, text translates to left rail. */
+		/* W 52.5–55.28  Camera-pan beat. Quote slides left, photo enters from
+       right, then "decía Jobs." swipes up with fade once the image has landed. */
 		{
 			id: "cosquilleo-5",
 			t: 52.5,
-			dur: 1.5,
+			dur: 2.78,
 			idx: "cosquilleo",
 			els: [
 				{
 					id: "phC2",
 					type: "photo",
 					src: "assets/images/steve jobs.png",
-					x: "72vw",
-					y: "56%",
+					x: "63.18vw",
+					y: "50.65%",
 					a: "cc",
-					w: "min(28vw, 594px)",
-					h: "calc(min(28vw, 594px) * 1.378)",
+					w: "28vw",
+					h: "71.77vh",
 					anim: "push-from-right",
 				},
 				{
 					id: "l17",
 					text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",',
-					size: "l",
-					x: "8vw",
-					y: "44%",
+					size: "xl",
+					x: "-61.08vw",
+					y: "51.15%",
 					a: "cl",
 					anim: "shift-position",
 				},
-			],
-		},
-		/* W 54.0–55.28  "decía Jobs." — attribution lands below the muted
-       quote, both anchored to the left rail with Jobs to the right. */
-		{
-			id: "cosquilleo-6",
-			t: 54.0,
-			dur: 1.28,
-			idx: "cosquilleo",
-			els: [
-				{
-					id: "phC2",
-					type: "photo",
-					src: "assets/images/steve jobs.png",
-					x: "72vw",
-					y: "56%",
-					a: "cc",
-					w: "min(28vw, 594px)",
-					h: "calc(min(28vw, 594px) * 1.378)",
-				},
-				{
-					id: "l17",
-					text: '"La gente no sabe lo que quiere\nhasta que se lo enseñas",',
-					size: "l",
-					x: "8vw",
-					y: "44%",
-					a: "cl",
-					mute: true,
-				},
-				{ id: "l17b", text: "decía Jobs.", size: "l", x: "8vw", y: "62%", a: "cl" },
+				{ id: "l17b", text: "decía Jobs.", size: "l", x: "60.26vw", y: "90.04%", a: "cl", anim: "swipe-up", enterDelay: 1.5 },
 			],
 		},
 		/* W 55.28–56.88  "No tengas miedo a crearlo."                   */
@@ -610,17 +609,17 @@
 					id: "phC3",
 					type: "photo",
 					src: "assets/images/no tengas miedo.png",
-					x: "50%",
+					x: "57%",
 					y: "50%",
 					a: "cc",
-					w: "min(60vw, 705px)",
-					h: "calc(min(60vw, 705px) * 0.637)",
+					w: "min(45vw, 600px)",
+					h: "calc(min(45vw, 600px) * 0.637)",
 				},
-				{ id: "l18a", text: "No tengas miedo a crearlo.", size: "xl", x: "50%", y: "52%", a: "cc" },
+				{ id: "l18a", text: "No tengas miedo a crearlo,", size: "l", x: "9.25vw", y: "50%", a: "cl" },
 			],
 		},
 		/* W 56.88–57.66  "Cuando algo funciona,"                        */
-		{ id: "cosquilleo-8", t: 56.88, dur: 0.78, idx: "cosquilleo", els: [{ id: "l18b", text: "Cuando algo funciona,", size: "l", x: "50%", y: "46%", a: "cc" }] },
+		{ id: "cosquilleo-8", t: 56.88, dur: 0.78, idx: "cosquilleo", els: [{ id: "l18b", text: "Cuando algo funciona,", size: "l", x: "37.05%", y: "50%", a: "cc" }] },
 		/* W 57.66–60.96  "esa sensación de cosquilleo te recorrerá la piel." */
 		{
 			id: "cosquilleo-9",
@@ -632,13 +631,13 @@
 					id: "phC4",
 					type: "photo",
 					src: "assets/images/cosquilleo.png",
-					x: "50%",
-					y: "50%",
+					x: "66.62%",
+					y: "50.38%",
 					a: "cc",
-					w: "min(24vw, 480px)",
-					h: "calc(min(24vw, 480px) * 1.462)",
+					w: "24vw",
+					h: "65.27vh",
 				},
-				{ id: "l19", text: "esa sensación de cosquilleo te recorrerá la piel.", size: "l", x: "50%", y: "50%", a: "cc" },
+				{ id: "l19", text: "esa sensación de cosquilleo te recorrerá la piel.", size: "l", x: "65.9%", y: "49.7%", a: "cc" },
 			],
 		},
 
@@ -650,7 +649,7 @@
 			dur: 1.04,
 			idx: "cosquilleo",
 			mutedIdx: true,
-			els: [{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "44%", a: "cc" }],
+			els: [{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50.05%", y: "44.75%", a: "cc" }],
 		},
 		/* W 62.0–63.82  "Tampoco lo he esperado…" + envelope tossed in.
        Second phrase arrives, then the envelope slides up from below the
@@ -663,8 +662,8 @@
 			idx: "cosquilleo",
 			mutedIdx: true,
 			els: [
-				{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "36%", a: "cc" },
-				{ id: "l20b", text: "Tampoco lo he esperado…", size: "xl", x: "50%", y: "48%", a: "cc" },
+				{ id: "l20", text: "Nadie me lo ha pedido.", size: "xl", x: "50%", y: "37.54%", a: "cc" },
+				{ id: "l20b", text: "Tampoco lo he esperado…", size: "xl", x: "50%", y: "47.82%", a: "cc" },
 				{
 					id: "phC5",
 					type: "photo",
@@ -676,6 +675,7 @@
 					h: "calc(min(28vw, 540px) * 1.194)",
 					anim: "envelope-toss",
 					z: 20,
+					cutout: true,
 				},
 			],
 		},
@@ -782,7 +782,7 @@
 				: spec.type === "placeholder"
 					? "viz placeholder"
 					: renderAsPhoto
-						? "viz photo"
+						? "viz photo" + (spec.cutout ? " cutout" : "")
 						: spec.type === "photo"
 							? "viz placeholder"
 							: "line size-" + (spec.size || "l");
@@ -815,7 +815,9 @@
 		else el.classList.remove("muted");
 		if (spec.diff) el.classList.add("diff");
 		else el.classList.remove("diff");
-		el.style.zIndex = spec.z || 5;
+		if (spec.white) el.classList.add("white");
+		else el.classList.remove("white");
+		el.style.zIndex = spec.z != null ? spec.z : 5;
 		/* Skip backgroundImage while placeholders are global */
 		if (spec.src && !USE_PLACEHOLDERS) el.style.backgroundImage = `url('${spec.src}')`;
 	}
@@ -872,10 +874,36 @@
 	/* ── GSAP transition helpers ── */
 	function enterEl(el, spec, delay) {
 		gsap.killTweensOf(el);
+		delay = (delay || 0) + (spec.enterDelay || 0);
 		const rot = CARD_ROT[spec.id] || 0;
 
 		/* Opening headline — fades in slowly as the image bleeds behind it,
        so they feel like one synchronized arrival rather than separate events. */
+		/* Typewriter — character-by-character reveal synced to audio duration.
+	       TextPlugin types into .tw-text; .tw-cursor blinks while typing then fades. */
+		if (spec.anim === "typewriter") {
+			const full = String(spec.text || "");
+			gsap.set(el, { autoAlpha: 1 });
+			el.innerHTML = '<span class="tw-text"></span><span class="tw-cursor">|</span>';
+			const textSpan = el.querySelector(".tw-text");
+			const cursorSpan = el.querySelector(".tw-cursor");
+			const dur = spec.twDur || 2;
+			/* Cursor blinks while typing */
+			gsap.to(cursorSpan, { opacity: 0, duration: 0.5, ease: "steps(1)", repeat: -1, yoyo: true });
+			/* Characters appear at audio pace */
+			gsap.to(textSpan, {
+				duration: dur,
+				delay,
+				ease: "none",
+				text: { value: full, delimiter: "" },
+				onComplete() {
+					gsap.killTweensOf(cursorSpan);
+					gsap.to(cursorSpan, { opacity: 0, duration: 0.4, delay: 0.5 });
+				},
+			});
+			return;
+		}
+
 		if (spec.id === "l1") {
 			gsap.fromTo(el, { autoAlpha: 0, x: 0, y: 0 }, { autoAlpha: 1, duration: 0.9, delay, ease: "power2.out" });
 			return;
@@ -890,19 +918,21 @@
 				{ autoAlpha: 0, scale: 0.94 },
 				{ autoAlpha: 1, scale: 1, duration: 0.32, delay, ease: "power2.out" },
 			);
-			startParallax(el);
+			if (!spec.cutout) startParallax(el);
 			return;
 		}
 		if (spec.anim === "expand-from-head") {
-			/* Text starts compressed near where the photo's head lives, then
-         expands outward to its final scale. Delayed so the photo lands
-         FIRST (milliseconds) and the text feels like it radiates out as
-         the head settles into frame. */
-			gsap.fromTo(
-				el,
-				{ autoAlpha: 0, scale: 0.55 },
-				{ autoAlpha: 1, scale: 1, duration: 0.6, delay: delay + 0.22, ease: "power3.out" },
-			);
+			/* Cortinilla simétrica: parte completamente oculta (50% desde cada lado)
+			   y se abre hacia los bordes. La foto aterriza primero (delay + 0.22),
+			   luego el texto emerge desde el centro. */
+			gsap.set(el, { autoAlpha: 1, clipPath: "inset(0 50% 0 50%)" });
+			gsap.to(el, {
+				clipPath: "inset(0 0% 0 0%)",
+				duration: 0.75,
+				delay: delay + 0.22,
+				ease: "power2.inOut",
+				onComplete() { el.style.clipPath = ""; },
+			});
 			return;
 		}
 		if (spec.anim === "stamp-drop") {
@@ -956,7 +986,7 @@
 				delay,
 				ease: "back.out(0.7)",
 				onComplete() {
-					startParallax(el);
+					if (!spec.cutout) startParallax(el);
 				},
 			});
 			return;
@@ -1005,7 +1035,7 @@
 				top: spec.y,
 				xPercent: xp,
 				yPercent: yp,
-				duration: 1.5,
+				duration: spec.bleedDur || 1.5,
 				delay,
 				ease: "power3.out",
 				onComplete() {
@@ -1049,6 +1079,15 @@
 		}
 		if (spec.anim === "fast-cut") {
 			gsap.set(el, { autoAlpha: 1, x: 0, y: 0, scale: 1 });
+			return;
+		}
+		if (spec.anim === "behind-cut") {
+			/* Aparece detrás de imágenes del frame anterior.
+			   setTimeout en lugar de gsap delay porque el ticker de GSAP duerme
+			   cuando no hay animaciones activas y los tweens pendientes no se ejecutan. */
+			gsap.set(el, { autoAlpha: 0, x: 0, y: 0, scale: 1 });
+			const _el = el;
+			setTimeout(() => { gsap.set(_el, { autoAlpha: 1 }); }, Math.round((delay + 0.28) * 1000));
 			return;
 		}
 
@@ -1111,13 +1150,17 @@
 		const dy = oldRect.top - newRect.top;
 		if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return; /* no real change */
 		gsap.killTweensOf(el, "x,y");
-		if (spec.anim === "shift-position") {
-			/* Smooth, deliberate — used when a phrase makes room for a photo */
-			gsap.fromTo(el, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.85, delay, ease: "power3.inOut" });
-			return;
+		const tr = spec.transition && typeof spec.transition === "object" ? spec.transition : null;
+		let duration = spec.anim === "shift-position" ? 0.85 : 0.6;
+		let ease = spec.anim === "shift-position" ? "power3.inOut" : "power2.inOut";
+		if (tr) {
+			if (tr.duration != null) {
+				const parsed = Number.parseFloat(tr.duration);
+				if (Number.isFinite(parsed)) duration = parsed;
+			}
+			if (typeof tr.ease === "string" && tr.ease.trim()) ease = tr.ease.trim();
 		}
-		/* Default position transition */
-		gsap.fromTo(el, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.6, delay, ease: "power2.inOut" });
+		gsap.fromTo(el, { x: dx, y: dy }, { x: 0, y: 0, duration, delay, ease });
 	}
 
 	function exitEl(el) {
@@ -1210,8 +1253,9 @@
 		for (const spec of (f.els || []).filter((e) => !e.mute)) {
 			const el = dom.get(spec.id);
 			const isNew = gsap.getProperty(el, "autoAlpha") < 0.5;
+			const shouldTransition = !isNew && (spec.anim || spec.transition);
 			/* Capture position before applyEl moves the element — needed for FLIP */
-			const oldRect = !isNew && spec.anim ? el.getBoundingClientRect() : null;
+			const oldRect = shouldTransition ? el.getBoundingClientRect() : null;
 			applyEl(el, spec);
 			if (isNew) {
 				enterEl(el, spec, staggerMs / 1000);
@@ -1221,6 +1265,16 @@
 				staggerMs += 70;
 			}
 			/* Persisting elements without anim: applyEl already updated muted/position */
+		}
+
+		/* exitAfter — elements that linger briefly then fade out within the frame.
+		   Guard with lastFrameIdx===i so stale timeouts don't fire after navigation. */
+		const _capturedIdx = i;
+		for (const spec of (f.els || []).filter((e) => !e.mute && e.exitAfter != null)) {
+			const _el = dom.get(spec.id);
+			setTimeout(() => {
+				if (lastFrameIdx === _capturedIdx) gsap.to(_el, { autoAlpha: 0, duration: 0.3 });
+			}, spec.exitAfter);
 		}
 
 		brandBg.classList.toggle("shown", !!f.brand);
@@ -1376,22 +1430,588 @@
 	   Not shipped to production.
 	══════════════════════════════════ */
 	if (new URLSearchParams(location.search).has("dev")) {
+		const DEV_STORE_KEY = "pieza-dev-overrides-v1";
+		let devStatusEl = null;
+		let devStatusTimer = null;
+		let devBox = null;
+		let devShell = null;
+		let devStage = null;
+		let devStageInner = null;
+		let devGrid = null;
+		let devScale = 1;
+
+		function devStatus(msg) {
+			if (!devStatusEl) return;
+			devStatusEl.textContent = msg || "";
+			if (devStatusTimer) window.clearTimeout(devStatusTimer);
+			if (msg) {
+				devStatusTimer = window.setTimeout(() => {
+					if (devStatusEl) devStatusEl.textContent = "";
+				}, 1400);
+			}
+		}
+
+		function trimFloat(n) {
+			const s = Number(n).toFixed(2);
+			return s.replace(/\.?0+$/, "");
+		}
+
+		function detectUnit(value) {
+			if (typeof value !== "string") return null;
+			const m = value.trim().match(/(vw|vh|%|px)$/i);
+			return m ? m[1].toLowerCase() : null;
+		}
+
+		function formatLen(px, axis, unitHint) {
+			const unit = unitHint || (axis === "x" || axis === "w" ? "vw" : "vh");
+			if (unit === "px") return `${Math.round(px)}px`;
+			const base = axis === "y" || axis === "h" ? window.innerHeight : window.innerWidth;
+			const v = base ? (px / base) * 100 : 0;
+			if (unit === "%") return `${trimFloat(v)}%`;
+			if (unit === "vw") return `${trimFloat((px / window.innerWidth) * 100)}vw`;
+			if (unit === "vh") return `${trimFloat((px / window.innerHeight) * 100)}vh`;
+			return `${Math.round(px)}px`;
+		}
+
+		function unitsFor(spec) {
+			return {
+				x: detectUnit(spec.x) || "vw",
+				y: detectUnit(spec.y) || "vh",
+				w: detectUnit(spec.w) || "vw",
+				h: detectUnit(spec.h) || "vh",
+			};
+		}
+
+		function getPanelWidthPx() {
+			const raw = getComputedStyle(document.documentElement).getPropertyValue("--dev-panel-w").trim();
+			const num = Number.parseFloat(raw);
+			return Number.isFinite(num) ? num : 280;
+		}
+
+		function loadOverrides() {
+			try {
+				const raw = localStorage.getItem(DEV_STORE_KEY);
+				if (!raw) return { version: 1, frames: {} };
+				const parsed = JSON.parse(raw);
+				if (!parsed || typeof parsed !== "object") return { version: 1, frames: {} };
+				if (!parsed.frames) parsed.frames = {};
+				return parsed;
+			} catch {
+				return { version: 1, frames: {} };
+			}
+		}
+
+		function saveOverrides(store) {
+			try {
+				store.updatedAt = new Date().toISOString();
+				localStorage.setItem(DEV_STORE_KEY, JSON.stringify(store));
+				devStatus("saved");
+			} catch {
+				devStatus("save failed");
+			}
+		}
+
+		function applyOverrides(store) {
+			for (const frameIdxStr of Object.keys(store.frames || {})) {
+				const frameIdx = Number(frameIdxStr);
+				const frame = FRAMES[frameIdx];
+				if (!frame || !frame.els) continue;
+				const frameOverrides = store.frames[frameIdxStr];
+				for (const id of Object.keys(frameOverrides || {})) {
+					const spec = frame.els.find((e) => e.id === id);
+					if (!spec) continue;
+					Object.assign(spec, frameOverrides[id]);
+				}
+			}
+		}
+
+		let devStore = loadOverrides();
+		applyOverrides(devStore);
+
 		/* 1. Skip hero — show pieza immediately */
 		const ns = document.getElementById("nextScene");
 		if (ns) { ns.style.opacity = "1"; ns.style.pointerEvents = "all"; }
+		const heroEl = document.getElementById("hero");
+		if (heroEl) heroEl.style.display = "none";
 		window.__setHeroScrollActive && window.__setHeroScrollActive(false);
+
+		devShell = document.createElement("div");
+		devShell.id = "dev-shell";
+		devStage = document.createElement("div");
+		devStage.id = "dev-stage";
+		devStageInner = document.createElement("div");
+		devStageInner.id = "dev-stage-inner";
+		devGrid = document.createElement("div");
+		devGrid.id = "dev-grid";
+		devShell.appendChild(devStage);
+		devStage.appendChild(devStageInner);
+		if (ns) {
+			ns.style.position = "absolute";
+			ns.style.inset = "0";
+			ns.style.width = "100vw";
+			ns.style.height = "100vh";
+			devStageInner.appendChild(ns);
+			devStageInner.appendChild(devGrid);
+		}
+		document.body.appendChild(devShell);
 
 		/* 2. Hide subtitles */
 		const subsEl = document.getElementById("piezaSubs");
 		if (subsEl) subsEl.style.display = "none";
 
 		/* 3. Render frame 0 paused */
+		lastFrameIdx = -1;
 		renderAt(0.01);
 		audio.pause();
 		syncPauseIcon();
 
 		/* 4. Track current frame index for ← → navigation */
 		let devFrameIdx = 0;
+		let devFrameLabelEl = null;
+		let devSelLabelEl = null;
+		let devElementPickerEl = null;
+		let devCanvasSizeEl = null;
+		let devTextSizeEl = null;
+		let devTextSizeRowEl = null;
+		let devApplyAllEl = null;
+		let devEditToggleEl = null;
+		let devDeleteEl = null;
+		let devInputXEl = null;
+		let devInputYEl = null;
+		let devInputWEl = null;
+		let devInputHEl = null;
+		let devInputZEl = null;
+		let devMotionAEl = null;
+		let devMotionBEl = null;
+		let devMotionEl = null;
+		let devMotionDurationEl = null;
+		let devMotionEaseEl = null;
+		let devMotionApplyEl = null;
+		let devMotionClearEl = null;
+		let devMotionPreviewEl = null;
+
+		const devState = {
+			editOn: false,
+			applyAll: false,
+			selectedEl: null,
+			selectedSpec: null,
+			units: null,
+			canResize: false,
+			drag: null,
+		};
+
+		const SPEC_KEYS = ["x", "y", "w", "h", "size", "mute", "z", "transition"];
+		const devHistory = [];
+		const devRedo = [];
+		const HISTORY_LIMIT = 200;
+
+		function isEditableTarget(target) {
+			if (!target || target === document.body) return false;
+			if (target.isContentEditable) return true;
+			const tag = target.tagName;
+			return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT";
+		}
+
+		function snapshotSpec(spec) {
+			const snap = {};
+			for (const key of SPEC_KEYS) {
+				if (Object.prototype.hasOwnProperty.call(spec, key)) {
+					const value = spec[key];
+					if (value && typeof value === "object") snap[key] = JSON.parse(JSON.stringify(value));
+					else snap[key] = value;
+				}
+			}
+			return snap;
+		}
+
+		function applySnapshot(spec, snap) {
+			for (const key of SPEC_KEYS) {
+				if (Object.prototype.hasOwnProperty.call(snap, key)) {
+					const value = snap[key];
+					if (value && typeof value === "object") spec[key] = JSON.parse(JSON.stringify(value));
+					else spec[key] = value;
+				}
+				else delete spec[key];
+			}
+		}
+
+		function snapsEqual(a, b) {
+			for (const key of SPEC_KEYS) {
+				const aHas = Object.prototype.hasOwnProperty.call(a, key);
+				const bHas = Object.prototype.hasOwnProperty.call(b, key);
+				if (aHas !== bHas) return false;
+				if (aHas) {
+					const av = a[key];
+					const bv = b[key];
+					if ((av && typeof av === "object") || (bv && typeof bv === "object")) {
+						if (JSON.stringify(av) !== JSON.stringify(bv)) return false;
+					} else if (av !== bv) return false;
+				}
+			}
+			return true;
+		}
+
+		function applyOverrideSnapshot(frameIdx, id, snap) {
+			if (!devStore.frames[frameIdx]) devStore.frames[frameIdx] = {};
+			const entry = devStore.frames[frameIdx][id] || {};
+			let hasAny = false;
+			for (const key of SPEC_KEYS) {
+				if (Object.prototype.hasOwnProperty.call(snap, key)) {
+					entry[key] = snap[key];
+					hasAny = true;
+				} else {
+					delete entry[key];
+				}
+			}
+			if (hasAny) devStore.frames[frameIdx][id] = entry;
+			else {
+				delete devStore.frames[frameIdx][id];
+				if (!Object.keys(devStore.frames[frameIdx]).length) delete devStore.frames[frameIdx];
+			}
+		}
+
+		function recordHistory(items) {
+			if (!items || !items.length) return;
+			devHistory.push({ items });
+			if (devHistory.length > HISTORY_LIMIT) devHistory.shift();
+			devRedo.length = 0;
+		}
+
+		function capturePrevMap(id) {
+			const map = {};
+			for (let i = 0; i < FRAMES.length; i++) {
+				const frame = FRAMES[i];
+				if (!frame || !frame.els) continue;
+				const frameSpec = frame.els.find((e) => e.id === id);
+				if (!frameSpec) continue;
+				map[i] = snapshotSpec(frameSpec);
+			}
+			return map;
+		}
+
+		function applyHistory(items, useNext) {
+			for (const item of items) {
+				const frame = FRAMES[item.frameIdx];
+				if (!frame || !frame.els) continue;
+				const spec = frame.els.find((e) => e.id === item.id);
+				if (!spec) continue;
+				const snap = useNext ? item.next : item.prev;
+				applySnapshot(spec, snap);
+				applyOverrideSnapshot(item.frameIdx, item.id, snap);
+			}
+			saveOverrides(devStore);
+			const t = FRAMES[devFrameIdx] ? FRAMES[devFrameIdx].t + 0.001 : 0.01;
+			lastFrameIdx = -1;
+			renderAt(t);
+			if (devState.selectedSpec) {
+				const spec = specForFrame(devState.selectedSpec.id, devFrameIdx);
+				if (!spec || spec.mute) clearSelection();
+				else {
+					devState.selectedSpec = spec;
+					updateInspector();
+					updateDevBox();
+				}
+			} else {
+				updateInspector();
+			}
+		}
+
+		function devUndo() {
+			if (!devHistory.length) return;
+			const entry = devHistory.pop();
+			devRedo.push(entry);
+			applyHistory(entry.items, false);
+		}
+
+		function devRedoAction() {
+			if (!devRedo.length) return;
+			const entry = devRedo.pop();
+			devHistory.push(entry);
+			applyHistory(entry.items, true);
+		}
+
+		function specForFrame(id, idx) {
+			const frame = FRAMES[idx];
+			if (!frame || !frame.els) return null;
+			return frame.els.find((e) => e.id === id) || null;
+		}
+
+		function updateFrameLabel() {
+			if (!devFrameLabelEl) return;
+			const f = FRAMES[devFrameIdx];
+			devFrameLabelEl.textContent = f ? `${devFrameIdx} @ ${f.t.toFixed(2)}s` : `${devFrameIdx}`;
+		}
+
+		function refreshElementPicker() {
+			if (!devElementPickerEl) return;
+			const frame = FRAMES[devFrameIdx];
+			devElementPickerEl.innerHTML = "";
+			const placeholder = document.createElement("option");
+			placeholder.value = "";
+			placeholder.textContent = "--";
+			devElementPickerEl.appendChild(placeholder);
+			if (!frame || !frame.els) return;
+			for (const spec of frame.els.filter((e) => !e.mute)) {
+				const opt = document.createElement("option");
+				opt.value = spec.id || "";
+				let label = spec.id || "(no-id)";
+				if (spec.text) {
+					const txt = String(spec.text).replace(/\n/g, " ").slice(0, 28);
+					label += ` - ${txt}`;
+				}
+				opt.textContent = label;
+				devElementPickerEl.appendChild(opt);
+			}
+			if (devState.selectedSpec) devElementPickerEl.value = devState.selectedSpec.id || "";
+		}
+
+		let devMotionAuto = true;
+
+		function frameLabel(i) {
+			const f = FRAMES[i];
+			if (!f) return String(i);
+			const id = f.id ? ` · ${f.id}` : "";
+			return `${i} · ${f.t.toFixed(2)}s${id}`;
+		}
+
+		function populateFrameSelect(selectEl) {
+			if (!selectEl) return;
+			selectEl.innerHTML = "";
+			for (let i = 0; i < FRAMES.length; i++) {
+				const opt = document.createElement("option");
+				opt.value = String(i);
+				opt.textContent = frameLabel(i);
+				selectEl.appendChild(opt);
+			}
+		}
+
+		function refreshMotionElements() {
+			if (!devMotionEl || !devMotionAEl || !devMotionBEl) return;
+			const aIdx = Number(devMotionAEl.value);
+			const bIdx = Number(devMotionBEl.value);
+			const aFrame = FRAMES[aIdx];
+			const bFrame = FRAMES[bIdx];
+			devMotionEl.innerHTML = "";
+			const placeholder = document.createElement("option");
+			placeholder.value = "";
+			placeholder.textContent = "--";
+			devMotionEl.appendChild(placeholder);
+			if (!aFrame || !bFrame || !aFrame.els || !bFrame.els) return;
+			const aIds = new Set(aFrame.els.filter((e) => !e.mute).map((e) => e.id));
+			for (const spec of bFrame.els.filter((e) => !e.mute && aIds.has(e.id))) {
+				const opt = document.createElement("option");
+				opt.value = spec.id || "";
+				let label = spec.id || "(no-id)";
+				if (spec.text) label += ` - ${String(spec.text).replace(/\n/g, " ").slice(0, 24)}`;
+				opt.textContent = label;
+				devMotionEl.appendChild(opt);
+			}
+		}
+
+		function updateMotionPanel() {
+			if (!devMotionAEl || !devMotionBEl || !devMotionEl) return;
+			if (devMotionAuto) {
+				devMotionAEl.value = String(devFrameIdx);
+				devMotionBEl.value = String(Math.min(devFrameIdx + 1, FRAMES.length - 1));
+			}
+			refreshMotionElements();
+			if (!devMotionEl.value && devState.selectedSpec && devState.selectedSpec.id) {
+				devMotionEl.value = devState.selectedSpec.id;
+			}
+			const bIdx = Number(devMotionBEl.value);
+			const id = devMotionEl.value;
+			const spec = id ? specForFrame(id, bIdx) : null;
+			const tr = spec && spec.transition && typeof spec.transition === "object" ? spec.transition : null;
+			if (devMotionDurationEl) devMotionDurationEl.value = tr && tr.duration != null ? String(tr.duration) : "";
+			if (devMotionEaseEl) devMotionEaseEl.value = tr && tr.ease ? String(tr.ease) : "";
+		}
+
+		function updateCanvasSize() {
+			if (!devCanvasSizeEl) return;
+			const total = window.innerWidth;
+			const panelW = getPanelWidthPx();
+			const view = Math.max(0, total - panelW);
+			devCanvasSizeEl.textContent = `${Math.round(total)}px → ${Math.round(view)}px`;
+		}
+
+		function rectToCanvas(rect) {
+			const stageRect = devStage ? devStage.getBoundingClientRect() : { left: 0, top: 0 };
+			const scale = devScale || 1;
+			const left = (rect.left - stageRect.left) / scale;
+			const top = (rect.top - stageRect.top) / scale;
+			const width = rect.width / scale;
+			const height = rect.height / scale;
+			return { left, top, width, height, right: left + width, bottom: top + height };
+		}
+
+		function updateDevLayout() {
+			if (!devStageInner) return;
+			const totalW = window.innerWidth;
+			const totalH = window.innerHeight;
+			const panelW = getPanelWidthPx();
+			const viewW = Math.max(0, totalW - panelW);
+			const scale = totalW > 0 ? Math.min(1, viewW / totalW) : 1;
+			devScale = scale;
+			devStageInner.style.width = `${totalW}px`;
+			devStageInner.style.height = `${totalH}px`;
+			devStageInner.style.transform = `scale(${scale})`;
+			updateCanvasSize();
+		}
+
+		function applyMotionFromPanel(clear) {
+			const bIdx = Number(devMotionBEl.value);
+			const id = devMotionEl.value;
+			if (!id || !Number.isFinite(bIdx)) return;
+			const spec = specForFrame(id, bIdx);
+			if (!spec) return;
+			const prevMap = devState.applyAll ? capturePrevMap(spec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(spec);
+			if (clear) {
+				delete spec.transition;
+			} else {
+				const durationRaw = devMotionDurationEl ? devMotionDurationEl.value : "";
+				const easeRaw = devMotionEaseEl ? devMotionEaseEl.value : "";
+				const duration = Number.parseFloat(durationRaw);
+				const ease = String(easeRaw || "").trim();
+				const next = { ...((spec.transition && typeof spec.transition === "object") ? spec.transition : {}) };
+				if (Number.isFinite(duration)) next.duration = duration;
+				else delete next.duration;
+				if (ease) next.ease = ease;
+				else delete next.ease;
+				if (!Object.keys(next).length) delete spec.transition;
+				else spec.transition = next;
+			}
+			commitSpecChanges(spec, { prevSnapshot, prevMap, frameIdx: bIdx });
+			updateMotionPanel();
+		}
+
+		function previewMotion() {
+			const aIdx = Number(devMotionAEl.value);
+			const bIdx = Number(devMotionBEl.value);
+			if (!Number.isFinite(aIdx) || !Number.isFinite(bIdx)) return;
+			const aFrame = FRAMES[aIdx];
+			const bFrame = FRAMES[bIdx];
+			if (!aFrame || !bFrame) return;
+			lastFrameIdx = -1;
+			renderAt(aFrame.t + 0.001);
+			devFrameIdx = bIdx;
+			renderAt(bFrame.t + 0.001);
+			audio.currentTime = bFrame.t + 0.001;
+			audio.pause();
+			syncPauseIcon();
+			devHighlight(bIdx);
+			updateInspector();
+			updateDevBox();
+		}
+
+		function updateInspector() {
+			updateFrameLabel();
+			if (!devSelLabelEl || !devTextSizeEl || !devTextSizeRowEl) return;
+			refreshElementPicker();
+			if (!devState.selectedSpec) {
+				devSelLabelEl.textContent = "-";
+				if (devElementPickerEl) devElementPickerEl.value = "";
+				if (devInputXEl) { devInputXEl.value = ""; devInputXEl.disabled = true; }
+				if (devInputYEl) { devInputYEl.value = ""; devInputYEl.disabled = true; }
+				if (devInputWEl) { devInputWEl.value = ""; devInputWEl.disabled = true; }
+				if (devInputHEl) { devInputHEl.value = ""; devInputHEl.disabled = true; }
+				if (devInputZEl) { devInputZEl.value = ""; devInputZEl.disabled = true; }
+				devTextSizeRowEl.style.display = "none";
+				updateMotionPanel();
+				return;
+			}
+			const spec = devState.selectedSpec;
+			devSelLabelEl.textContent = spec.id || "-";
+			if (devElementPickerEl) devElementPickerEl.value = spec.id || "";
+			if (devInputXEl) { devInputXEl.disabled = false; devInputXEl.value = spec.x || ""; }
+			if (devInputYEl) { devInputYEl.disabled = false; devInputYEl.value = spec.y || ""; }
+			if (devInputWEl) { devInputWEl.disabled = false; devInputWEl.value = spec.w || ""; }
+			if (devInputHEl) { devInputHEl.disabled = false; devInputHEl.value = spec.h || ""; }
+			if (devInputZEl) {
+				devInputZEl.disabled = false;
+				devInputZEl.value = spec.z != null ? String(spec.z) : "";
+			}
+			if (spec.type == null) {
+				devTextSizeRowEl.style.display = "flex";
+				devTextSizeEl.value = spec.size || "l";
+			} else {
+				devTextSizeRowEl.style.display = "none";
+			}
+			updateMotionPanel();
+		}
+
+		function updateDevBox() {
+			if (!devBox || !devState.editOn || !devState.selectedEl) {
+				if (devBox) devBox.classList.add("hidden");
+				return;
+			}
+			const rect = devState.selectedEl.getBoundingClientRect();
+			devBox.style.left = `${rect.left}px`;
+			devBox.style.top = `${rect.top}px`;
+			devBox.style.width = `${rect.width}px`;
+			devBox.style.height = `${rect.height}px`;
+			devBox.classList.toggle("no-resize", !devState.canResize);
+			devBox.classList.remove("hidden");
+		}
+
+		function clearSelection() {
+			devState.selectedEl = null;
+			devState.selectedSpec = null;
+			devState.units = null;
+			devState.canResize = false;
+			updateInspector();
+			updateDevBox();
+		}
+
+		function selectEl(el, opts = {}) {
+			const force = !!opts.force;
+			const id = el.dataset.id;
+			const spec = specForFrame(id, devFrameIdx);
+			if (!spec || spec.mute) return;
+			if (!force && gsap.getProperty(el, "autoAlpha") < 0.05) return;
+			gsap.killTweensOf(el);
+			devState.selectedEl = el;
+			devState.selectedSpec = spec;
+			devState.units = unitsFor(spec);
+			devState.canResize = !!spec.type;
+			updateInspector();
+			updateDevBox();
+		}
+
+		function commitSpecChanges(spec, opts = {}) {
+			if (!spec) return;
+			const patch = { x: spec.x, y: spec.y };
+			if (spec.w != null) patch.w = spec.w;
+			if (spec.h != null) patch.h = spec.h;
+			if (spec.size != null) patch.size = spec.size;
+			if (Object.prototype.hasOwnProperty.call(spec, "mute")) patch.mute = spec.mute;
+			if (Object.prototype.hasOwnProperty.call(spec, "z")) patch.z = spec.z;
+			if (Object.prototype.hasOwnProperty.call(spec, "transition")) patch.transition = spec.transition;
+			const items = [];
+			const prevMap = opts.prevMap || null;
+			const prevSnapshot = opts.prevSnapshot || null;
+			const targetFrameIdx = opts.frameIdx != null ? opts.frameIdx : devFrameIdx;
+			if (devState.applyAll) {
+				for (let i = 0; i < FRAMES.length; i++) {
+					const frame = FRAMES[i];
+					if (!frame || !frame.els) continue;
+					const frameSpec = frame.els.find((e) => e.id === spec.id);
+					if (!frameSpec) continue;
+					const before = prevMap && prevMap[i] ? prevMap[i] : snapshotSpec(frameSpec);
+					Object.assign(frameSpec, patch);
+					const after = snapshotSpec(frameSpec);
+					applyOverrideSnapshot(i, spec.id, after);
+					if (!snapsEqual(before, after)) items.push({ frameIdx: i, id: spec.id, prev: before, next: after });
+				}
+			} else {
+				const before = prevSnapshot || snapshotSpec(spec);
+				const after = snapshotSpec(spec);
+				applyOverrideSnapshot(targetFrameIdx, spec.id, after);
+				if (!snapsEqual(before, after)) items.push({ frameIdx: targetFrameIdx, id: spec.id, prev: before, next: after });
+			}
+			if (!opts.skipHistory) recordHistory(items);
+			saveOverrides(devStore);
+		}
 
 		function devJump(idx) {
 			devFrameIdx = Math.max(0, Math.min(FRAMES.length - 1, idx));
@@ -1402,10 +2022,82 @@
 			audio.pause();
 			syncPauseIcon();
 			devHighlight(devFrameIdx);
+			refreshElementPicker();
+			if (devState.selectedEl) {
+				const id = devState.selectedEl.dataset.id;
+				const spec = specForFrame(id, devFrameIdx);
+				if (!spec || spec.mute) clearSelection();
+				else {
+					devState.selectedSpec = spec;
+					devState.units = unitsFor(spec);
+					devState.canResize = !!spec.type;
+					updateInspector();
+					updateDevBox();
+				}
+			} else {
+				updateInspector();
+			}
 		}
 
 		/* 5. Keyboard: ← → navigate frames, Space pause/resume */
 		document.addEventListener("keydown", function devKeys(e) {
+			if ((e.metaKey || e.ctrlKey) && !isEditableTarget(e.target)) {
+				const key = e.key.toLowerCase();
+				if (key === "z") {
+					e.preventDefault();
+					if (e.shiftKey) devRedoAction();
+					else devUndo();
+					return;
+				}
+				if (key === "y") {
+					e.preventDefault();
+					devRedoAction();
+					return;
+				}
+				if (key === "]") {
+					e.preventDefault();
+					bumpZ(1);
+					return;
+				}
+				if (key === "[") {
+					e.preventDefault();
+					bumpZ(-1);
+					return;
+				}
+			}
+			if (!isEditableTarget(e.target) && devState.editOn && devState.selectedSpec) {
+				if (e.key === "Backspace" || e.key === "Delete") {
+					e.preventDefault();
+					deleteSelected();
+					return;
+				}
+			}
+			const isArrow = e.key === "ArrowRight" || e.key === "ArrowLeft" || e.key === "ArrowUp" || e.key === "ArrowDown";
+			if (isArrow && devState.editOn && devState.selectedEl && !e.altKey) {
+				const step = e.shiftKey ? 10 : 1;
+				const dx = e.key === "ArrowRight" ? step : e.key === "ArrowLeft" ? -step : 0;
+				const dy = e.key === "ArrowDown" ? step : e.key === "ArrowUp" ? -step : 0;
+				if (dx || dy) {
+					const spec = devState.selectedSpec;
+					const el = devState.selectedEl;
+					const prevMap = devState.applyAll ? capturePrevMap(spec.id) : null;
+					const prevSnapshot = devState.applyAll ? null : snapshotSpec(spec);
+					const rect = rectToCanvas(el.getBoundingClientRect());
+					const { xp, yp } = ANCHOR[spec.a || "cc"];
+					const anchorLeft = rect.left - (xp / 100) * rect.width + dx;
+					const anchorTop = rect.top - (yp / 100) * rect.height + dy;
+					spec.x = formatLen(anchorLeft, "x", devState.units.x);
+					spec.y = formatLen(anchorTop, "y", devState.units.y);
+					el.style.left = spec.x;
+					el.style.top = spec.y;
+					applyEl(el, spec);
+					updateInspector();
+					updateDevBox();
+					commitSpecChanges(spec, { prevSnapshot, prevMap });
+				}
+				e.preventDefault();
+				return;
+			}
 			if (e.key === "ArrowRight") { e.preventDefault(); devJump(devFrameIdx + 1); }
 			else if (e.key === "ArrowLeft") { e.preventDefault(); devJump(devFrameIdx - 1); }
 		});
@@ -1418,8 +2110,75 @@
 				<span id="dev-nav-title">DEV</span>
 				<button id="dev-nav-toggle" title="Toggle panel">☰</button>
 			</div>
+			<div id="dev-controls">
+				<button id="dev-edit-toggle" class="dev-btn">Edit Off</button>
+				<button id="dev-delete" class="dev-btn dev-danger">Delete</button>
+				<button id="dev-export" class="dev-btn">Export</button>
+				<button id="dev-reset" class="dev-btn">Reset</button>
+			</div>
+			<div id="dev-inspector">
+				<div class="dev-row"><span class="dev-label">Frame</span><span id="dev-frame-label">0</span></div>
+				<div class="dev-row"><span class="dev-label">Sel</span><span id="dev-sel-label">-</span></div>
+				<div class="dev-row"><span class="dev-label">Canvas</span><span id="dev-canvas-size">-</span></div>
+				<div class="dev-row"><span class="dev-label">Element</span>
+					<select id="dev-element-picker"></select>
+				</div>
+				<div class="dev-grid">
+					<label class="dev-field"><span>x</span><input id="dev-x" type="text" spellcheck="false"></label>
+					<label class="dev-field"><span>y</span><input id="dev-y" type="text" spellcheck="false"></label>
+					<label class="dev-field"><span>w</span><input id="dev-w" type="text" spellcheck="false"></label>
+					<label class="dev-field"><span>h</span><input id="dev-h" type="text" spellcheck="false"></label>
+				</div>
+				<div class="dev-row"><span class="dev-label">Layer</span>
+					<div class="dev-layer">
+						<button class="dev-mini" data-layer="back">-</button>
+						<input id="dev-z" type="number" step="1" placeholder="5">
+						<button class="dev-mini" data-layer="front">+</button>
+					</div>
+				</div>
+				<div class="dev-row"><span class="dev-label">Align</span>
+					<div class="dev-align">
+						<button class="dev-mini" data-align="left">L</button>
+						<button class="dev-mini" data-align="center">C</button>
+						<button class="dev-mini" data-align="right">R</button>
+						<button class="dev-mini" data-align="top">T</button>
+						<button class="dev-mini" data-align="middle">M</button>
+						<button class="dev-mini" data-align="bottom">B</button>
+					</div>
+				</div>
+				<div class="dev-row"><span class="dev-label">Motion</span></div>
+				<div class="dev-motion">
+					<div class="dev-motion-row">
+						<select id="dev-motion-a"></select>
+						<select id="dev-motion-b"></select>
+					</div>
+					<div class="dev-motion-row">
+						<select id="dev-motion-el"></select>
+					</div>
+					<div class="dev-motion-row">
+						<input id="dev-motion-duration" type="number" step="0.05" placeholder="dur">
+						<input id="dev-motion-ease" type="text" placeholder="ease">
+					</div>
+					<div class="dev-motion-row">
+						<button id="dev-motion-apply" class="dev-mini">Apply</button>
+						<button id="dev-motion-clear" class="dev-mini">Clear</button>
+						<button id="dev-motion-preview" class="dev-mini">Preview</button>
+					</div>
+				</div>
+				<div class="dev-row dev-size-row"><span class="dev-label">Text</span>
+					<select id="dev-text-size">
+						<option value="xxl">xxl</option>
+						<option value="xl">xl</option>
+						<option value="l">l</option>
+						<option value="m">m</option>
+					</select>
+				</div>
+				<label class="dev-check"><input type="checkbox" id="dev-apply-all">apply all frames</label>
+				<div id="dev-status"></div>
+			</div>
 			<div id="dev-nav-list"></div>`;
-		document.body.appendChild(panel);
+		if (devShell) devShell.appendChild(panel);
+		else document.body.appendChild(panel);
 
 		/* Panel CSS — injected inline so it never leaks into production */
 		const devStyle = document.createElement("style");
@@ -1432,11 +2191,101 @@
 				border-left: 1px solid rgba(255,255,255,0.08);
 				backdrop-filter: blur(8px);
 				transition: transform 0.2s ease;
+				min-height: 0;
 			}
 			#dev-nav.collapsed { transform: translateX(calc(100% - 32px)); pointer-events: none; }
 			#dev-nav.collapsed #dev-nav-header { pointer-events: auto; }
 			#dev-nav.collapsed #dev-nav-toggle { pointer-events: auto; }
 			#dev-nav.collapsed #dev-nav-list { pointer-events: none; }
+			body.dev-docked-right { overflow: hidden; }
+			body.dev-docked-right #dev-shell {
+				position: fixed; inset: 0; display: grid;
+				grid-template-columns: 1fr var(--dev-panel-w, 280px);
+			}
+			body.dev-docked-right #dev-stage {
+				position: relative; overflow: hidden; background: #0c0c0a;
+			}
+			body.dev-docked-right #dev-stage-inner {
+				position: absolute; inset: 0; transform-origin: top left;
+			}
+			body.dev-docked-right #dev-grid {
+				position: absolute; inset: 0; pointer-events: none; z-index: 99970;
+				background-image:
+					linear-gradient(to right, rgba(255, 95, 64, 0.25) 1px, transparent 1px),
+					linear-gradient(to bottom, rgba(255, 95, 64, 0.25) 1px, transparent 1px);
+				background-size: var(--dev-grid, 40px) var(--dev-grid, 40px);
+				mix-blend-mode: multiply;
+				opacity: 0.35;
+			}
+			body.dev-docked-right #dev-nav {
+				position: relative; top: auto; right: auto; height: 100%; width: 100%;
+			}
+			body.dev-docked-right #dev-nav.collapsed { transform: translateX(calc(100% - 32px)); }
+			#dev-controls {
+				display: flex; gap: 6px; padding: 8px 12px;
+				border-bottom: 1px solid rgba(255,255,255,0.08);
+			}
+			.dev-btn {
+				background: rgba(255,255,255,0.06);
+				border: 1px solid rgba(255,255,255,0.1);
+				color: #ddd; font-size: 10px; padding: 4px 6px;
+				border-radius: 4px; cursor: pointer;
+			}
+			.dev-btn:hover { background: rgba(255,255,255,0.12); }
+			.dev-btn.on { background: #ff5f40; color: #111; border-color: #ff5f40; }
+			.dev-btn.dev-danger { color: #ffb3a6; border-color: rgba(255, 95, 64, 0.5); }
+			.dev-btn.dev-danger:hover { background: rgba(255, 95, 64, 0.2); color: #fff; }
+			#dev-inspector {
+				padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.08);
+				font-size: 10px; color: #bdbdb8;
+			}
+			.dev-row {
+				display: flex; align-items: center; justify-content: space-between;
+				gap: 8px; margin-bottom: 4px;
+			}
+			.dev-label { color: #777; }
+			#dev-element-picker {
+				background: #101010; color: #ddd; border: 1px solid rgba(255,255,255,0.1);
+				font-size: 10px; padding: 2px 4px; border-radius: 3px; width: 140px;
+			}
+			.dev-grid {
+				display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px; margin: 6px 0;
+			}
+			.dev-field {
+				display: flex; align-items: center; gap: 6px; color: #888; font-size: 10px;
+			}
+			.dev-field span { width: 10px; text-transform: lowercase; }
+			.dev-field input {
+				flex: 1; background: #101010; color: #ddd; border: 1px solid rgba(255,255,255,0.1);
+				font-size: 10px; padding: 2px 4px; border-radius: 3px;
+			}
+			.dev-field input:disabled { opacity: 0.4; }
+			.dev-layer { display: flex; align-items: center; gap: 4px; }
+			#dev-z {
+				width: 48px; background: #101010; color: #ddd; border: 1px solid rgba(255,255,255,0.1);
+				font-size: 10px; padding: 2px 4px; border-radius: 3px;
+			}
+			#dev-z:disabled { opacity: 0.4; }
+			.dev-align { display: flex; gap: 4px; }
+			.dev-motion { display: flex; flex-direction: column; gap: 4px; margin: 4px 0 6px; }
+			.dev-motion-row { display: flex; gap: 4px; }
+			.dev-motion select,
+			.dev-motion input {
+				flex: 1; background: #101010; color: #ddd; border: 1px solid rgba(255,255,255,0.1);
+				font-size: 10px; padding: 2px 4px; border-radius: 3px;
+			}
+			.dev-motion input::placeholder { color: #666; }
+			.dev-mini {
+				background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+				color: #ddd; font-size: 10px; padding: 2px 6px; border-radius: 3px; cursor: pointer;
+			}
+			.dev-mini:hover { background: rgba(255,255,255,0.12); }
+			#dev-text-size {
+				background: #101010; color: #ddd; border: 1px solid rgba(255,255,255,0.1);
+				font-size: 10px; padding: 2px 4px; border-radius: 3px;
+			}
+			.dev-check { display: flex; align-items: center; gap: 6px; color: #888; font-size: 10px; }
+			#dev-status { min-height: 12px; color: #ff5f40; font-size: 10px; margin-top: 6px; }
 			#dev-nav-header {
 				display: flex; align-items: center; justify-content: space-between;
 				padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -1449,7 +2298,7 @@
 			}
 			#dev-nav-toggle:hover { color: #fff; }
 			#dev-nav-list {
-				overflow-y: auto; flex: 1; padding: 4px 0;
+				overflow-y: auto; flex: 1; padding: 4px 0; min-height: 0;
 			}
 			#dev-nav-list::-webkit-scrollbar { width: 3px; }
 			#dev-nav-list::-webkit-scrollbar-track { background: transparent; }
@@ -1475,8 +2324,66 @@
 				padding: 8px 12px; font-size: 10px; color: #555;
 				border-top: 1px solid rgba(255,255,255,0.05); flex-shrink: 0;
 			}
+			#dev-editor {
+				position: fixed; inset: 0; z-index: 99990; pointer-events: none;
+			}
+			#dev-box {
+				position: absolute; border: 1px solid #ff5f40;
+				box-shadow: 0 0 0 1px rgba(0,0,0,0.6);
+				pointer-events: auto;
+			}
+			#dev-box.hidden { display: none; }
+			#dev-box.no-resize .dev-handle { display: none; }
+			.dev-handle {
+				position: absolute; width: 8px; height: 8px; background: #ff5f40;
+				border-radius: 2px; margin: -4px 0 0 -4px; pointer-events: auto;
+			}
+			.dev-handle[data-handle="nw"] { left: 0; top: 0; cursor: nwse-resize; }
+			.dev-handle[data-handle="n"] { left: 50%; top: 0; cursor: ns-resize; }
+			.dev-handle[data-handle="ne"] { right: 0; top: 0; cursor: nesw-resize; }
+			.dev-handle[data-handle="e"] { right: 0; top: 50%; cursor: ew-resize; }
+			.dev-handle[data-handle="se"] { right: 0; bottom: 0; cursor: nwse-resize; }
+			.dev-handle[data-handle="s"] { left: 50%; bottom: 0; cursor: ns-resize; }
+			.dev-handle[data-handle="sw"] { left: 0; bottom: 0; cursor: nesw-resize; }
+			.dev-handle[data-handle="w"] { left: 0; top: 50%; cursor: ew-resize; }
+			#nextScene.dev-editing .line,
+			#nextScene.dev-editing .viz { pointer-events: auto; cursor: grab; }
+			#nextScene.dev-editing .line:active,
+			#nextScene.dev-editing .viz:active { cursor: grabbing; }
 		`;
 		document.head.appendChild(devStyle);
+
+		devFrameLabelEl = panel.querySelector("#dev-frame-label");
+		devSelLabelEl = panel.querySelector("#dev-sel-label");
+		devElementPickerEl = panel.querySelector("#dev-element-picker");
+		devCanvasSizeEl = panel.querySelector("#dev-canvas-size");
+		devTextSizeEl = panel.querySelector("#dev-text-size");
+		devTextSizeRowEl = panel.querySelector(".dev-size-row");
+		devApplyAllEl = panel.querySelector("#dev-apply-all");
+		devEditToggleEl = panel.querySelector("#dev-edit-toggle");
+		devStatusEl = panel.querySelector("#dev-status");
+		devDeleteEl = panel.querySelector("#dev-delete");
+		devInputXEl = panel.querySelector("#dev-x");
+		devInputYEl = panel.querySelector("#dev-y");
+		devInputWEl = panel.querySelector("#dev-w");
+		devInputHEl = panel.querySelector("#dev-h");
+		devInputZEl = panel.querySelector("#dev-z");
+		devMotionAEl = panel.querySelector("#dev-motion-a");
+		devMotionBEl = panel.querySelector("#dev-motion-b");
+		devMotionEl = panel.querySelector("#dev-motion-el");
+		devMotionDurationEl = panel.querySelector("#dev-motion-duration");
+		devMotionEaseEl = panel.querySelector("#dev-motion-ease");
+		devMotionApplyEl = panel.querySelector("#dev-motion-apply");
+		devMotionClearEl = panel.querySelector("#dev-motion-clear");
+		devMotionPreviewEl = panel.querySelector("#dev-motion-preview");
+
+		populateFrameSelect(devMotionAEl);
+		populateFrameSelect(devMotionBEl);
+		devMotionAEl.value = String(devFrameIdx);
+		devMotionBEl.value = String(Math.min(devFrameIdx + 1, FRAMES.length - 1));
+
+		document.body.classList.add("dev-docked-right");
+		document.documentElement.style.setProperty("--dev-panel-w", "280px");
 
 		/* Populate frame list */
 		const listEl = panel.querySelector("#dev-nav-list");
@@ -1503,13 +2410,17 @@
 		/* Hint bar */
 		const hint = document.createElement("div");
 		hint.className = "dev-hint";
-		hint.textContent = "← → frames · click to jump";
+		hint.textContent = "← → frames · cmd+z / cmd+shift+z · cmd+[ / cmd+] layers · edit: drag/resize (shift locks)";
 		panel.appendChild(hint);
 
 		/* Toggle collapse */
 		panel.querySelector("#dev-nav-toggle").addEventListener("click", () => {
 			panel.classList.toggle("collapsed");
 		});
+
+		/* Prevent wheel events on the panel from bubbling to the pieza wheel handler */
+		panel.addEventListener("wheel", (e) => e.stopPropagation(), { passive: true });
+		panel.addEventListener("pointerdown", (e) => e.stopPropagation());
 
 		function devHighlight(idx) {
 			listEl.querySelectorAll(".dev-frame-item").forEach(el => el.classList.remove("active"));
@@ -1520,6 +2431,381 @@
 			}
 		}
 
+		const devEditor = document.createElement("div");
+		devEditor.id = "dev-editor";
+		devEditor.innerHTML = `
+			<div id="dev-box" class="hidden">
+				<div class="dev-handle" data-handle="nw"></div>
+				<div class="dev-handle" data-handle="n"></div>
+				<div class="dev-handle" data-handle="ne"></div>
+				<div class="dev-handle" data-handle="e"></div>
+				<div class="dev-handle" data-handle="se"></div>
+				<div class="dev-handle" data-handle="s"></div>
+				<div class="dev-handle" data-handle="sw"></div>
+				<div class="dev-handle" data-handle="w"></div>
+			</div>`;
+		document.body.appendChild(devEditor);
+		devBox = devEditor.querySelector("#dev-box");
+
+		function exportOverrides() {
+			const payload = JSON.stringify(devStore, null, 2);
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(payload).then(
+					() => devStatus("copied"),
+					() => {
+						window.prompt("Copy overrides", payload);
+					},
+				);
+			} else {
+				window.prompt("Copy overrides", payload);
+			}
+		}
+
+		function resetOverrides() {
+			const ok = window.confirm("Clear stored edits and reload?");
+			if (!ok) return;
+			localStorage.removeItem(DEV_STORE_KEY);
+			location.reload();
+		}
+
+		function updateDrag(spec, el, rect) {
+			const { xp, yp } = ANCHOR[spec.a || "cc"];
+			const anchorLeft = rect.left - (xp / 100) * rect.width;
+			const anchorTop = rect.top - (yp / 100) * rect.height;
+			spec.x = formatLen(anchorLeft, "x", devState.units.x);
+			spec.y = formatLen(anchorTop, "y", devState.units.y);
+			el.style.left = spec.x;
+			el.style.top = spec.y;
+			if (devState.canResize) {
+				spec.w = formatLen(rect.width, "w", devState.units.w);
+				spec.h = formatLen(rect.height, "h", devState.units.h);
+				el.style.width = spec.w;
+				el.style.height = spec.h;
+			}
+			updateInspector();
+			updateDevBox();
+		}
+
+		function startDrag(e, mode, handle) {
+			if (!devState.selectedEl || !devState.selectedSpec) return;
+			const rect = rectToCanvas(devState.selectedEl.getBoundingClientRect());
+			const prevMap = devState.applyAll ? capturePrevMap(devState.selectedSpec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(devState.selectedSpec);
+			devState.drag = {
+				mode,
+				handle,
+				startX: e.clientX,
+				startY: e.clientY,
+				startRect: rect,
+				ratio: rect.width && rect.height ? rect.width / rect.height : 1,
+				axis: null,
+				prevMap,
+				prevSnapshot,
+			};
+			document.addEventListener("pointermove", onDragMove);
+			document.addEventListener("pointerup", onDragEnd);
+		}
+
+		function onDragMove(e) {
+			if (!devState.drag || !devState.selectedEl || !devState.selectedSpec) return;
+			const { startX, startY, startRect, mode, handle, ratio } = devState.drag;
+			const scale = devScale || 1;
+			let dx = (e.clientX - startX) / scale;
+			let dy = (e.clientY - startY) / scale;
+			let left = startRect.left;
+			let top = startRect.top;
+			let right = startRect.right;
+			let bottom = startRect.bottom;
+
+			if (mode === "move") {
+				if (e.shiftKey) {
+					if (!devState.drag.axis) devState.drag.axis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
+					if (devState.drag.axis === "x") dy = 0;
+					if (devState.drag.axis === "y") dx = 0;
+				} else {
+					devState.drag.axis = null;
+				}
+				left += dx;
+				top += dy;
+				right = left + startRect.width;
+				bottom = top + startRect.height;
+			} else if (mode === "resize" && devState.canResize) {
+				if (handle.includes("n")) top += dy;
+				if (handle.includes("s")) bottom += dy;
+				if (handle.includes("w")) left += dx;
+				if (handle.includes("e")) right += dx;
+
+				let width = right - left;
+				let height = bottom - top;
+				const minSize = 20;
+				if (width < minSize) {
+					width = minSize;
+					if (handle.includes("w")) left = right - width;
+					else right = left + width;
+				}
+				if (height < minSize) {
+					height = minSize;
+					if (handle.includes("n")) top = bottom - height;
+					else bottom = top + height;
+				}
+
+				if (e.shiftKey && ratio) {
+					if (Math.abs(dx) > Math.abs(dy)) {
+						height = width / ratio;
+						if (handle.includes("n")) top = bottom - height;
+						else bottom = top + height;
+					} else {
+						width = height * ratio;
+						if (handle.includes("w")) left = right - width;
+						else right = left + width;
+					}
+				}
+			}
+
+			const rect = {
+				left,
+				top,
+				width: right - left,
+				height: bottom - top,
+				right,
+				bottom,
+			};
+			updateDrag(devState.selectedSpec, devState.selectedEl, rect);
+		}
+
+		function onDragEnd() {
+			if (!devState.drag || !devState.selectedEl || !devState.selectedSpec) return;
+			const dragState = devState.drag;
+			document.removeEventListener("pointermove", onDragMove);
+			document.removeEventListener("pointerup", onDragEnd);
+			devState.drag = null;
+			applyEl(devState.selectedEl, devState.selectedSpec);
+			updateDevBox();
+			commitSpecChanges(devState.selectedSpec, {
+				prevSnapshot: dragState.prevSnapshot,
+				prevMap: dragState.prevMap,
+			});
+		}
+
+		function readManualValue(input) {
+			if (!input) return "";
+			return String(input.value || "").trim();
+		}
+
+		function applyManualInputs() {
+			if (!devState.selectedSpec || !devState.selectedEl) return;
+			const spec = devState.selectedSpec;
+			const prevMap = devState.applyAll ? capturePrevMap(spec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(spec);
+			const xVal = readManualValue(devInputXEl);
+			const yVal = readManualValue(devInputYEl);
+			const wVal = readManualValue(devInputWEl);
+			const hVal = readManualValue(devInputHEl);
+			if (xVal) spec.x = xVal;
+			if (yVal) spec.y = yVal;
+			if (wVal) spec.w = wVal;
+			if (hVal) spec.h = hVal;
+			applyEl(devState.selectedEl, spec);
+			devState.units = unitsFor(spec);
+			commitSpecChanges(spec, { prevSnapshot, prevMap });
+			updateInspector();
+			updateDevBox();
+		}
+
+		function deleteSelected() {
+			if (!devState.selectedSpec) return;
+			const spec = devState.selectedSpec;
+			const prevMap = devState.applyAll ? capturePrevMap(spec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(spec);
+			spec.mute = true;
+			commitSpecChanges(spec, { prevSnapshot, prevMap });
+			lastFrameIdx = -1;
+			renderAt(FRAMES[devFrameIdx].t + 0.001);
+			clearSelection();
+		}
+
+		function alignSelected(kind) {
+			if (!devState.selectedSpec || !devState.selectedEl) return;
+			const spec = devState.selectedSpec;
+			const el = devState.selectedEl;
+			const prevMap = devState.applyAll ? capturePrevMap(spec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(spec);
+			const rect = rectToCanvas(el.getBoundingClientRect());
+			const containerRect = {
+				left: 0,
+				top: 0,
+				right: window.innerWidth,
+				bottom: window.innerHeight,
+				width: window.innerWidth,
+				height: window.innerHeight,
+			};
+			const { xp, yp } = ANCHOR[spec.a || "cc"];
+			let left = rect.left;
+			let top = rect.top;
+
+			if (kind === "left") left = containerRect.left;
+			if (kind === "center") left = containerRect.left + (containerRect.width - rect.width) / 2;
+			if (kind === "right") left = containerRect.right - rect.width;
+			if (kind === "top") top = containerRect.top;
+			if (kind === "middle") top = containerRect.top + (containerRect.height - rect.height) / 2;
+			if (kind === "bottom") top = containerRect.bottom - rect.height;
+
+			if (kind === "left" || kind === "center" || kind === "right") {
+				const anchorLeft = left - (xp / 100) * rect.width;
+				spec.x = formatLen(anchorLeft, "x", devState.units.x);
+				el.style.left = spec.x;
+			}
+			if (kind === "top" || kind === "middle" || kind === "bottom") {
+				const anchorTop = top - (yp / 100) * rect.height;
+				spec.y = formatLen(anchorTop, "y", devState.units.y);
+				el.style.top = spec.y;
+			}
+
+			applyEl(el, spec);
+			commitSpecChanges(spec, { prevSnapshot, prevMap });
+			updateInspector();
+			updateDevBox();
+		}
+
+		function setZValue(raw) {
+			if (!devState.selectedSpec || !devState.selectedEl) return;
+			const spec = devState.selectedSpec;
+			const prevMap = devState.applyAll ? capturePrevMap(spec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(spec);
+			const value = String(raw || "").trim();
+			if (!value) {
+				delete spec.z;
+			} else {
+				const num = Number.parseInt(value, 10);
+				if (!Number.isFinite(num)) return;
+				spec.z = num;
+			}
+			applyEl(devState.selectedEl, spec);
+			commitSpecChanges(spec, { prevSnapshot, prevMap });
+			updateInspector();
+			updateDevBox();
+		}
+
+		function bumpZ(delta) {
+			if (!devState.selectedSpec) return;
+			const current = devState.selectedSpec.z != null ? devState.selectedSpec.z : 5;
+			setZValue(current + delta);
+		}
+
+		devEditToggleEl.addEventListener("click", () => {
+			devState.editOn = !devState.editOn;
+			devEditToggleEl.classList.toggle("on", devState.editOn);
+			devEditToggleEl.textContent = devState.editOn ? "Edit On" : "Edit Off";
+			root.classList.toggle("dev-editing", devState.editOn);
+			if (!devState.editOn) clearSelection();
+			else updateDevBox();
+		});
+
+		panel.querySelector("#dev-export").addEventListener("click", exportOverrides);
+		panel.querySelector("#dev-reset").addEventListener("click", resetOverrides);
+		devDeleteEl.addEventListener("click", () => {
+			if (!devState.editOn) return;
+			deleteSelected();
+		});
+		panel.querySelectorAll(".dev-align [data-align]").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				if (!devState.editOn) return;
+				alignSelected(btn.dataset.align);
+			});
+		});
+		panel.querySelectorAll("[data-layer]").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				if (!devState.editOn) return;
+				const dir = btn.dataset.layer === "front" ? 1 : -1;
+				bumpZ(dir);
+			});
+		});
+		devMotionAEl.addEventListener("change", () => {
+			devMotionAuto = false;
+			updateMotionPanel();
+		});
+		devMotionBEl.addEventListener("change", () => {
+			devMotionAuto = false;
+			updateMotionPanel();
+		});
+		devMotionEl.addEventListener("change", updateMotionPanel);
+		devMotionApplyEl.addEventListener("click", () => applyMotionFromPanel(false));
+		devMotionClearEl.addEventListener("click", () => applyMotionFromPanel(true));
+		devMotionPreviewEl.addEventListener("click", previewMotion);
+
+		devElementPickerEl.addEventListener("change", () => {
+			const id = devElementPickerEl.value;
+			if (!id) {
+				clearSelection();
+				return;
+			}
+			const el = dom.get(id);
+			if (el) selectEl(el, { force: true });
+		});
+
+		devTextSizeEl.addEventListener("change", () => {
+			if (!devState.selectedSpec || devState.selectedSpec.type != null) return;
+			const prevMap = devState.applyAll ? capturePrevMap(devState.selectedSpec.id) : null;
+			const prevSnapshot = devState.applyAll ? null : snapshotSpec(devState.selectedSpec);
+			devState.selectedSpec.size = devTextSizeEl.value;
+			applyEl(devState.selectedEl, devState.selectedSpec);
+			commitSpecChanges(devState.selectedSpec, { prevSnapshot, prevMap });
+			updateInspector();
+		});
+
+		for (const input of [devInputXEl, devInputYEl, devInputWEl, devInputHEl]) {
+			input.addEventListener("change", applyManualInputs);
+			input.addEventListener("keydown", (e) => {
+				if (e.key === "Enter") {
+					e.preventDefault();
+					applyManualInputs();
+					input.blur();
+				}
+			});
+		}
+		devInputZEl.addEventListener("change", () => setZValue(devInputZEl.value));
+		devInputZEl.addEventListener("keydown", (e) => {
+			if (e.key === "Enter") {
+				e.preventDefault();
+				setZValue(devInputZEl.value);
+				devInputZEl.blur();
+			}
+		});
+
+		devApplyAllEl.addEventListener("change", () => {
+			devState.applyAll = devApplyAllEl.checked;
+		});
+
+		sceneEl.addEventListener("pointerdown", (e) => {
+			if (!devState.editOn) return;
+			const target = e.target.closest(".line, .viz");
+			if (!target) return;
+			e.preventDefault();
+			selectEl(target);
+			startDrag(e, "move", "");
+		});
+
+		devBox.addEventListener("pointerdown", (e) => {
+			if (!devState.editOn) return;
+			const handleEl = e.target.closest(".dev-handle");
+			if (handleEl) {
+				const handle = handleEl.dataset.handle;
+				startDrag(e, "resize", handle);
+			} else {
+				startDrag(e, "move", "");
+			}
+			e.stopPropagation();
+		});
+
+		window.addEventListener("resize", () => {
+			if (devState.selectedSpec) devState.units = unitsFor(devState.selectedSpec);
+			updateInspector();
+			updateDevBox();
+			updateDevLayout();
+		});
+
 		devHighlight(0);
+		updateInspector();
+		updateDevLayout();
 	}
 })();
