@@ -733,6 +733,22 @@
 
 	const TOTAL = 63.82;
 
+	/* ── Image prefetch — fires while hero is visible, fills browser cache.
+	     Iterates every spec with a src so the list never goes stale.
+	     new Image() triggers a GET; the browser caches the response so when
+	     pieza starts the images are already available — no blank frames. ── */
+	(function prefetchImages() {
+		const seen = new Set();
+		for (const f of FRAMES) {
+			for (const e of f.els || []) {
+				if (e.src && !seen.has(e.src)) {
+					seen.add(e.src);
+					new Image().src = e.src;
+				}
+			}
+		}
+	})();
+
 	const SECTIONS = [
 		{ id: "incomodidad", label: "La incomodidad" },
 		{ id: "cuestionarlo", label: "Cuestionarlo todo" },
