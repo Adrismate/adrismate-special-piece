@@ -44,7 +44,18 @@
 					h: "calc(min(90vw, 906px) * 0.7225)",
 					anim: "bleed-to-frame",
 				},
-				{ id: "l1", text: "Todo empieza con algo incómodo.", size: "xl", x: "50%", y: "50%", a: "cc", diff: true, z: 10, anim: "typewriter", twDur: 2.18 },
+				{
+					id: "l1",
+					text: "Todo empieza con algo incómodo.",
+					size: "xl",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					diff: true,
+					z: 10,
+					anim: "typewriter",
+					twDur: 2.18,
+				},
 			],
 		},
 		/* W 2.76–3.82  "No con un briefing,"
@@ -109,7 +120,7 @@
 			t: 7.54,
 			dur: 0.78,
 			idx: "incomodidad",
-			els: [{ id: "l5", text: "Entonces recuerdo…", size: "xl", x: "50%", y: "50%", a: "cc", anim: "fast-cut", exit: "swipe-left-soft" }],
+			els: [{ id: "l5", text: "Entonces recuerdo…", size: "xl", x: "50%", y: "50%", a: "cc", anim: "fast-cut" }],
 		},
 		/* W 8.32–9.44  "que algo esté hecho así"
        Ojo en primer plano izquierdo, texto centrado a la derecha. */
@@ -253,6 +264,7 @@
 		},
 		/* W 22.96–23.66  "cuestionar" — l8 exits left, words accumulate  */
 		{
+			id: "cuestionarlo-9",
 			t: 22.96,
 			dur: 0.7,
 			idx: "cuestionarlo",
@@ -272,6 +284,7 @@
 		},
 		/* W 23.66–24.54  "combinar" — builds alongside "cuestionar"      */
 		{
+			id: "cuestionarlo-10",
 			t: 23.66,
 			dur: 0.88,
 			idx: "cuestionarlo",
@@ -279,6 +292,7 @@
 		},
 		/* W 24.54–25.80  "y crear algo nuevo." — phrase complete          */
 		{
+			id: "cuestionarlo-11",
 			t: 24.54,
 			dur: 1.26,
 			idx: "cuestionarlo",
@@ -302,7 +316,13 @@
 
 		/* 3 · LEARN BY DOING ───────────────────────────────────────────
        W 25.80–27.0  "Learn by doing."                               */
-		{ id: "learn-1", t: 25.8, dur: 1.2, idx: "learn", els: [{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "48.86%", a: "cc", anim: "typewriter", twDur: 1.2 }] },
+		{
+			id: "learn-1",
+			t: 25.8,
+			dur: 1.2,
+			idx: "learn",
+			els: [{ id: "l10a", text: "Learn by doing.", size: "xl", x: "50%", y: "48.86%", a: "cc", anim: "typewriter", twDur: 1.2 }],
+		},
 		/* W 27.0–28.52  "Si no sabes por dónde empezar,"
 		   Texto solo — l10a sube al entrar l10b (shift-position). */
 		{
@@ -336,7 +356,19 @@
 			dur: 0.98,
 			idx: "learn",
 			els: [
-				{ id: "phL0", type: "photo", src: "assets/images/haciendo.png", x: "50%", y: "50%", a: "cc", w: "53.69vw", h: "55.92vh", anim: "bleed-to-frame", bleedDur: 0.62, z: 1 },
+				{
+					id: "phL0",
+					type: "photo",
+					src: "assets/images/haciendo.png",
+					x: "50%",
+					y: "50%",
+					a: "cc",
+					w: "53.69vw",
+					h: "55.92vh",
+					anim: "bleed-to-frame",
+					bleedDur: 0.62,
+					z: 1,
+				},
 				{ id: "l10d", text: "haciendo.", size: "xl", x: "50%", y: "50%", a: "cc", white: true },
 			],
 		},
@@ -425,7 +457,13 @@
 
 		/* 4 · UCD REAL ─────────────────────────────────────────────────
        W 36.02–38.66  "User-centered design real."                   */
-		{ id: "ucd-1", t: 36.02, dur: 2.64, idx: "ucd", els: [{ id: "l12", text: "User-centered design real.", size: "xl", x: "50%", y: "50%", a: "cc" }] },
+		{
+			id: "ucd-1",
+			t: 36.02,
+			dur: 2.64,
+			idx: "ucd",
+			els: [{ id: "l12", text: "User-centered design real.", size: "xl", x: "50%", y: "50%", a: "cc" }],
+		},
 		/* W 38.66–39.90  "Sal ahí fuera y pregunta."                   */
 		{
 			id: "ucd-2",
@@ -493,7 +531,13 @@
 
 		/* 5 · EL COSQUILLEO ────────────────────────────────────────────
        W 45.16–46.30  "Sobre todo,"                                  */
-		{ id: "cosquilleo-1", t: 45.16, dur: 1.14, idx: "cosquilleo", els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc", anim: "typewriter", twDur: 1.14 }] },
+		{
+			id: "cosquilleo-1",
+			t: 45.16,
+			dur: 1.14,
+			idx: "cosquilleo",
+			els: [{ id: "l14", text: "Sobre todo,", size: "xl", x: "50%", y: "50%", a: "cc", anim: "typewriter", twDur: 1.14 }],
+		},
 		/* W 46.30–47.12  "crea." — the imperative drops like a stamp.    */
 		{
 			id: "cosquilleo-2",
@@ -619,7 +663,13 @@
 			],
 		},
 		/* W 56.88–57.66  "Cuando algo funciona,"                        */
-		{ id: "cosquilleo-8", t: 56.88, dur: 0.78, idx: "cosquilleo", els: [{ id: "l18b", text: "Cuando algo funciona,", size: "l", x: "37.05%", y: "50%", a: "cc" }] },
+		{
+			id: "cosquilleo-8",
+			t: 56.88,
+			dur: 0.78,
+			idx: "cosquilleo",
+			els: [{ id: "l18b", text: "Cuando algo funciona,", size: "l", x: "37.05%", y: "50%", a: "cc" }],
+		},
 		/* W 57.66–60.96  "esa sensación de cosquilleo te recorrerá la piel." */
 		{
 			id: "cosquilleo-9",
@@ -877,10 +927,8 @@
 		delay = (delay || 0) + (spec.enterDelay || 0);
 		const rot = CARD_ROT[spec.id] || 0;
 
-		/* Opening headline — fades in slowly as the image bleeds behind it,
-       so they feel like one synchronized arrival rather than separate events. */
 		/* Typewriter — character-by-character reveal synced to audio duration.
-	       TextPlugin types into .tw-text; .tw-cursor blinks while typing then fades. */
+		   TextPlugin types into .tw-text; .tw-cursor blinks while typing then fades. */
 		if (spec.anim === "typewriter") {
 			const full = String(spec.text || "");
 			gsap.set(el, { autoAlpha: 1 });
@@ -904,20 +952,11 @@
 			return;
 		}
 
-		if (spec.id === "l1") {
-			gsap.fromTo(el, { autoAlpha: 0, x: 0, y: 0 }, { autoAlpha: 1, duration: 0.9, delay, ease: "power2.out" });
-			return;
-		}
-
-		/* ── New motion tokens (anim:'...') ── */
+		/* ── Motion tokens (anim:'...') ── */
 		if (spec.anim === "fast-photo-pop") {
 			/* Photo lands quickly with a tiny scale-up — used before paired
          text expansion. Parallax kicks in during the pop, not after. */
-			gsap.fromTo(
-				el,
-				{ autoAlpha: 0, scale: 0.94 },
-				{ autoAlpha: 1, scale: 1, duration: 0.32, delay, ease: "power2.out" },
-			);
+			gsap.fromTo(el, { autoAlpha: 0, scale: 0.94 }, { autoAlpha: 1, scale: 1, duration: 0.32, delay, ease: "power2.out" });
 			if (!spec.cutout) startParallax(el);
 			return;
 		}
@@ -931,28 +970,22 @@
 				duration: 0.75,
 				delay: delay + 0.22,
 				ease: "power2.inOut",
-				onComplete() { el.style.clipPath = ""; },
+				onComplete() {
+					el.style.clipPath = "";
+				},
 			});
 			return;
 		}
 		if (spec.anim === "stamp-drop") {
 			/* Used for the single most weighty word of the piece — lands like
          a stamp on paper. Slight overshoot at the end seals the impact. */
-			gsap.fromTo(
-				el,
-				{ autoAlpha: 0, scale: 1.35 },
-				{ autoAlpha: 1, scale: 1, duration: 0.5, delay, ease: "back.out(1.4)" },
-			);
+			gsap.fromTo(el, { autoAlpha: 0, scale: 1.35 }, { autoAlpha: 1, scale: 1, duration: 0.5, delay, ease: "back.out(1.4)" });
 			return;
 		}
 		if (spec.anim === "expand-from-center") {
 			/* Quote-style entry — text appears at center with a subtle scale
          expansion. Resonance, not impact. */
-			gsap.fromTo(
-				el,
-				{ autoAlpha: 0, scale: 0.88 },
-				{ autoAlpha: 1, scale: 1, duration: 0.55, delay, ease: "power3.out" },
-			);
+			gsap.fromTo(el, { autoAlpha: 0, scale: 0.88 }, { autoAlpha: 1, scale: 1, duration: 0.55, delay, ease: "power3.out" });
 			return;
 		}
 		if (spec.anim === "push-from-right") {
@@ -1087,7 +1120,12 @@
 			   cuando no hay animaciones activas y los tweens pendientes no se ejecutan. */
 			gsap.set(el, { autoAlpha: 0, x: 0, y: 0, scale: 1 });
 			const _el = el;
-			setTimeout(() => { gsap.set(_el, { autoAlpha: 1 }); }, Math.round((delay + 0.28) * 1000));
+			setTimeout(
+				() => {
+					gsap.set(_el, { autoAlpha: 1 });
+				},
+				Math.round((delay + 0.28) * 1000),
+			);
 			return;
 		}
 
@@ -1387,16 +1425,6 @@
 		for (const [, el] of dom) gsap.set(el, { autoAlpha: 1, y: 0, scale: 1, rotation: 0, xPercent: -50, yPercent: -50 });
 	}
 
-	/* ── Debug helpers (remove before production) ── */
-	window.__piezaSeek = function (t) {
-		lastFrameIdx = -1;
-		audio.currentTime = t;
-	};
-	window.__piezaRender = function (t) {
-		lastFrameIdx = -1;
-		renderAt(t);
-	};
-
 	/* ── Public API ── */
 	window.piezaStart = function () {
 		audio.currentTime = 0;
@@ -1528,9 +1556,22 @@
 		let devStore = loadOverrides();
 		applyOverrides(devStore);
 
+		/* Dev-only seek/render helpers — exposed for console use */
+		window.__piezaSeek = function (t) {
+			lastFrameIdx = -1;
+			audio.currentTime = t;
+		};
+		window.__piezaRender = function (t) {
+			lastFrameIdx = -1;
+			renderAt(t);
+		};
+
 		/* 1. Skip hero — show pieza immediately */
 		const ns = document.getElementById("nextScene");
-		if (ns) { ns.style.opacity = "1"; ns.style.pointerEvents = "all"; }
+		if (ns) {
+			ns.style.opacity = "1";
+			ns.style.pointerEvents = "all";
+		}
 		const heroEl = document.getElementById("hero");
 		if (heroEl) heroEl.style.display = "none";
 		window.__setHeroScrollActive && window.__setHeroScrollActive(false);
@@ -1630,8 +1671,7 @@
 					const value = snap[key];
 					if (value && typeof value === "object") spec[key] = JSON.parse(JSON.stringify(value));
 					else spec[key] = value;
-				}
-				else delete spec[key];
+				} else delete spec[key];
 			}
 		}
 
@@ -1873,7 +1913,7 @@
 				const easeRaw = devMotionEaseEl ? devMotionEaseEl.value : "";
 				const duration = Number.parseFloat(durationRaw);
 				const ease = String(easeRaw || "").trim();
-				const next = { ...((spec.transition && typeof spec.transition === "object") ? spec.transition : {}) };
+				const next = { ...(spec.transition && typeof spec.transition === "object" ? spec.transition : {}) };
 				if (Number.isFinite(duration)) next.duration = duration;
 				else delete next.duration;
 				if (ease) next.ease = ease;
@@ -1911,11 +1951,26 @@
 			if (!devState.selectedSpec) {
 				devSelLabelEl.textContent = "-";
 				if (devElementPickerEl) devElementPickerEl.value = "";
-				if (devInputXEl) { devInputXEl.value = ""; devInputXEl.disabled = true; }
-				if (devInputYEl) { devInputYEl.value = ""; devInputYEl.disabled = true; }
-				if (devInputWEl) { devInputWEl.value = ""; devInputWEl.disabled = true; }
-				if (devInputHEl) { devInputHEl.value = ""; devInputHEl.disabled = true; }
-				if (devInputZEl) { devInputZEl.value = ""; devInputZEl.disabled = true; }
+				if (devInputXEl) {
+					devInputXEl.value = "";
+					devInputXEl.disabled = true;
+				}
+				if (devInputYEl) {
+					devInputYEl.value = "";
+					devInputYEl.disabled = true;
+				}
+				if (devInputWEl) {
+					devInputWEl.value = "";
+					devInputWEl.disabled = true;
+				}
+				if (devInputHEl) {
+					devInputHEl.value = "";
+					devInputHEl.disabled = true;
+				}
+				if (devInputZEl) {
+					devInputZEl.value = "";
+					devInputZEl.disabled = true;
+				}
 				devTextSizeRowEl.style.display = "none";
 				updateMotionPanel();
 				return;
@@ -1923,10 +1978,22 @@
 			const spec = devState.selectedSpec;
 			devSelLabelEl.textContent = spec.id || "-";
 			if (devElementPickerEl) devElementPickerEl.value = spec.id || "";
-			if (devInputXEl) { devInputXEl.disabled = false; devInputXEl.value = spec.x || ""; }
-			if (devInputYEl) { devInputYEl.disabled = false; devInputYEl.value = spec.y || ""; }
-			if (devInputWEl) { devInputWEl.disabled = false; devInputWEl.value = spec.w || ""; }
-			if (devInputHEl) { devInputHEl.disabled = false; devInputHEl.value = spec.h || ""; }
+			if (devInputXEl) {
+				devInputXEl.disabled = false;
+				devInputXEl.value = spec.x || "";
+			}
+			if (devInputYEl) {
+				devInputYEl.disabled = false;
+				devInputYEl.value = spec.y || "";
+			}
+			if (devInputWEl) {
+				devInputWEl.disabled = false;
+				devInputWEl.value = spec.w || "";
+			}
+			if (devInputHEl) {
+				devInputHEl.disabled = false;
+				devInputHEl.value = spec.h || "";
+			}
 			if (devInputZEl) {
 				devInputZEl.disabled = false;
 				devInputZEl.value = spec.z != null ? String(spec.z) : "";
@@ -2098,8 +2165,13 @@
 				e.preventDefault();
 				return;
 			}
-			if (e.key === "ArrowRight") { e.preventDefault(); devJump(devFrameIdx + 1); }
-			else if (e.key === "ArrowLeft") { e.preventDefault(); devJump(devFrameIdx - 1); }
+			if (e.key === "ArrowRight") {
+				e.preventDefault();
+				devJump(devFrameIdx + 1);
+			} else if (e.key === "ArrowLeft") {
+				e.preventDefault();
+				devJump(devFrameIdx - 1);
+			}
 		});
 
 		/* 6. Build navigator panel */
@@ -2396,7 +2468,7 @@
 				sep.textContent = f.idx;
 				listEl.appendChild(sep);
 			}
-			const firstText = (f.els || []).find(e => e.text);
+			const firstText = (f.els || []).find((e) => e.text);
 			const item = document.createElement("div");
 			item.className = "dev-frame-item";
 			item.dataset.frameIdx = i;
@@ -2423,7 +2495,7 @@
 		panel.addEventListener("pointerdown", (e) => e.stopPropagation());
 
 		function devHighlight(idx) {
-			listEl.querySelectorAll(".dev-frame-item").forEach(el => el.classList.remove("active"));
+			listEl.querySelectorAll(".dev-frame-item").forEach((el) => el.classList.remove("active"));
 			const active = listEl.querySelector(`[data-frame-idx="${idx}"]`);
 			if (active) {
 				active.classList.add("active");
