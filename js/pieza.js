@@ -767,21 +767,6 @@
 	const audio = new Audio("assets/voice-off.m4a");
 	audio.preload = "auto";
 
-	/* ── Subtitle sync overlay (temporal check — no animation) ── */
-	const subsEl = document.getElementById("piezaSubs");
-	let subSegs = [];
-	fetch("assets/subtitles.json")
-		.then((r) => r.json())
-		.then((s) => {
-			subSegs = s;
-		});
-
-	function renderSubs(time) {
-		if (!subsEl) return;
-		const seg = subSegs.find((s) => time >= s.start && time < s.end);
-		subsEl.textContent = seg ? seg.text : "";
-	}
-
 	/* ── Refs ── */
 	const root = document.getElementById("nextScene");
 	const sceneEl = root.querySelector(".pieza-scene");
@@ -1322,7 +1307,6 @@
 	/* ── rAF loop — reads audio.currentTime ── */
 	function loop() {
 		renderAt(audio.currentTime);
-		renderSubs(audio.currentTime);
 		updateProgress();
 		requestAnimationFrame(loop);
 	}
