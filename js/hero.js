@@ -160,7 +160,7 @@ function applyStep(n) {
     /* Hero content gone → reveal pieza and start it */
     setTimeout(() => {
       gsap.to(nextScene, { opacity: 1, pointerEvents: 'auto', duration: 0.9, ease: 'ES' });
-      setTimeout(() => { window.piezaStart && window.piezaStart(); }, 900);
+      setTimeout(() => { window.piezaStart && window.piezaStart(); }, 100);
     }, 800);
   }
 }
@@ -243,7 +243,7 @@ document.fonts.ready.then(() => {
 
   const tl = gsap.timeline({
     defaults: { ease: 'ES' },
-    onComplete: () => { locked = false; scheduleAutoAdvance(5000); },
+    onComplete: () => { locked = false; scheduleAutoAdvance(800); },
   });
 
   /* Title: opacity only — no y transform, preserves mix-blend-mode */
