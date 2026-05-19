@@ -783,6 +783,27 @@
 	const audio = new Audio("assets/voice-off.m4a");
 	audio.preload = "auto";
 
+	/* ── Autoplay unlock (Safari + Chrome workaround) ──────────────────
+	     Browsers block audio.play() when it is called from a setTimeout
+	     rather than directly inside a user-gesture handler. The fix: on
+	     the very first interaction anywhere on the page, call play() +
+	     pause() synchronously. This marks the audio element as
+	     "user-activated" in the browser's internal permission model, so
+	     the delayed piezaStart() call can play freely 900 ms later.    */
+	let _audioUnlocked = false;
+	function _unlockAudio() {
+		if (_audioUnlocked) return;
+		_audioUnlocked = true;
+		["click", "touchstart", "keydown", "wheel"].forEach((evt) =>
+			document.removeEventListener(evt, _unlockAudio, true),
+		);
+		const p = audio.play();
+		if (p instanceof Promise) p.then(() => { audio.pause(); audio.currentTime = 0; }).catch(() => {});
+	}
+	["click", "touchstart", "keydown", "wheel"].forEach((evt) =>
+		document.addEventListener(evt, _unlockAudio, { capture: true, passive: true }),
+	);
+
 	/* ── Refs ── */
 	const root = document.getElementById("nextScene");
 	const sceneEl = root.querySelector(".pieza-scene");
@@ -1345,6 +1366,7 @@
     <line x1="14" y1="6" x2="10" y2="10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>`;
 
 	let audioMuted = false;
+	let audioBlockedByPolicy = false; /* true when browser forced muted-fallback */
 
 	function setAudioMuted(m) {
 		audioMuted = m;
@@ -1365,6 +1387,12 @@
 
 	/* ── Pause/resume button ── */
 	pauseBtn.addEventListener("click", () => {
+		/* If the browser forced muted-fallback, first press = unmute + continue */
+		if (audioBlockedByPolicy) {
+			audioBlockedByPolicy = false;
+			setAudioMuted(false);
+			return;
+		}
 		if (audio.ended || audio.currentTime >= TOTAL) {
 			lastFrameIdx = -1;
 			audio.currentTime = 0;
@@ -1437,9 +1465,12 @@
 		entries.forEach((e) => e.classList.remove("shown", "active"));
 		shownSections.clear();
 		brandBg.classList.remove("shown");
+		audioBlockedByPolicy = false;
 		setAudioMuted(false);
 		audio.play().catch(() => {
-			/* Unmuted autoplay blocked — retry muted so visuals still run */
+			/* Autoplay still blocked (unlock didn't fire yet) —
+			   run visuals muted; first press of play button will unmute */
+			audioBlockedByPolicy = true;
 			setAudioMuted(true);
 			audio.play().catch(() => syncPauseIcon());
 		});
