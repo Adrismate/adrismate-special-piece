@@ -794,13 +794,13 @@
 	function _unlockAudio() {
 		if (_audioUnlocked) return;
 		_audioUnlocked = true;
-		["click", "touchstart", "keydown", "wheel"].forEach((evt) =>
+		["click", "mousedown", "keydown", "pointerdown", "touchend"].forEach((evt) =>
 			document.removeEventListener(evt, _unlockAudio, true),
 		);
 		const p = audio.play();
 		if (p instanceof Promise) p.then(() => { audio.pause(); audio.currentTime = 0; }).catch(() => {});
 	}
-	["click", "touchstart", "keydown", "wheel"].forEach((evt) =>
+	["click", "mousedown", "keydown", "pointerdown", "touchend"].forEach((evt) =>
 		document.addEventListener(evt, _unlockAudio, { capture: true, passive: true }),
 	);
 
@@ -1391,6 +1391,7 @@
 		if (audioBlockedByPolicy) {
 			audioBlockedByPolicy = false;
 			setAudioMuted(false);
+			if (audio.paused && !audio.ended) audio.play().catch(() => {});
 			return;
 		}
 		if (audio.ended || audio.currentTime >= TOTAL) {
@@ -1467,6 +1468,7 @@
 		brandBg.classList.remove("shown");
 		audioBlockedByPolicy = false;
 		setAudioMuted(false);
+		audio.load(); /* reset any prior rejected-play state */
 		audio.play().catch(() => {
 			/* Autoplay still blocked (unlock didn't fire yet) —
 			   run visuals muted; first press of play button will unmute */
